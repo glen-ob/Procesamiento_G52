@@ -34,7 +34,7 @@ saveImage.addEventListener('click', function () {
 
     ctx.filter = `brightness(${brightness}%) contrast(${contrast}%) grayscale(${grayscale}%) saturate(${saturate}%) opacity(${opacity}%) blur(${blurs}px)`;
 
-    ctx.translate(canvas.width / 2, canvas.height / 2); 
+    ctx.translate(canvas.width / 2, canvas.height / 2);
     if (rotate !== 0) {
         ctx.rotate(rotate * Math.PI / 180);
     }
@@ -186,3 +186,37 @@ inpRange.addEventListener('change', function () {
     console.log(selectedFilter.id)
     applyFilteronImg
 })
+
+new Swiper(".wrapper", {
+    loop: true,
+    spaceBetween: 30,
+    // Autoplay
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+    },
+    // Pagination bullets
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        dynamicBullets: true,
+    },
+    // Navigation arrows
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    // Responsive breakpoints
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 3,
+        },
+    },
+});

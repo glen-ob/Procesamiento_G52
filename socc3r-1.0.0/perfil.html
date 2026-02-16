@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Index - Socc3r</title>
+    <title>Mi Perfil - Socc3r</title>
 
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -41,11 +41,16 @@
             font-family: 'DigiBop', sans-serif;
             color: white;
             text-align: center;
-            box-shadow: 10px 10px 0px rgba(0,0,0,0.05);
+            box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.05);
         }
 
-        .box-purple { background-color: #f091c5; }
-        .box-blue { background-color: #89d4f0; }
+        .box-purple {
+            background-color: #f091c5;
+        }
+
+        .box-blue {
+            background-color: #89d4f0;
+        }
 
         .y2k-title {
             font-size: 3rem;
@@ -110,7 +115,7 @@
 
         /* Marquee / Topbar */
         .topbar {
-            background: rgba(0,0,0,0.1);
+            background: rgba(0, 0, 0, 0.1);
             padding: 5px 0;
         }
 
@@ -129,13 +134,23 @@
         }
 
         @keyframes marquee {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(-100%, 0); }
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(-100%, 0);
+            }
         }
 
         @media (max-width: 991px) {
-            .y2k-cards-grid { grid-template-columns: repeat(2, 1fr); }
-            .y2k-title { font-size: 2rem; }
+            .y2k-cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .y2k-title {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -154,7 +169,8 @@
                         <li><a href="#hero">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#menu">Menu</a></li>
-                        <li class="dropdown"><a href="#"><span>Explore</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <li class="dropdown"><a href="#"><span>Explore</span> <i
+                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
                             <ul>
                                 <li><a href="#">Gallery</a></li>
                                 <li><a href="#">Events</a></li>
@@ -165,7 +181,8 @@
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
 
-                <img src="assets/img/avatar.jpg" alt="Avatar" class="avatar" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
+                <img src="assets/img/avatar.jpg" alt="Avatar" class="avatar"
+                    style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
             </div>
         </div>
 
@@ -173,7 +190,8 @@
             <div class="container marquee-section d-flex justify-content-center">
                 <div class="marquee-div">
                     <div class="marquee">
-                        <p>Nuevas cartas ya disponibles &bull; Nuevas cartas ya disponibles &bull; Nuevas cartas ya disponibles &bull; Nuevas cartas ya disponibles &bull;</p>
+                        <p>Nuevas cartas ya disponibles &bull; Nuevas cartas ya disponibles &bull; Nuevas cartas ya
+                            disponibles &bull; Nuevas cartas ya disponibles &bull;</p>
                     </div>
                 </div>
             </div>
@@ -181,16 +199,17 @@
     </header>
 
     <main class="main">
-        <div class="main-profile-bg" style="padding-top: 140px; padding-bottom: 80px;"> 
+        <div class="main-profile-bg" style="padding-top: 140px; padding-bottom: 80px;">
             <div class="container">
                 <div class="row gy-5 align-items-start">
-                    
+
                     <div class="col-lg-4">
                         <div class="y2k-container box-purple">
                             <h2 class="y2k-title">MI PERFIL</h2>
-                            
+
                             <div class="profile-pic-wrapper my-4">
-                                <img src="assets/img/avatar.jpg" alt="Profile" class="rounded-circle img-fluid" style="width: 150px; height: 150px; object-fit: cover; border: 5px solid white;">
+                                <img src="assets/img/avatar.jpg" alt="Profile" class="rounded-circle img-fluid"
+                                    style="width: 150px; height: 150px; object-fit: cover; border: 5px solid white;">
                             </div>
 
                             <div class="mb-4">
@@ -199,7 +218,7 @@
                             </div>
 
                             <a href="escaneo.html">
-                             <button class="btn-y2k-scan">escanear</button>
+                                <button class="btn-y2k-scan">escanear</button>
                             </a>
                         </div>
                     </div>
@@ -208,12 +227,18 @@
                         <div class="y2k-container box-blue">
                             <h2 class="y2k-title">tarjetas</h2>
                             <div class="y2k-cards-grid">
-                                <div class="y2k-card-item"><img src="../socc3r-1.0.0/assets/img/neymar_carta.jpg" alt=""></div>
-                                <div class="y2k-card-item"><img src="../socc3r-1.0.0/assets/img/messi_carta.jpg" alt=""></div>
-                                <div class="y2k-card-item"><img src="../socc3r-1.0.0/assets/img/mbappe_carta.jpg" alt=""></div>
-                                <div class="y2k-card-item"><img src="../socc3r-1.0.0/assets/img/aymeric_carta.jpg" alt=""></div>
-                                <div class="y2k-card-item"><img src="../socc3r-1.0.0/assets/img/neymar_carta.jpg" alt=""></div>
-                                <div class="y2k-card-item"><img src="../socc3r-1.0.0/assets/img/messi_carta.jpg" alt=""></div>
+                                <div class="y2k-card-item"><img src="../socc3r-1.0.0/assets/img/neymar_carta.jpg"
+                                        alt=""></div>
+                                <div class="y2k-card-item"><img src="../socc3r-1.0.0/assets/img/messi_carta.jpg" alt="">
+                                </div>
+                                <div class="y2k-card-item"><img src="../socc3r-1.0.0/assets/img/mbappe_carta.jpg"
+                                        alt=""></div>
+                                <div class="y2k-card-item"><img src="../socc3r-1.0.0/assets/img/aymeric_carta.jpg"
+                                        alt=""></div>
+                                <div class="y2k-card-item"><img src="../socc3r-1.0.0/assets/img/neymar_carta.jpg"
+                                        alt=""></div>
+                                <div class="y2k-card-item"><img src="../socc3r-1.0.0/assets/img/messi_carta.jpg" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -252,7 +277,8 @@
         </div>
 
         <div class="container copyright text-center mt-4">
-            <p>© <span>Copyright</span> <strong class="px-1 sitename">Socc3r</strong> <span>All Rights Reserved</span></p>
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">Socc3r</strong> <span>All Rights Reserved</span>
+            </p>
         </div>
     </footer>
 
@@ -263,4 +289,5 @@
     <script src="assets/js/main.js"></script>
 
 </body>
+
 </html>
