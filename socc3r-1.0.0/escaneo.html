@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socc3r - Escaneo</title>
+    <style>
+        @font-face {
+            font-family: 'DigiBop';
+            src: url('https://dl.dropbox.com/s/8maabpvuycdrlai/DigiBop-Regular.ttf');
+            font-display: swap;
+        }
+
+        :root {
+            --bg-gradient: linear-gradient(45deg, #fbc2eb 0%, #a6c1ee 100%);
+            --scan-green: #d1f587; /* El verde de tus bocetos */
+            --font-main: 'DigiBop', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-main);
+            background: var(--bg-gradient);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            gap: 30px;
+            width: 90%;
+            max-width: 1000px;
+            height: 500px;
+        }
+
+        /* --- CUADRO IZQUIERDO: INFORMACIÓN --- */
+        .info-box {
+            background-color: var(--scan-green);
+            flex: 1;
+            border-radius: 40px;
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        /* --- CUADRO DERECHO: VISOR DE ESCANEO --- */
+        .scan-box {
+            background-color: var(--scan-green);
+            flex: 1.5;
+            border-radius: 40px;
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.05);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 30px;
+        }
+
+        .scan-title {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* El visor con las esquinas blancas */
+        .camera-view {
+            width: 80%;
+            height: 70%;
+            background-color: rgba(255, 255, 255, 0.2); /* Simula el lente */
+            border-radius: 20px;
+            position: relative;
+            border: 2px dashed rgba(255,255,255,0.5);
+            overflow: hidden;
+        }
+
+        /* Esquinas del visor (Corners) */
+        .corner {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 8px solid white;
+        }
+
+        .top-left { top: 20px; left: 20px; border-right: none; border-bottom: none; border-radius: 10px 0 0 0; }
+        .top-right { top: 20px; right: 20px; border-left: none; border-bottom: none; border-radius: 0 10px 0 0; }
+        .bottom-left { bottom: 20px; left: 20px; border-right: none; border-top: none; border-radius: 0 0 0 10px; }
+        .bottom-right { bottom: 20px; right: 20px; border-left: none; border-top: none; border-radius: 0 0 10px 0; }
+
+        /* Línea de escaneo animada 
+        .scan-line {
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background: white;
+            box-shadow: 0 0 15px white;
+            top: 0;
+            animation: scanning 3s ease-in-out infinite;
+        }
+
+        @keyframes scanning {
+            0% { top: 0%; }
+            50% { top: 100%; }
+            100% { top: 0%; }
+        }*/
+
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container { flex-direction: column; height: auto; }
+            .info-box { display: none; } /* En móvil ocultamos el decorativo */
+        }
+    </style>
+</head>
+<body>
+
+    <a href="perfil.html" class="back-link">← volver al perfil</a>
+
+    <div class="container">
+        <div class="info-box">
+            <p style="font-size: 1.2rem;">ingresa una<br>tarjeta<br></p>
+        </div>
+
+        <div class="scan-box">
+            <h1 class="scan-title">escaneo</h1>
+            
+            <div class="camera-view">
+                <div class="scan-line"></div>
+                <div class="corner top-left"></div>
+                <div class="corner top-right"></div>
+                <div class="corner bottom-left"></div>
+                <div class="corner bottom-right"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socc3r - Sign Up</title>
+        <style>
+        /* Definición de la fuente */
+        @font-face {
+            font-family: 'DigiBop';
+            src: url('https://dl.dropbox.com/s/8maabpvuycdrlai/DigiBop-Regular.ttf');
+            font-display: swap;
+        }
+
+        :root {
+            --bg-gradient: linear-gradient(45deg, #fbc2eb 0%, #a6c1ee 100%);
+            --card-bg: #c5cfff;
+            --input-bg: #ffffff;
+            --btn-green: #d1f587;
+            --text-placeholder: #f3a6d5;
+            /* Aplicamos la fuente a una variable para reusarla */
+            --main-font: 'DigiBop', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--main-font);
+            background: var(--bg-gradient);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .auth-card {
+            background-color: var(--card-bg);
+            width: 350px;
+            padding: 50px 30px;
+            border-radius: 45px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .auth-title {
+            color: #ffffff;
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .input-group { margin-bottom: 20px; }
+
+        .input-group input {
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 25px;
+            background-color: var(--input-bg);
+            text-align: center;
+            font-family: var(--main-font);
+            font-size: 1.1rem;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .input-group input::placeholder { color: var(--text-placeholder); }
+
+        .auth-btn {
+            background-color: var(--btn-green);
+            color: #ffffff;
+            border: none;
+            padding: 12px 60px;
+            border-radius: 30px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: var(--main-font);
+            margin-top: 15px;
+        }
+
+        .auth-btn:hover { transform: scale(1.05); }
+
+        .switch-page {
+            margin-top: 20px;
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-card">
+        <h1 class="auth-title">SIGN UP</h1>
+        <form action="login.html">
+            <div class="input-group">
+                <input type="email" placeholder="correo electrónico" required>
+            </div>
+            <div class="input-group">
+                <input type="password" placeholder="contraseña" required>
+            </div>
+            <div class="input-group">
+                <input type="text" placeholder="algo más">
+            </div>
+            <button type="submit" class="auth-btn">sign up</button>
+        </form>
+        <a href="login.html" class="switch-page">¿ya tienes cuenta? entra aquí</a>
+    </div>
+</body>
+</html>
