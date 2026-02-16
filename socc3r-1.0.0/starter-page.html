@@ -15,7 +15,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,56 +29,63 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-<style>
-  /* 1. Bajamos el título SOCC3R aumentando el padding superior */
-  .page-title {
-    padding: 140px 0 80px 0 !important;
-  }
+  <style>
+    /* 1. Bajamos el título SOCC3R aumentando el padding superior */
+    .page-title {
+      padding: 140px 0 80px 0 !important;
+    }
 
-  /* 2. Hacemos las tarjetas verticales (más altas que anchas) */
-  .card-placeholder {
-    height: 320px !important; /* Altura de cromo vertical */
-    border-radius: 15px !important;
-    transition: transform 0.3s ease;
-  }
+    /* 2. Hacemos las tarjetas verticales (más altas que anchas) */
+    .card-placeholder {
+      height: 320px !important;
+      /* Altura de cromo vertical */
+      border-radius: 15px !important;
+      transition: transform 0.3s ease;
+    }
 
-  .card-placeholder:hover {
-    transform: translateY(-5px); /* Efecto sutil al pasar el mouse */
-  }
+    .card-placeholder:hover {
+      transform: translateY(-5px);
+      /* Efecto sutil al pasar el mouse */
+    }
 
-  /* 3. Estilo para que los banners no abarquen todo el ancho */
-  .custom-banner-container {
-    max-width: 600px; /* Ancho reducido */
-    margin-left: auto;
-    margin-right: auto;
-    border: 4px solid #fff;
-    border-radius: 50px;
-    background: rgba(255, 255, 255, 0.15); /* Un poco más visible */
-    padding: 20px;
-    transition: all 0.3s ease;
-  }
+    /* 3. Estilo para que los banners no abarquen todo el ancho */
+    .custom-banner-container {
+      max-width: 600px;
+      /* Ancho reducido */
+      margin-left: auto;
+      margin-right: auto;
+      border: 4px solid #fff;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.15);
+      /* Un poco más visible */
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
 
-  /* Ajuste de textos dentro de los banners */
-  .custom-banner-container h3, 
-  .custom-banner-container h4 {
-    font-size: 1.3rem !important;
-    margin-bottom: 5px !important;
-    color: #fff;
-  }
+    /* Ajuste de textos dentro de los banners */
+    .custom-banner-container h3,
+    .custom-banner-container h4 {
+      font-size: 1.3rem !important;
+      margin-bottom: 5px !important;
+      color: #fff;
+    }
 
-  .custom-banner-container p {
-    font-size: 1rem !important;
-    margin-bottom: 0 !important;
-    color: #ffffff;
-  }
-  .card-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Esto hace que la foto se recorte para llenar el espacio vertical */
-    border-radius: 12px; /* Un poco menos que el borde de la carta para que encaje */
-  }
-</style>
-  
+    .custom-banner-container p {
+      font-size: 1rem !important;
+      margin-bottom: 0 !important;
+      color: #ffffff;
+    }
+
+    .card-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* Esto hace que la foto se recorte para llenar el espacio vertical */
+      border-radius: 12px;
+      /* Un poco menos que el borde de la carta para que encaje */
+    }
+  </style>
+
 </head>
 
 <body class="starter-page-page">
@@ -93,146 +102,139 @@
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="#hero">Home<br></a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#specials">Specials</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="#chefs">Chefs</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">Dropdown 1</a></li>
-                <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                  <ul>
-                    <li><a href="#">Deep Dropdown 1</a></li>
-                    <li><a href="#">Deep Dropdown 2</a></li>
-                    <li><a href="#">Deep Dropdown 3</a></li>
-                    <li><a href="#">Deep Dropdown 4</a></li>
-                    <li><a href="#">Deep Dropdown 5</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Dropdown 2</a></li>
-                <li><a href="#">Dropdown 3</a></li>
-                <li><a href="#">Dropdown 4</a></li>
-              </ul>
-            </li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#hero" class="active">Inicio<br></a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="trivia.html">Trivia</a></li>
+            <li><a href="perfil.html">Mi Perfil</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
-
-        <img src="assets/img/avatar.jpg" href="#" alt="Avatar" class="avatar">
-
+        <img src="assets/img/avatar.jpg" alt="Avatar" class="avatar"
+          style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
       </div>
 
+
     </div>
-    
+
     <div class="topbar ">
       <div class="container marquee-section d-flex justify-content-center justify-content-md-between">
         <div class="marquee-div">
-          <div class="marquee"><p>Nuevas cartas ya disponibles &bull; Nuevas cartas ya disponibles &bull; Nuevas cartas ya disponibles &bull; Nuevas cartas ya disponibles &bull; Nuevas cartas ya disponibles &bull; Nuevas cartas ya disponibles &bull; </p></div>
+          <div class="marquee">
+            <p>Nuevas cartas ya disponibles &bull; Nuevas cartas ya disponibles &bull; Nuevas cartas ya disponibles
+              &bull; Nuevas cartas ya disponibles &bull; Nuevas cartas ya disponibles &bull; Nuevas cartas ya
+              disponibles &bull; </p>
+          </div>
         </div>
       </div>
     </div><!-- End Top Bar -->
   </header>
 
- <main class="main">
+  <main class="main">
 
-  <div class="page-title position-relative" data-aos="fade" style="background-image: url('assets/img/gradiente.jpg'); background-size: cover; padding: 80px 0;">
-    <div class="container position-relative text-center">
-      <h1 class="sitename" style="font-size: 4rem; color: #fff; text-shadow: 2px 2px #ff00ff;">SOCC3R</h1>
-      <p style="color: #ffffff; font-weight: bold;">¡Colecciona, Escanea y Gana!</p>
+    <div class="page-title position-relative" data-aos="fade"
+      style="background-image: url('assets/img/gradiente.jpg'); background-size: cover; padding: 80px 0;">
+      <div class="container position-relative text-center">
+        <h1 class="sitename" style="font-size: 4rem; color: #fff; text-shadow: 2px 2px #ff00ff;">SOCC3R</h1>
+        <p style="color: #ffffff; font-weight: bold;">¡Colecciona, Escanea y Gana!</p>
+      </div>
     </div>
-  </div>
 
-  <section id="cards-display" class="section" style="background-color: #f3bae1; color: #fff;">
-    
-    <div class="container mb-5" data-aos="fade-up">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h3 style="color: #adff2f;">Cartas Recientes</h3>
-        <div>
-          <button class="btn btn-outline-light btn-sm"><i class="bi bi-chevron-left"></i></button>
-          <button class="btn btn-outline-light btn-sm"><i class="bi bi-chevron-right"></i></button>
+    <section id="cards-display" class="section" style="background-color: #f3bae1; color: #fff;">
+
+      <div class="container mb-5" data-aos="fade-up">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h3 style="color: #adff2f;">Cartas Recientes</h3>
+          <div>
+            <button class="btn btn-outline-light btn-sm"><i class="bi bi-chevron-left"></i></button>
+            <button class="btn btn-outline-light btn-sm"><i class="bi bi-chevron-right"></i></button>
+          </div>
+        </div>
+        <div class="row g-3">
+          <div class="col-6 col-md-3">
+            <div class="card-placeholder"
+              style="background: #000; height: 320px; border-radius: 15px; border: 3px solid #adff2f; overflow: hidden;">
+              <img src="../socc3r-1.0.0/assets/img/messi_carta.jpg" alt="Nombre del Jugador">
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <div class="card-placeholder"
+              style="background: #000; height: 320px; border-radius: 15px; border: 3px solid #adff2f; overflow: hidden;">
+              <img src="../socc3r-1.0.0/assets/img/mbappe_carta.jpg" alt="Nombre del Jugador">
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <div class="card-placeholder"
+              style="background: #000; height: 320px; border-radius: 15px; border: 3px solid #adff2f; overflow: hidden;">
+              <img src="../socc3r-1.0.0/assets/img/neymar_carta.jpg" alt="Nombre del Jugador">
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <div class="card-placeholder"
+              style="background: #000; height: 320px; border-radius: 15px; border: 3px solid #adff2f; overflow: hidden;">
+              <img src="../socc3r-1.0.0/assets/img/aymeric_carta.jpg" alt="Nombre del Jugador">
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row g-3">
-  <div class="col-6 col-md-3">
-    <div class="card-placeholder" style="background: #000; height: 320px; border-radius: 15px; border: 3px solid #adff2f; overflow: hidden;">
-      <img src="../socc3r-1.0.0/assets/img/messi_carta.jpg" alt="Nombre del Jugador">
-    </div>
-  </div>
 
-  <div class="col-6 col-md-3">
-    <div class="card-placeholder" style="background: #000; height: 320px; border-radius: 15px; border: 3px solid #adff2f; overflow: hidden;">
-      <img src="../socc3r-1.0.0/assets/img/mbappe_carta.jpg" alt="Nombre del Jugador">
-    </div>
-  </div>
+      <div class="container mb-5" data-aos="fade-up" data-aos-delay="100">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h3 style="color: #ff00ff;">Más Populares</h3>
+          <div>
+            <button class="btn btn-outline-light btn-sm"><i class="bi bi-chevron-left"></i></button>
+            <button class="btn btn-outline-light btn-sm"><i class="bi bi-chevron-right"></i></button>
+          </div>
+        </div>
+        <div class="row g-3">
+          <div class="col-6 col-md-3">
+            <div class="card-placeholder"
+              style="background: #000; height: 320px; border-radius: 15px; border: 3px solid #ff00ff; overflow: hidden;">
+              <img src="../socc3r-1.0.0/assets/img/messi_carta.jpg" alt="Nombre del Jugador">
+            </div>
+          </div>
 
-  <div class="col-6 col-md-3">
-    <div class="card-placeholder" style="background: #000; height: 320px; border-radius: 15px; border: 3px solid #adff2f; overflow: hidden;">
-      <img src="../socc3r-1.0.0/assets/img/neymar_carta.jpg" alt="Nombre del Jugador">
-    </div>
-  </div>
+          <div class="col-6 col-md-3">
+            <div class="card-placeholder"
+              style="background: #000; height: 320px; border-radius: 15px; border: 3px solid #ff00ff; overflow: hidden;">
+              <img src="../socc3r-1.0.0/assets/img/mbappe_carta.jpg" alt="Nombre del Jugador">
+            </div>
+          </div>
 
-  <div class="col-6 col-md-3">
-    <div class="card-placeholder" style="background: #000; height: 320px; border-radius: 15px; border: 3px solid #adff2f; overflow: hidden;">
-      <img src="../socc3r-1.0.0/assets/img/aymeric_carta.jpg" alt="Nombre del Jugador">
-    </div>
-  </div>
-</div>
-    </div>
+          <div class="col-6 col-md-3">
+            <div class="card-placeholder"
+              style="background: #000; height: 320px; border-radius: 15px; border: 3px solid #ff00ff; overflow: hidden;">
+              <img src="../socc3r-1.0.0/assets/img/neymar_carta.jpg" alt="Nombre del Jugador">
+            </div>
+          </div>
 
-    <div class="container mb-5" data-aos="fade-up" data-aos-delay="100">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h3 style="color: #ff00ff;">Más Populares</h3>
-        <div>
-          <button class="btn btn-outline-light btn-sm"><i class="bi bi-chevron-left"></i></button>
-          <button class="btn btn-outline-light btn-sm"><i class="bi bi-chevron-right"></i></button>
+          <div class="col-6 col-md-3">
+            <div class="card-placeholder"
+              style="background: #000; height: 320px; border-radius: 15px; border: 3px solid #ff00ff; overflow: hidden;">
+              <img src="../socc3r-1.0.0/assets/img/aymeric_carta.jpg" alt="Nombre del Jugador">
+            </div>
+          </div>
         </div>
       </div>
-<div class="row g-3">
-  <div class="col-6 col-md-3">
-    <div class="card-placeholder" style="background: #000; height: 320px; border-radius: 15px; border: 3px solid #ff00ff; overflow: hidden;">
-      <img src="../socc3r-1.0.0/assets/img/messi_carta.jpg" alt="Nombre del Jugador">
-    </div>
-  </div>
 
-  <div class="col-6 col-md-3">
-    <div class="card-placeholder" style="background: #000; height: 320px; border-radius: 15px; border: 3px solid #ff00ff; overflow: hidden;">
-      <img src="../socc3r-1.0.0/assets/img/mbappe_carta.jpg" alt="Nombre del Jugador">
-    </div>
-  </div>
-
-  <div class="col-6 col-md-3">
-    <div class="card-placeholder" style="background: #000; height: 320px; border-radius: 15px; border: 3px solid #ff00ff; overflow: hidden;">
-      <img src="../socc3r-1.0.0/assets/img/neymar_carta.jpg" alt="Nombre del Jugador">
-    </div>
-  </div>
-
-  <div class="col-6 col-md-3">
-    <div class="card-placeholder" style="background: #000; height: 320px; border-radius: 15px; border: 3px solid #ff00ff; overflow: hidden;">
-      <img src="../socc3r-1.0.0/assets/img/aymeric_carta.jpg" alt="Nombre del Jugador">
-    </div>
-  </div>
+      <div class="container mb-4" data-aos="zoom-in">
+        <div class="custom-banner-container text-center">
+          <h3>Ve las noticias más recientes del mundial 2026</h3>
+        </div>
       </div>
-    </div>
 
-   <div class="container mb-4" data-aos="zoom-in">
-  <div class="custom-banner-container text-center">
-    <h3>Ve las noticias más recientes del mundial 2026</h3>
-  </div>
-</div>
+      <div class="container" data-aos="zoom-in" data-aos-delay="200">
+        <div class="custom-banner-container text-center" style="border-color: #ffffff;">
+          <h4>¿Qué tanto sabes de tu equipo?</h4>
+          <p>¡Participa en la trivia semanal!</p>
+        </div>
+      </div>
 
-<div class="container" data-aos="zoom-in" data-aos-delay="200">
-  <div class="custom-banner-container text-center" style="border-color: #ffffff;"> <h4>¿Qué tanto sabes de tu equipo?</h4>
-    <p>¡Participa en la trivia semanal!</p>
-  </div>
-</div>
+    </section>
 
-  </section>
-
-</main>
+  </main>
 
   <footer id="footer" class="footer">
 
@@ -240,7 +242,7 @@
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
           <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Restaurantly</span>
+            <span class="sitename">Socc3r</span>
           </a>
           <div class="footer-contact pt-3">
             <p>A108 Adam Street</p>
@@ -293,20 +295,22 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Restaurantly</strong> <span>All Rights Reserved</span></p>
+
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you've purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a
+          href="https://themewagon.com" target="_blank">ThemeWagon</a>
       </div>
     </div>
 
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>

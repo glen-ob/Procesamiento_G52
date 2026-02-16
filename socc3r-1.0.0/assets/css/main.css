@@ -2245,3 +2245,8 @@ div.gallery-item div.desc {
     display: none;
   }
 }
+
+.gradient-section {
+background: #F8FB3F;
+background: linear-gradient(0deg, rgba(248, 251, 63, 1) 0%, rgba(246, 70, 252, 1) 100%);
+}
