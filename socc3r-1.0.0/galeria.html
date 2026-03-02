@@ -78,13 +78,14 @@
             color: white;
         }
 
-        /* GRID DE VIDEOS/GIFS */
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
+/* GRID DE VIDEOS: Cambiamos de 4 a 2 columnas para que sean más anchos */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Solo 2 columnas = videos más grandes */
+    gap: 30px; /* Un poco más de espacio entre ellos */
+}
 
+<<<<<<< Updated upstream
         .video-item {
             aspect-ratio: 1/1;
             background: linear-gradient(135deg, #ffd1ff 0%, #fae1d0 100%);
@@ -98,21 +99,47 @@
             align-items: center;
             justify-content: center;
         }
+=======
+.video-item {
+    /* Cambiamos de 1/1 (cuadrado) a 16/9 (formato panorámico tipo cine/YouTube) */
+    aspect-ratio: 16 / 9; 
+    background: linear-gradient(135deg, #ffd1ff 0%, #fae1d0 100%);
+    border-radius: 30px;
+    box-shadow: 8px 8px 0px #b191ff;
+    transition: 0.3s;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+>>>>>>> Stashed changes
 
-        .video-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
+/* Aseguramos que el video dentro del item cubra todo el espacio ancho */
+.video-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto evita que queden franjas negras */
+    transition: transform 0.3s ease;
+}
 
-        .video-item:hover img {
-            transform: scale(1.1);
-        }
+.video-item:hover video {
+    transform: scale(1.05);
+}
 
+<<<<<<< Updated upstream
         @media (max-width: 991px) {
             .video-grid { grid-template-columns: repeat(2, 1fr); }
         }
+=======
+/* Para celulares, que se vea 1 solo video a la vez a lo ancho */
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+}
+>>>>>>> Stashed changes
     </style>
 </head>
 
@@ -149,6 +176,7 @@
     </header>
 
     <main class="main">
+<<<<<<< Updated upstream
         <section class="video-gallery-bg">
             <div class="container">
                 <div class="row gy-4 align-items-start">
@@ -161,10 +189,26 @@
                                 <button class="btn-filter-y2k">pixeleado</button>
                                 <button class="btn-filter-y2k">cámara térmica</button>
                                 <button class="btn-filter-y2k">ajuste de color</button>
+=======
+    <section class="video-gallery-bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                
+                <div class="col-lg-10">
+                    <div class="y2k-gallery-container">
+                        <h2 class="y2k-title" style="text-align: center;">galería de videos</h2>
+                        
+                        <div class="video-grid">
+                            <div class="video-item">
+                                <a href="detalle_video1.html">
+                                    <video autoplay muted loop playsinline>
+                                        <source src="../socc3r-1.0.0/assets/img/gallery/brasil_video.mp4" type="video/mp4">
+                                    </video>
+                                </a>
+>>>>>>> Stashed changes
                             </div>
-                        </div>
-                    </div>
 
+<<<<<<< Updated upstream
                     <div class="col-lg-9">
                         <div class="y2k-gallery-container">
                             <h2 class="y2k-title" style="text-align: center;">galería de videos</h2>
@@ -177,14 +221,25 @@
                                 <div class="video-item"><img src="../socc3r-1.0.0/assets/img/gallery/gif3.gif" alt="preview"></div>
                                 <div class="video-item"><img src="../socc3r-1.0.0/assets/img/gallery/gif_soccer1.gif" alt="preview"></div>
                                 <div class="video-item"><img src="../socc3r-1.0.0/assets/img/gallery/gif_soccer2.gif" alt="preview"></div>
+=======
+                            <div class="video-item">
+                                <a href="detalle_video2.html">
+                                    <video autoplay muted loop playsinline>
+                                        <source src="../socc3r-1.0.0/assets/img/gallery/mexico_video.mp4" type="video/mp4">
+                                    </video>
+                                </a>
+>>>>>>> Stashed changes
                             </div>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
-        </section>
-    </main>
+                            <div class="video-item">
+                                <a href="detalle_video3.html">
+                                    <video autoplay muted loop playsinline>
+                                        <source src="../socc3r-1.0.0/assets/img/gallery/españa_video.mp4" type="video/mp4">
+                                    </video>
+                                </a>
+                            </div>
+                        </div> </div> </div> </div> </div> </section>
+</main>
 
     <footer id="footer" class="footer">
         <div class="container footer-top">
