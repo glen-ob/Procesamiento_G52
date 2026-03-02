@@ -29,7 +29,7 @@
         /* ESTILO Y2K PARA EL CONTENIDO CENTRAL */
         .video-gallery-bg {
             background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
-            padding: 180px 0 80px 0;
+            padding: 180px 0 80px 0; 
             min-height: 100vh;
             font-family: 'DigiBop', sans-serif;
         }
@@ -42,12 +42,10 @@
             text-align: center;
         }
 
-        .box-yellow {
-            background-color: #ffe75c;
-        }
-
+        .box-yellow { background-color: #ffe75c; }
+        
         .y2k-gallery-container {
-            background-color: #d8f08c;
+            background-color: #d8f08c; 
             border: 8px solid #c5e063;
             border-radius: 40px;
             padding: 30px;
@@ -58,7 +56,7 @@
             text-transform: lowercase;
             margin-bottom: 20px;
             color: white;
-            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
         }
 
         .btn-filter-y2k {
@@ -80,44 +78,51 @@
             color: white;
         }
 
-        /* GRID DE VIDEOS/GIFS */
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
+/* GRID DE VIDEOS: Cambiamos de 4 a 2 columnas para que sean más anchos */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Solo 2 columnas = videos más grandes */
+    gap: 30px; /* Un poco más de espacio entre ellos */
+}
 
-        .video-item {
-            aspect-ratio: 1/1;
-            background: linear-gradient(135deg, #ffd1ff 0%, #fae1d0 100%);
-            border-radius: 30px;
-            box-shadow: 8px 8px 0px #b191ff;
-            transition: 0.3s;
-            cursor: pointer;
-            overflow: hidden;
-            /* Importante para los GIFs */
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+.video-item {
+    /* Cambiamos de 1/1 (cuadrado) a 16/9 (formato panorámico tipo cine/YouTube) */
+    aspect-ratio: 16 / 9; 
+    background: linear-gradient(135deg, #ffd1ff 0%, #fae1d0 100%);
+    border-radius: 30px;
+    box-shadow: 8px 8px 0px #b191ff;
+    transition: 0.3s;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        .video-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
+/* Aseguramos que el video dentro del item cubra todo el espacio ancho */
+.video-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto evita que queden franjas negras */
+    transition: transform 0.3s ease;
+}
 
-        .video-item:hover img {
-            transform: scale(1.1);
-        }
+.video-item:hover video {
+    transform: scale(1.05);
+}
 
         @media (max-width: 991px) {
-            .video-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .video-grid { grid-template-columns: repeat(2, 1fr); }
         }
+
+/* Para celulares, que se vea 1 solo video a la vez a lo ancho */
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
     </style>
 </head>
 
@@ -129,28 +134,24 @@
                 <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
                     <h1 class="sitename">(っ◔◡◔)っ ♥ Socc3r ♥</h1>
                 </a>
-
                 <nav id="navmenu" class="navmenu">
                     <ul>
-                        <li><a href="index.html">Inicio<br></a></li>
-                        <li><a href="galeria.html" class="active">Galería</a></li>
-                        <li><a href="trivia.html">Trivia</a></li>
-                        <li><a href="perfil.html">Mi Perfil</a></li>
+            <li><a href="index.html">Inicio</a></li>            
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="trivia.html">Trivia</a></li>
+            <li><a href="../ar/index.html">Escaneo</a></li>
                     </ul>
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
-                <img src="assets/img/avatar.jpg" alt="Avatar" class="avatar"
-                    style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
+                <img src="assets/img/avatar.jpg" alt="Avatar" class="avatar" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
             </div>
-
         </div>
 
         <div class="topbar">
             <div class="container marquee-section">
                 <div class="marquee-div">
                     <div class="marquee">
-                        <p>Nuevas cartas ya disponibles &bull; Nuevas cartas ya disponibles &bull; Nuevas cartas ya
-                            disponibles &bull; Nuevas cartas ya disponibles &bull;</p>
+                        <p>Nuevas cartas ya disponibles &bull; Nuevas cartas ya disponibles &bull; Nuevas cartas ya disponibles &bull; Nuevas cartas ya disponibles &bull;</p>
                     </div>
                 </div>
             </div>
@@ -158,57 +159,50 @@
     </header>
 
     <main class="main">
-        <section class="video-gallery-bg">
-            <div class="container">
-                <div class="row gy-4 align-items-start">
 
-                    <div class="col-lg-3">
-                        <div class="y2k-box box-yellow">
-                            <h2 class="y2k-title">filtros</h2>
-                            <div class="filters-list">
-                                <button class="btn-filter-y2k">desenfoque</button>
-                                <button class="btn-filter-y2k">pixeleado</button>
-                                <button class="btn-filter-y2k">cámara térmica</button>
-                                <button class="btn-filter-y2k">ajuste de color</button>
+    <section class="video-gallery-bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                
+                <div class="col-lg-10">
+                    <div class="y2k-gallery-container">
+                        <h2 class="y2k-title" style="text-align: center;">galería de videos</h2>
+                        
+                        <div class="video-grid">
+                            <div class="video-item">
+                                <a href="detalle_video1.html">
+                                    <video autoplay muted loop playsinline>
+                                        <source src="../socc3r-1.0.0/assets/img/gallery/brasil_video.mp4" type="video/mp4">
+                                    </video>
+                                </a>
+
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="col-lg-9">
-                        <div class="y2k-gallery-container">
-                            <h2 class="y2k-title" style="text-align: center;">galería de videos</h2>
-                            <div class="video-grid">
-                                <div class="video-item"><img src="../socc3r-1.0.0/assets/img/gallery/gif_soccer1.gif"
-                                        alt="preview"></div>
-                                <div class="video-item"><img src="../socc3r-1.0.0/assets/img/gallery/gif_soccer2.gif"
-                                        alt="preview"></div>
-                                <div class="video-item"><img src="../socc3r-1.0.0/assets/img/gallery/gif3.gif"
-                                        alt="preview"></div>
-                                <div class="video-item"><img src="../socc3r-1.0.0/assets/img/gallery/gif_soccer1.gif"
-                                        alt="preview"></div>
-                                <div class="video-item"><img src="../socc3r-1.0.0/assets/img/gallery/gif_soccer2.gif"
-                                        alt="preview"></div>
-                                <div class="video-item"><img src="../socc3r-1.0.0/assets/img/gallery/gif3.gif"
-                                        alt="preview"></div>
-                                <div class="video-item"><img src="../socc3r-1.0.0/assets/img/gallery/gif_soccer1.gif"
-                                        alt="preview"></div>
-                                <div class="video-item"><img src="../socc3r-1.0.0/assets/img/gallery/gif_soccer2.gif"
-                                        alt="preview"></div>
+                            <div class="video-item">
+                                <a href="detalle_video2.html">
+                                    <video autoplay muted loop playsinline>
+                                        <source src="../socc3r-1.0.0/assets/img/gallery/mexico_video.mp4" type="video/mp4">
+                                    </video>
+                                </a>
+
                             </div>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
-        </section>
-    </main>
+                            <div class="video-item">
+                                <a href="detalle_video3.html">
+                                    <video autoplay muted loop playsinline>
+                                        <source src="../socc3r-1.0.0/assets/img/gallery/españa_video.mp4" type="video/mp4">
+                                    </video>
+                                </a>
+                            </div>
+                        </div> </div> </div> </div> </div> </section>
+</main>
 
     <footer id="footer" class="footer">
         <div class="container footer-top">
             <div class="row gy-4">
                 <div class="col-lg-4 col-md-6 footer-about">
                     <a href="index.html" class="logo d-flex align-items-center">
-                        <span class="sitename">Socc3r</span>
+                        <span class="sitename">Restaurantly</span>
                     </a>
                     <div class="footer-contact pt-3">
                         <p>A108 Adam Street</p>
@@ -224,6 +218,9 @@
                     </ul>
                 </div>
             </div>
+        </div>
+        <div class="container copyright text-center mt-4">
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">Restaurantly</strong> <span>All Rights Reserved</span></p>
         </div>
     </footer>
 
