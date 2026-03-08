@@ -1,42 +1,58 @@
-
 /*--------------------------------------------------------------
 # Font & Color Variables
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /* Fonts */
- 
+body {
+    cursor: url('https://www.vhv.rs/dpng/d/557-5571660_cursor-heart-aesthetic-windows-computer-pixel-cursor-pc.png')auto;
+
+}
+
 @font-face {
   font-family: 'DigiBop';
   src: url('https://dl.dropbox.com/s/8maabpvuycdrlai/DigiBop-Regular.ttf');
-  font-display: swap; /* Ayuda a que el texto no desaparezca mientras carga */
+  font-display: swap;
+  /* Ayuda a que el texto no desaparezca mientras carga */
 }
 
 :root {
   --default-font: "DigiBop", system-ui, sans-serif;
   --heading-font: "DigiBop", sans-serif;
   --nav-font: "DigiBop", sans-serif;
-  
+
   scroll-behavior: smooth;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #0c0b09; /* Background color for the entire website, including individual sections */
-  --default-color: rgba(255, 255, 255, 0.7); /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #ffffff; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #ffe75c; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #29261f; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #0c0b09; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+:root {
+  --background-color: #0c0b09;
+  /* Background color for the entire website, including individual sections */
+  --default-color: rgba(255, 255, 255, 0.7);
+  /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #ffffff;
+  /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #ffe75c;
+  /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #29261f;
+  /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #0c0b09;
+  /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #ffffff;  /* The default color of the main navmenu links */
-  --nav-hover-color: #ffe75c; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #291f29; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #29261f; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #ffffff; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #ffe75c; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: #ffffff;
+  /* The default color of the main navmenu links */
+  --nav-hover-color: #ffe75c;
+  /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #291f29;
+  /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #29261f;
+  /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #ffffff;
+  /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #ffe75c;
+  /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -1730,46 +1746,49 @@ section,
 }
 
 .marquee-section {
-    position: relative;
-    min-height: 82px;
+  position: relative;
+  min-height: 82px;
 }
 
-.marquee-section, .marquee-section * {
-    overflow: hidden;
+.marquee-section,
+.marquee-section * {
+  overflow: hidden;
 }
 
 .marquee {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 .marquee-div {
-    position: absolute;
-    animation: move-left-to-right linear 12.5s infinite;
+  position: absolute;
+  animation: move-left-to-right linear 12.5s infinite;
 }
 
 /* use this one to move from left to right direction */
 @keyframes move-left-to-right {
-    from {
-        transform: translateX(-50%);
-    }
-    to {
-        transform: translateX(0);
-    }
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 /* use this one to move from right to left direction */
 @keyframes move-right-to-left {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .gradient {
   background: #f8fb3f;
-background: radial-gradient(circle, rgba(248, 251, 63, 1) 0%, rgba(246, 70, 252, 1) 100%);
+  background: radial-gradient(circle, rgba(248, 251, 63, 1) 0%, rgba(246, 70, 252, 1) 100%);
 }
 
 .avatar {
@@ -1796,8 +1815,9 @@ background: radial-gradient(circle, rgba(248, 251, 63, 1) 0%, rgba(246, 70, 252,
   transition: 0.4s;
 }
 
-.active, .accordion:hover {
-  background-color: #cccccc26; 
+.active,
+.accordion:hover {
+  background-color: #cccccc26;
 }
 
 .panel {
@@ -1818,147 +1838,156 @@ background: radial-gradient(circle, rgba(248, 251, 63, 1) 0%, rgba(246, 70, 252,
   font-size: 15px;
   transition: 0.4s;
 }
-.active, .accordion-item:hover {
-  background-color: #cccccc26; 
+
+.active,
+.accordion-item:hover {
+  background-color: #cccccc26;
 }
 
 .accordion-trivia {
   border-radius: 15px;
   background: #aa047b;
   width: 200px;
-  height: 150px; 
-} 
+  height: 150px;
+}
 
-  .formbold-main-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 48px;
-  }
+.formbold-main-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+}
 
-  .formbold-form-wrapper {
-    margin: 0 auto;
-    max-width: 570px;
-    width: 100%;
-    background: rgba(216, 216, 216, 0.262);
-    padding: 40px;
-    border-radius: 20px;
-  }
+.formbold-form-wrapper {
+  margin: 0 auto;
+  max-width: 570px;
+  width: 100%;
+  background: rgba(216, 216, 216, 0.262);
+  padding: 40px;
+  border-radius: 20px;
+}
 
-  .formbold-img {
-    margin-bottom: 40px;
-  }
+.formbold-img {
+  margin-bottom: 40px;
+}
 
-  .formbold-input-flex {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 30px;
-  }
-  .formbold-input-flex > div {
-    width: 50%;
-  }
-  .formbold-form-input {
-    width: 100%;
-    padding: 13px 22px;
-    border-radius: 5px;
-    border: 1px solid #dde3ec;
-    background: #ffffff;
-    font-weight: 500;
-    font-size: 16px;
-    color: #d0d4dd;
-    outline: none;
-    resize: none;
-  }
-  .formbold-form-input:focus {
-    border-color: #e564f1;
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
-  }
-  .formbold-form-label {
-    color: #ffffff;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 24px;
-    display: block;
-    margin-bottom: 10px;
-  }
+.formbold-input-flex {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
 
-  .formbold-mb-5 {
-    margin-bottom: 20px;
-  }
-  .formbold-radio-flex {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .formbold-radio-label {
-    font-size: 14px;
-    line-height: 24px;
-    position: relative;
-    padding-left: 25px;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  .formbold-input-radio {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-  }
-  .formbold-radio-checkmark {
-    position: absolute;
-    top: -1px;
-    left: 0;
-    height: 18px;
-    width: 18px;
-    background-color: #ffffff;
-    border: 1px solid #dde3ec;
-    border-radius: 50%;
-  }
-  .formbold-radio-label
-    .formbold-input-radio:checked
-    ~ .formbold-radio-checkmark {
-    background-color: #e564f1;
-  }
-  .formbold-radio-checkmark:after {
-    content: '';
-    position: absolute;
-    display: none;
-  }
+.formbold-input-flex>div {
+  width: 50%;
+}
 
-  .formbold-radio-label
-    .formbold-input-radio:checked
-    ~ .formbold-radio-checkmark:after {
-    display: block;
-  }
+.formbold-form-input {
+  width: 100%;
+  padding: 13px 22px;
+  border-radius: 5px;
+  border: 1px solid #dde3ec;
+  background: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+  color: #d0d4dd;
+  outline: none;
+  resize: none;
+}
 
-  .formbold-radio-label .formbold-radio-checkmark:after {
-    top: 50%;
-    left: 50%;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #ffffff;
-    transform: translate(-50%, -50%);
-  }
+.formbold-form-input:focus {
+  border-color: #e564f1;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
 
-  .formbold-btn {
-    text-align: center;
-    width: 100%;
-    font-size: 16px;
-    border-radius: 5px;
-    padding: 14px 25px;
-    border: none;
-    font-weight: 500;
-    background-color: #e564f1;
-    color: white;
-    cursor: pointer;
-    margin-top: 25px;
-  }
-  .formbold-btn:hover {
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
-  }
+.formbold-form-label {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.formbold-mb-5 {
+  margin-bottom: 20px;
+}
+
+.formbold-radio-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formbold-radio-label {
+  font-size: 14px;
+  line-height: 24px;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.formbold-input-radio {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.formbold-radio-checkmark {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #ffffff;
+  border: 1px solid #dde3ec;
+  border-radius: 50%;
+}
+
+.formbold-radio-label .formbold-input-radio:checked~.formbold-radio-checkmark {
+  background-color: #e564f1;
+}
+
+.formbold-radio-checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.formbold-radio-label .formbold-input-radio:checked~.formbold-radio-checkmark:after {
+  display: block;
+}
+
+.formbold-radio-label .formbold-radio-checkmark:after {
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ffffff;
+  transform: translate(-50%, -50%);
+}
+
+.formbold-btn {
+  text-align: center;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 14px 25px;
+  border: none;
+  font-weight: 500;
+  background-color: #e564f1;
+  color: white;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+.formbold-btn:hover {
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
 
 .black-bg {
   background-color: #1a1a1a;
@@ -1968,46 +1997,52 @@ background: radial-gradient(circle, rgba(248, 251, 63, 1) 0%, rgba(246, 70, 252,
   color: white;
 }
 
-  /* PERFIL */
-  .img-account-profile {
-    height: 10rem;
-    width: 10rem;
+/* PERFIL */
+.img-account-profile {
+  height: 10rem;
+  width: 10rem;
 }
 
 .rounded-circle {
-    border-radius: 50% !important;
+  border-radius: 50% !important;
 }
+
 .card {
-    box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+  box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
 }
+
 .card .card-header {
-    font-weight: 500;
+  font-weight: 500;
 }
+
 .card-header:first-child {
-    border-radius: 0.35rem 0.35rem 0 0;
+  border-radius: 0.35rem 0.35rem 0 0;
 }
+
 .card-header {
-    padding: 1rem 1.35rem;
-    margin-bottom: 0;
-    background-color: rgba(33, 40, 50, 0.03);
-    border-bottom: 1px solid rgba(33, 40, 50, 0.125);
+  padding: 1rem 1.35rem;
+  margin-bottom: 0;
+  background-color: rgba(33, 40, 50, 0.03);
+  border-bottom: 1px solid rgba(33, 40, 50, 0.125);
 }
-.form-control, .dataTable-input {
-    display: block;
-    width: 100%;
-    padding: 0.875rem 1.125rem;
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: 1;
-    color: #69707a;
-    background-color: #ffffff17;
-    background-clip: padding-box;
-    border: 1px solid #c5ccd6;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border-radius: 0.35rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+.form-control,
+.dataTable-input {
+  display: block;
+  width: 100%;
+  padding: 0.875rem 1.125rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #69707a;
+  background-color: #ffffff17;
+  background-clip: padding-box;
+  border: 1px solid #c5ccd6;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.35rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .container-grid {
@@ -2015,6 +2050,7 @@ background: radial-gradient(circle, rgba(248, 251, 63, 1) 0%, rgba(246, 70, 252,
   grid-template-columns: auto auto auto;
   padding: 10px;
 }
+
 .container-grid div {
   border: 1px solid black;
   padding: 10px;
@@ -2047,48 +2083,50 @@ div.gallery-item img {
 div.gallery-item div.desc {
   padding: 15px;
   text-align: center;
-  } 
-  .hero.dark-background::before {
-    background-color: transparent !important;
+}
+
+.hero.dark-background::before {
+  background-color: transparent !important;
 }
 
 /* cards */
 
-        .y2k-card-item {
-            position: relative;
-            overflow: hidden;
-            aspect-ratio: 2/3;
-            background: linear-gradient(to bottom, #2bb7b7 0%, #f3e05a 100%);
-            border-radius: 25px;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+.y2k-card-item {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 2/3;
+  background: linear-gradient(to bottom, #2bb7b7 0%, #f3e05a 100%);
+  border-radius: 25px;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-        .y2k-card-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: 0.5s ease;
-        }
+.y2k-card-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
 
-        .y2k-card-item:hover {
-            transform: rotate(2deg) scale(1.05);
-        }
+.y2k-card-item:hover {
+  transform: rotate(2deg) scale(1.05);
+}
 
-        .y2k-card-item:hover img {
-            transform: scale(1.1);
-            filter: brightness(1.1);
-        }
+.y2k-card-item:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
 
 
-        .wrapper {
+.wrapper {
   max-width: 1100px;
   padding: 20px 10px;
   margin: 0 60px 35px;
   overflow: hidden;
 }
+
 .wrapper .card {
   background: #fff;
   display: flex;
@@ -2098,12 +2136,15 @@ div.gallery-item div.desc {
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
 }
+
 .wrapper .card:hover {
   transform: translateY(-10px);
 }
+
 .card .card-image {
   position: relative;
 }
+
 .card .card-image img {
   width: 100%;
   padding: 10px;
@@ -2111,6 +2152,7 @@ div.gallery-item div.desc {
   object-fit: cover;
   aspect-ratio: 16 / 9;
 }
+
 .card .card-image .card-tag {
   position: absolute;
   top: 25px;
@@ -2125,12 +2167,14 @@ div.gallery-item div.desc {
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+
 .card .card-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   padding: 10px 25px 25px;
 }
+
 .card .card-content .card-title {
   color: #111111;
   font-size: 1.25rem;
@@ -2138,12 +2182,14 @@ div.gallery-item div.desc {
   line-height: 1.3;
   margin-bottom: 15px;
 }
+
 .card .card-content .card-text {
   color: #747474;
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 20px;
 }
+
 .card .card-footer {
   display: flex;
   margin-top: auto;
@@ -2152,23 +2198,28 @@ div.gallery-item div.desc {
   justify-content: space-between;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
+
 .card .card-footer .card-profile {
   display: flex;
   align-items: center;
 }
+
 .card .card-profile .card-profile-info {
   display: flex;
   flex-direction: column;
 }
+
 .card .card-profile .card-profile-name {
   font-size: 0.875rem;
   font-weight: 600;
   color: #202020;
 }
+
 .card .card-profile .card-profile-role {
   font-size: 0.8rem;
   color: #7A7A7A;
 }
+
 .card .card-profile img {
   width: 35px;
   height: 35px;
@@ -2178,6 +2229,7 @@ div.gallery-item div.desc {
   border: 2px solid #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 .card .card-button {
   color: #fff;
   padding: 10px 20px;
@@ -2189,10 +2241,12 @@ div.gallery-item div.desc {
   box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2);
   transition: all 0.3s ease;
 }
+
 .card .card-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 15px rgba(99, 102, 241, 0.3);
 }
+
 .wrapper .swiper-pagination-bullet {
   height: 15px;
   width: 15px;
@@ -2201,9 +2255,11 @@ div.gallery-item div.desc {
   position: relative;
   background: #B1B3F8;
 }
+
 .wrapper .swiper-pagination-bullet-active {
   background: #a4a7fd;
 }
+
 /* Auto-play loading indicator */
 .wrapper .swiper-pagination-bullet-active::before {
   content: '';
@@ -2217,36 +2273,168 @@ div.gallery-item div.desc {
   transform: scaleX(0);
   animation: autoplay-loading 5s linear forwards;
 }
+
 .container:hover .wrapper .swiper-pagination-bullet-active::before {
   animation-play-state: paused;
 }
+
 @keyframes autoplay-loading {
   0% {
     transform: scaleX(0);
   }
+
   100% {
     transform: scaleX(1);
   }
 }
+
 .wrapper :where(.swiper-button-prev, .swiper-button-next) {
   color: #6366f1;
   margin-top: -35px;
   transition: all 0.3s ease;
 }
+
 .wrapper :where(.swiper-button-prev, .swiper-button-next):hover {
   color: #8b5cf6;
 }
+
 /* Responsive media query code for small screens */
 @media (max-width: 768px) {
   .wrapper {
     margin: 0 10px 25px;
   }
+
   .wrapper :where(.swiper-button-prev, .swiper-button-next) {
     display: none;
   }
 }
 
 .gradient-section {
-background: #F8FB3F;
-background: linear-gradient(0deg, rgba(248, 251, 63, 1) 0%, rgba(246, 70, 252, 1) 100%);
+  background: #F8FB3F;
+  background: linear-gradient(0deg, rgba(248, 251, 63, 1) 0%, rgba(246, 70, 252, 1) 100%);
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #bd3fd99c;
+  color: white;
+}
+
+.modal-body {
+  padding: 2px 16px;
+  margin: 30px;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #bd3fd99c;
+  color: white;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* bouncing animation (floating)  */
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+.floating {
+  animation: bounce 2s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }

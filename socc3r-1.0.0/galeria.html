@@ -4,14 +4,26 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Galería de Videos - Socc3r</title>
+    <title>Galería - Socc3r</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- Favicons -->
+    <link href="assets/img/favicon.ico" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
+    <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
 
     <style>
@@ -135,14 +147,88 @@
                         <li><a href="index.html">Inicio<br></a></li>
                         <li><a href="galeria.html" class="active">Galería</a></li>
                         <li><a href="trivia.html">Trivia</a></li>
+                        <li><a href="ar.html">Escanear</a></li>
                     </ul>
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
-                        <button type="button">ayuda!</button>
+                <button type="button" id="ayudaBtn">ayuda!</button>
+                <!--Modal de boton d ayuda-->
+                <div id="myModal" class="modal">
 
+                    <!-- Modal contenido -->
+                    <div class="modal-content">
+                        <div class="modal-header d-flex align-items-center">
+                            <span class="close">&times;</span>
+                            <nav id="navmenu" class="navmenu">
+                                <ul>
+                                    <li><a href="#">Index<br></a></li>
+                                    <li><a href="#galeriaAyuda">Galería</a></li>
+                                    <li><a href="#triviaAyuda">Trivia</a></li>
+                                    <li><a href="#escaneoAyuda">Escaneo de cartas</a></li>
+                                </ul>
+                                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                            </nav>
+                        </div>
+                        <div class="modal-body" id="indexAyuda">
+                            <h1 style="color: black;" data-aos="fade-up" data-aos-delay="200">
+                                Bienvenido a <span style="color: #ffe75c;">Socc3r</span>! <br> </h1>
+                            <h4 style="color: black;"> La página donde verás todas las nuevas noticias sobre nuestra
+                                exclusiva línea
+                                de Trading Cards. </br>
+                                Aquí puedes visualizar todo lo que ofrecemos, desde cartas fisicas hasta nuestra pagina
+                                de galeria con
+                                edición, trivia de equipos y eventos de futbol, y nuestra sección de escaneo para
+                                visualizar mejor tus
+                                propias cartas!
+                            </h4>
+                        </div>
+                        <hr style="color: black;">
+                        <div class="modal-body" id="galeriaAyuda">
+                            <h1 style="color: black;" data-aos="fade-up" data-aos-delay="200">
+                                (っ◔◡◔)っ ♥ <span style="color: #ffe75c;">Galeria</span> ♥ <br> </h1>
+                            <h4 style="color: black;"> ¿Reconoces los clips más populares? <br> <br>
+                                Gracias a la activa comunidad de fans del futbol, tenemos disponibles los clips, fotos y
+                                videos
+                                completos más populares actualmente! Llenate de nuevo contenido y disfruta de tu
+                                creatividad con nuestra
+                                sección de <a href="edicion.html">edición</a>.
+                            </h4>
+                            <br>
+                            <img src="assets/img/galeria-ayuda.png" class="img-fluid center floating" alt="">
+                        </div>
+                        <hr style="color: black;">
+                        <div class="modal-body" id="triviaAyuda">
+                            <h1 style="color: black;" data-aos="fade-up" data-aos-delay="200">
+                                (っ◔◡◔)っ ♥ <span style="color: #ffe75c;">Trivia</span> ♥ </br> </h1>
+                            <h4 style="color: black;"> ¿Crees saber todo sobre el mundial mas reciente? <br><br>
+                                Aquí puedes visualizar todo lo que ofrecemos, desde cartas fisicas hasta nuestra pagina
+                                de galeria con
+                                edición, trivia de equipos y eventos de futbol, y nuestra sección de escaneo para
+                                visualizar mejor tus
+                                propias cartas!
+                            </h4>
+                        </div>
+                        <img src="assets/img/trivia-ayuda.png" class="img-fluid center floating" alt="">
+
+                        <hr style="color: black;">
+                        <div class="modal-body" id="escaneoAyuda">
+                            <h1 style="color: black;" data-aos="fade-up" data-aos-delay="200">
+                                (っ◔◡◔)っ ♥ <span style="color: #ffe75c;">Escaneo de Cartas</span> ♥ <br> </h1>
+                            <h4 style="color: black;"> ¿Conseguiste una de nuestras rarisimas cartas físicas? <br><br>
+                                Escaneala <a href="edicion.html">aquí</a>, y disfruta de nuestra sección de Realidad
+                                Aumentada con la
+                                que puedes visualizar en 3D tu carta y jugar con ella! Utiliza los botones para moverla.
+                            </h4>
+                        </div>
+                        <img src="" class="img-fluid center floating" alt="">
+                        <div class="modal-footer">
+                            <h3>⋆｡°✩</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </div>
+
 
         <div class="topbar">
             <div class="container marquee-section">
@@ -177,22 +263,20 @@
                         <div class="y2k-gallery-container">
                             <h2 class="y2k-title" style="text-align: center;">galería de videos</h2>
                             <div class="video-grid">
-                                <div class="video-item"><img src="../socc3r-1.0.0/assets/img/gallery/gif_soccer1.gif"
-                                        alt="preview"></div>
-                                <div class="video-item"><img src="../socc3r-1.0.0/assets/img/gallery/gif_soccer2.gif"
-                                        alt="preview"></div>
-                                <div class="video-item"><img src="../socc3r-1.0.0/assets/img/gallery/gif3.gif"
-                                        alt="preview"></div>
-                                <div class="video-item"><img src="../socc3r-1.0.0/assets/img/gallery/gif_soccer1.gif"
-                                        alt="preview"></div>
-                                <div class="video-item"><img src="../socc3r-1.0.0/assets/img/gallery/gif_soccer2.gif"
-                                        alt="preview"></div>
-                                <div class="video-item"><img src="../socc3r-1.0.0/assets/img/gallery/gif3.gif"
-                                        alt="preview"></div>
-                                <div class="video-item"><img src="../socc3r-1.0.0/assets/img/gallery/gif_soccer1.gif"
-                                        alt="preview"></div>
-                                <div class="video-item"><img src="../socc3r-1.0.0/assets/img/gallery/gif_soccer2.gif"
-                                        alt="preview"></div>
+                                <div class="video-item"><img src="assets/img/gallery/gif_soccer1.gif" alt="preview">
+                                </div>
+                                <div class="video-item"><img src="assets/img/gallery/gif_soccer2.gif" alt="preview">
+                                </div>
+                                <div class="video-item"><img src="assets/img/gallery/gif3.gif" alt="preview"></div>
+                                <div class="video-item"><img src="assets/img/gallery/gif_soccer1.gif" alt="preview">
+                                </div>
+                                <div class="video-item"><img src="assets/img/gallery/gif_soccer2.gif" alt="preview">
+                                </div>
+                                <div class="video-item"><img src="assets/img/gallery/gif3.gif" alt="preview"></div>
+                                <div class="video-item"><img src="assets/img/gallery/gif_soccer1.gif" alt="preview">
+                                </div>
+                                <div class="video-item"><img src="assets/img/gallery/gif_soccer2.gif" alt="preview">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -231,7 +315,8 @@
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
-
+    <!-- boton de ayuda -->
+    <script src="assets/js/ayuda.js"></script>
 </body>
 
 </html>
