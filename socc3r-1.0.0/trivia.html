@@ -9,7 +9,7 @@
     <meta name="keywords" content="">
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/favicon.ico" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Fonts -->
@@ -28,6 +28,8 @@
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@latest/dist/driver.js.iife.js"></script>
+      <link href="assets/css/tour.css" rel="stylesheet">
 
 </head>
 
@@ -44,20 +46,17 @@
                 </a>
                 <nav id="navmenu" class="navmenu">
                     <ul>
-            <li><a href="index.html">Inicio</a></li>            
-            <li><a href="galeria.html">Galería</a></li>
-            <li><a href="trivia.html">Trivia</a></li>
-            <li><a href="../ar/index.html">Escaneo</a></li>
+                        <li><a href="index.html">Inicio<br></a></li>
+                        <li><a href="galeria.html">Galería</a></li>
+                        <li><a href="trivia.html" class="active">Trivia</a></li>
+                        <li><a href="../ar/index.html">Escaneo</a></li>
                     </ul>
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
-                <img src="assets/img/avatar.jpg" alt="Avatar" class="avatar"
-                    style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
+                <button type="button" id="btnTourTrivia">tour</button>
+
             </div>
-
-
         </div>
-
         <div class="topbar ">
             <div class="container marquee-section d-flex justify-content-center justify-content-md-between">
                 <div class="marquee-div">
@@ -90,135 +89,6 @@
         </section>
 
 
-        <!-- <div class="formbold-main-wrapper">
-            <div class="formbold-form-wrapper">
-                <form action="https://formbold.com/s/FORM_ID" method="POST">
-
-                    <div class="formbold-mb-5">
-                        <label for="prgUno" class="formbold-form-label">
-                            Pregunta 1 sobre el equipo
-                        </label>
-
-                        <div class="formbold-radio-flex">
-                            <div class="formbold-radio-group">
-                                <label class="formbold-radio-label">
-                                    <input class="formbold-input-radio" type="radio" name="qusOne" id="qusOne" />
-                                    Opción 1
-                                    <span class="formbold-radio-checkmark"></span>
-                                </label>
-                            </div>
-
-                            <div class="formbold-radio-group">
-                                <label class="formbold-radio-label">
-                                    <input class="formbold-input-radio" type="radio" name="qusOne" id="qusOne" />
-                                    Opción 2
-                                    <span class="formbold-radio-checkmark"></span>
-                                </label>
-                            </div>
-
-                            <div class="formbold-radio-group">
-                                <label class="formbold-radio-label">
-                                    <input class="formbold-input-radio" type="radio" name="qusOne" id="qusOne" />
-                                    Opción 3
-                                    <span class="formbold-radio-checkmark"></span>
-                                </label>
-                            </div>
-
-                            <div class="formbold-radio-group">
-                                <label class="formbold-radio-label">
-                                    <input class="formbold-input-radio" type="radio" name="qusOne" id="qusOne" />
-                                    Ninguna de las anteriores
-                                    <span class="formbold-radio-checkmark"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="formbold-mb-5">
-                        <label for="prgDos" class="formbold-form-label">
-                            Pregunta 2 sobre el equipo
-                        </label>
-
-                        <div class="formbold-radio-flex">
-                            <div class="formbold-radio-group">
-                                <label class="formbold-radio-label">
-                                    <input class="formbold-input-radio" type="radio" name="qusOne" id="qusOne" />
-                                    Opción 1
-                                    <span class="formbold-radio-checkmark"></span>
-                                </label>
-                            </div>
-
-                            <div class="formbold-radio-group">
-                                <label class="formbold-radio-label">
-                                    <input class="formbold-input-radio" type="radio" name="qusOne" id="qusOne" />
-                                    Opción 2
-                                    <span class="formbold-radio-checkmark"></span>
-                                </label>
-                            </div>
-
-                            <div class="formbold-radio-group">
-                                <label class="formbold-radio-label">
-                                    <input class="formbold-input-radio" type="radio" name="qusOne" id="qusOne" />
-                                    Opción 3
-                                    <span class="formbold-radio-checkmark"></span>
-                                </label>
-                            </div>
-
-                            <div class="formbold-radio-group">
-                                <label class="formbold-radio-label">
-                                    <input class="formbold-input-radio" type="radio" name="qusOne" id="qusOne" />
-                                    Ninguna de las anteriores
-                                    <span class="formbold-radio-checkmark"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="formbold-mb-5">
-                        <label for="prgTres" class="formbold-form-label">
-                            Pregunta 3 sobre el equipo
-                        </label>
-
-                        <div class="formbold-radio-flex">
-                            <div class="formbold-radio-group">
-                                <label class="formbold-radio-label">
-                                    <input class="formbold-input-radio" type="radio" name="qusOne" id="qusOne" />
-                                    Opción 1
-                                    <span class="formbold-radio-checkmark"></span>
-                                </label>
-                            </div>
-
-                            <div class="formbold-radio-group">
-                                <label class="formbold-radio-label">
-                                    <input class="formbold-input-radio" type="radio" name="qusOne" id="qusOne" />
-                                    Opción 2
-                                    <span class="formbold-radio-checkmark"></span>
-                                </label>
-                            </div>
-
-                            <div class="formbold-radio-group">
-                                <label class="formbold-radio-label">
-                                    <input class="formbold-input-radio" type="radio" name="qusOne" id="qusOne" />
-                                    Opción 3
-                                    <span class="formbold-radio-checkmark"></span>
-                                </label>
-                            </div>
-
-                            <div class="formbold-radio-group">
-                                <label class="formbold-radio-label">
-                                    <input class="formbold-input-radio" type="radio" name="qusOne" id="qusOne" />
-                                    Ninguna de las anteriores
-                                    <span class="formbold-radio-checkmark"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button class="formbold-btn">Enviar</button>
-                </form>
-            </div>
-        </div> -->
-
 
         <!-- Starter Section Section -->
         <section id="starter-section" class="starter-section section">
@@ -227,447 +97,53 @@
                 <p>Escoge el Tema<br></p>
             </div><!-- End Section Title -->
 
-            <div class="container" data-aos="fade-up">
+            <div id="questions" class="container" data-aos="fade-up">
 
-                <button class="accordion">Equipos</button>
+                <button class="accordion">Premier League</button>
                 <div class="panel">
-                    <ol>
-                        <button class="accordion-item">Mexico</button>
-                        <ol>
-                            <div id="accordion-trivia">
-                                <div class="formbold-main-wrapper">
-                                    <div class="formbold-form-wrapper">
-                                        <form action="https://formbold.com/s/FORM_ID" method="POST">
 
-                                            <div class="formbold-mb-5">
-                                                <label for="prgUno" class="formbold-form-label">
-                                                    Pregunta 1 sobre el equipo
-                                                </label>
-
-                                                <div class="formbold-radio-flex">
-                                                    <div class="formbold-radio-group">
-                                                        <label class="formbold-radio-label">
-                                                            <input class="formbold-input-radio" type="radio"
-                                                                name="qusOne" id="qusOne" />
-                                                            Opción 1
-                                                            <span class="formbold-radio-checkmark"></span>
-                                                        </label>
-                                                    </div>
-
-                                                    <div class="formbold-radio-group">
-                                                        <label class="formbold-radio-label">
-                                                            <input class="formbold-input-radio" type="radio"
-                                                                name="qusOne" id="qusOne" />
-                                                            Opción 2
-                                                            <span class="formbold-radio-checkmark"></span>
-                                                        </label>
-                                                    </div>
-
-                                                    <div class="formbold-radio-group">
-                                                        <label class="formbold-radio-label">
-                                                            <input class="formbold-input-radio" type="radio"
-                                                                name="qusOne" id="qusOne" />
-                                                            Opción 3
-                                                            <span class="formbold-radio-checkmark"></span>
-                                                        </label>
-                                                    </div>
-
-                                                    <div class="formbold-radio-group">
-                                                        <label class="formbold-radio-label">
-                                                            <input class="formbold-input-radio" type="radio"
-                                                                name="qusOne" id="qusOne" />
-                                                            Ninguna de las anteriores
-                                                            <span class="formbold-radio-checkmark"></span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="formbold-mb-5">
-                                                <label for="prgDos" class="formbold-form-label">
-                                                    Pregunta 2 sobre el equipo
-                                                </label>
-
-                                                <div class="formbold-radio-flex">
-                                                    <div class="formbold-radio-group">
-                                                        <label class="formbold-radio-label">
-                                                            <input class="formbold-input-radio" type="radio"
-                                                                name="qusOne" id="qusOne" />
-                                                            Opción 1
-                                                            <span class="formbold-radio-checkmark"></span>
-                                                        </label>
-                                                    </div>
-
-                                                    <div class="formbold-radio-group">
-                                                        <label class="formbold-radio-label">
-                                                            <input class="formbold-input-radio" type="radio"
-                                                                name="qusOne" id="qusOne" />
-                                                            Opción 2
-                                                            <span class="formbold-radio-checkmark"></span>
-                                                        </label>
-                                                    </div>
-
-                                                    <div class="formbold-radio-group">
-                                                        <label class="formbold-radio-label">
-                                                            <input class="formbold-input-radio" type="radio"
-                                                                name="qusOne" id="qusOne" />
-                                                            Opción 3
-                                                            <span class="formbold-radio-checkmark"></span>
-                                                        </label>
-                                                    </div>
-
-                                                    <div class="formbold-radio-group">
-                                                        <label class="formbold-radio-label">
-                                                            <input class="formbold-input-radio" type="radio"
-                                                                name="qusOne" id="qusOne" />
-                                                            Ninguna de las anteriores
-                                                            <span class="formbold-radio-checkmark"></span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="formbold-mb-5">
-                                                <label for="prgTres" class="formbold-form-label">
-                                                    Pregunta 3 sobre el equipo
-                                                </label>
-
-                                                <div class="formbold-radio-flex">
-                                                    <div class="formbold-radio-group">
-                                                        <label class="formbold-radio-label">
-                                                            <input class="formbold-input-radio" type="radio"
-                                                                name="qusOne" id="qusOne" />
-                                                            Opción 1
-                                                            <span class="formbold-radio-checkmark"></span>
-                                                        </label>
-                                                    </div>
-
-                                                    <div class="formbold-radio-group">
-                                                        <label class="formbold-radio-label">
-                                                            <input class="formbold-input-radio" type="radio"
-                                                                name="qusOne" id="qusOne" />
-                                                            Opción 2
-                                                            <span class="formbold-radio-checkmark"></span>
-                                                        </label>
-                                                    </div>
-
-                                                    <div class="formbold-radio-group">
-                                                        <label class="formbold-radio-label">
-                                                            <input class="formbold-input-radio" type="radio"
-                                                                name="qusOne" id="qusOne" />
-                                                            Opción 3
-                                                            <span class="formbold-radio-checkmark"></span>
-                                                        </label>
-                                                    </div>
-
-                                                    <div class="formbold-radio-group">
-                                                        <label class="formbold-radio-label">
-                                                            <input class="formbold-input-radio" type="radio"
-                                                                name="qusOne" id="qusOne" />
-                                                            Ninguna de las anteriores
-                                                            <span class="formbold-radio-checkmark"></span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <button class="formbold-btn">Enviar</button>
-                                        </form>
-                                    </div>
+                    <div id="quizP">
+                        <div class="formbold-main-wrapper">
+                            <div class="formbold-form-wrapper">
+                                <div class="formbold-mb-5">
+                                    <div id="questionP"></div>
                                 </div>
+                                <div id="optionsP"></div>
+                                <!-- <button id="submit">Enviar</button> -->
                             </div>
-
-                        </ol>
-                        <button class="accordion-item">Argentina</button>
-                        <button class="accordion-item">Brazil</button>
-                    </ol>
+                        </div>
+                    </div>
                 </div>
 
-                <button class="accordion">Balones</button>
+                <button class="accordion">World Cup</button>
                 <div class="panel">
-                    <div class="formbold-main-wrapper">
-                        <div class="formbold-form-wrapper">
-                            <form action="https://formbold.com/s/FORM_ID" method="POST">
 
+                    <div id="quizW">
+                        <div class="formbold-main-wrapper">
+                            <div class="formbold-form-wrapper">
                                 <div class="formbold-mb-5">
-                                    <label for="prgUno" class="formbold-form-label">
-                                        Pregunta 1 sobre balones
-                                    </label>
-
-                                    <div class="formbold-radio-flex">
-                                        <div class="formbold-radio-group">
-                                            <label class="formbold-radio-label">
-                                                <input class="formbold-input-radio" type="radio" name="qusOne"
-                                                    id="qusOne" />
-                                                Opción 1
-                                                <span class="formbold-radio-checkmark"></span>
-                                            </label>
-                                        </div>
-
-                                        <div class="formbold-radio-group">
-                                            <label class="formbold-radio-label">
-                                                <input class="formbold-input-radio" type="radio" name="qusOne"
-                                                    id="qusOne" />
-                                                Opción 2
-                                                <span class="formbold-radio-checkmark"></span>
-                                            </label>
-                                        </div>
-
-                                        <div class="formbold-radio-group">
-                                            <label class="formbold-radio-label">
-                                                <input class="formbold-input-radio" type="radio" name="qusOne"
-                                                    id="qusOne" />
-                                                Opción 3
-                                                <span class="formbold-radio-checkmark"></span>
-                                            </label>
-                                        </div>
-
-                                        <div class="formbold-radio-group">
-                                            <label class="formbold-radio-label">
-                                                <input class="formbold-input-radio" type="radio" name="qusOne"
-                                                    id="qusOne" />
-                                                Ninguna de las anteriores
-                                                <span class="formbold-radio-checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
+                                    <div id="questionW"></div>
                                 </div>
-
-                                <div class="formbold-mb-5">
-                                    <label for="prgDos" class="formbold-form-label">
-                                        Pregunta 2 sobre balones
-                                    </label>
-
-                                    <div class="formbold-radio-flex">
-                                        <div class="formbold-radio-group">
-                                            <label class="formbold-radio-label">
-                                                <input class="formbold-input-radio" type="radio" name="qusOne"
-                                                    id="qusOne" />
-                                                Opción 1
-                                                <span class="formbold-radio-checkmark"></span>
-                                            </label>
-                                        </div>
-
-                                        <div class="formbold-radio-group">
-                                            <label class="formbold-radio-label">
-                                                <input class="formbold-input-radio" type="radio" name="qusOne"
-                                                    id="qusOne" />
-                                                Opción 2
-                                                <span class="formbold-radio-checkmark"></span>
-                                            </label>
-                                        </div>
-
-                                        <div class="formbold-radio-group">
-                                            <label class="formbold-radio-label">
-                                                <input class="formbold-input-radio" type="radio" name="qusOne"
-                                                    id="qusOne" />
-                                                Opción 3
-                                                <span class="formbold-radio-checkmark"></span>
-                                            </label>
-                                        </div>
-
-                                        <div class="formbold-radio-group">
-                                            <label class="formbold-radio-label">
-                                                <input class="formbold-input-radio" type="radio" name="qusOne"
-                                                    id="qusOne" />
-                                                Ninguna de las anteriores
-                                                <span class="formbold-radio-checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="formbold-mb-5">
-                                    <label for="prgTres" class="formbold-form-label">
-                                        Pregunta 3 sobre balones
-                                    </label>
-
-                                    <div class="formbold-radio-flex">
-                                        <div class="formbold-radio-group">
-                                            <label class="formbold-radio-label">
-                                                <input class="formbold-input-radio" type="radio" name="qusOne"
-                                                    id="qusOne" />
-                                                Opción 1
-                                                <span class="formbold-radio-checkmark"></span>
-                                            </label>
-                                        </div>
-
-                                        <div class="formbold-radio-group">
-                                            <label class="formbold-radio-label">
-                                                <input class="formbold-input-radio" type="radio" name="qusOne"
-                                                    id="qusOne" />
-                                                Opción 2
-                                                <span class="formbold-radio-checkmark"></span>
-                                            </label>
-                                        </div>
-
-                                        <div class="formbold-radio-group">
-                                            <label class="formbold-radio-label">
-                                                <input class="formbold-input-radio" type="radio" name="qusOne"
-                                                    id="qusOne" />
-                                                Opción 3
-                                                <span class="formbold-radio-checkmark"></span>
-                                            </label>
-                                        </div>
-
-                                        <div class="formbold-radio-group">
-                                            <label class="formbold-radio-label">
-                                                <input class="formbold-input-radio" type="radio" name="qusOne"
-                                                    id="qusOne" />
-                                                Ninguna de las anteriores
-                                                <span class="formbold-radio-checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <button class="formbold-btn">Enviar</button>
-                            </form>
+                                <div id="optionsW"></div>
+                                <!-- <button id="submit">Enviar</button> -->
+                            </div>
                         </div>
                     </div>
 
                 </div>
 
-                <button class="accordion">Estadios</button>
+                <button class="accordion">Champions League</button>
                 <div class="panel">
-                    <div class="formbold-main-wrapper">
-                        <div class="formbold-form-wrapper">
-                            <form action="https://formbold.com/s/FORM_ID" method="POST">
 
+                    <div id="quizC">
+                        <div class="formbold-main-wrapper">
+                            <div class="formbold-form-wrapper">
                                 <div class="formbold-mb-5">
-                                    <label for="prgUno" class="formbold-form-label">
-                                        Pregunta 1 sobre el estadio
-                                    </label>
-
-                                    <div class="formbold-radio-flex">
-                                        <div class="formbold-radio-group">
-                                            <label class="formbold-radio-label">
-                                                <input class="formbold-input-radio" type="radio" name="qusOne"
-                                                    id="qusOne" />
-                                                Opción 1
-                                                <span class="formbold-radio-checkmark"></span>
-                                            </label>
-                                        </div>
-
-                                        <div class="formbold-radio-group">
-                                            <label class="formbold-radio-label">
-                                                <input class="formbold-input-radio" type="radio" name="qusOne"
-                                                    id="qusOne" />
-                                                Opción 2
-                                                <span class="formbold-radio-checkmark"></span>
-                                            </label>
-                                        </div>
-
-                                        <div class="formbold-radio-group">
-                                            <label class="formbold-radio-label">
-                                                <input class="formbold-input-radio" type="radio" name="qusOne"
-                                                    id="qusOne" />
-                                                Opción 3
-                                                <span class="formbold-radio-checkmark"></span>
-                                            </label>
-                                        </div>
-
-                                        <div class="formbold-radio-group">
-                                            <label class="formbold-radio-label">
-                                                <input class="formbold-input-radio" type="radio" name="qusOne"
-                                                    id="qusOne" />
-                                                Ninguna de las anteriores
-                                                <span class="formbold-radio-checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
+                                    <div id="questionC"></div>
                                 </div>
-
-                                <div class="formbold-mb-5">
-                                    <label for="prgDos" class="formbold-form-label">
-                                        Pregunta 2 sobre el estadio
-                                    </label>
-
-                                    <div class="formbold-radio-flex">
-                                        <div class="formbold-radio-group">
-                                            <label class="formbold-radio-label">
-                                                <input class="formbold-input-radio" type="radio" name="qusOne"
-                                                    id="qusOne" />
-                                                Opción 1
-                                                <span class="formbold-radio-checkmark"></span>
-                                            </label>
-                                        </div>
-
-                                        <div class="formbold-radio-group">
-                                            <label class="formbold-radio-label">
-                                                <input class="formbold-input-radio" type="radio" name="qusOne"
-                                                    id="qusOne" />
-                                                Opción 2
-                                                <span class="formbold-radio-checkmark"></span>
-                                            </label>
-                                        </div>
-
-                                        <div class="formbold-radio-group">
-                                            <label class="formbold-radio-label">
-                                                <input class="formbold-input-radio" type="radio" name="qusOne"
-                                                    id="qusOne" />
-                                                Opción 3
-                                                <span class="formbold-radio-checkmark"></span>
-                                            </label>
-                                        </div>
-
-                                        <div class="formbold-radio-group">
-                                            <label class="formbold-radio-label">
-                                                <input class="formbold-input-radio" type="radio" name="qusOne"
-                                                    id="qusOne" />
-                                                Ninguna de las anteriores
-                                                <span class="formbold-radio-checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="formbold-mb-5">
-                                    <label for="prgTres" class="formbold-form-label">
-                                        Pregunta 3 sobre el estadio
-                                    </label>
-
-                                    <div class="formbold-radio-flex">
-                                        <div class="formbold-radio-group">
-                                            <label class="formbold-radio-label">
-                                                <input class="formbold-input-radio" type="radio" name="qusOne"
-                                                    id="qusOne" />
-                                                Opción 1
-                                                <span class="formbold-radio-checkmark"></span>
-                                            </label>
-                                        </div>
-
-                                        <div class="formbold-radio-group">
-                                            <label class="formbold-radio-label">
-                                                <input class="formbold-input-radio" type="radio" name="qusOne"
-                                                    id="qusOne" />
-                                                Opción 2
-                                                <span class="formbold-radio-checkmark"></span>
-                                            </label>
-                                        </div>
-
-                                        <div class="formbold-radio-group">
-                                            <label class="formbold-radio-label">
-                                                <input class="formbold-input-radio" type="radio" name="qusOne"
-                                                    id="qusOne" />
-                                                Opción 3
-                                                <span class="formbold-radio-checkmark"></span>
-                                            </label>
-                                        </div>
-
-                                        <div class="formbold-radio-group">
-                                            <label class="formbold-radio-label">
-                                                <input class="formbold-input-radio" type="radio" name="qusOne"
-                                                    id="qusOne" />
-                                                Ninguna de las anteriores
-                                                <span class="formbold-radio-checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <button class="formbold-btn">Enviar</button>
-                            </form>
+                                <div id="optionsC"></div>
+                                <!-- <button id="submit">Enviar</button> -->
+                            </div>
                         </div>
                     </div>
 
@@ -737,7 +213,7 @@
             </div>
         </div>
 
-       
+
         </div>
 
     </footer>
@@ -792,6 +268,10 @@
         }
 
     </script>
+
+    <script src="assets/js/trivia.js"></script>
+    <!-- boton de ayuda -->
+    <script src="assets/js/tourTrivia.js"></script>
 
 </body>
 

@@ -17,104 +17,258 @@
                 --font-main: 'DigiBop', sans-serif;
             }
 
+            body { margin: 0; overflow: hidden; }
+
             .back-link {
                 position: absolute;
-                top: 20px;
-                left: 20px;
-                color: white;
-                text-decoration: none;
-                font-size: 1.6rem;
-                font-family: var(--font-main);
-                z-index: 1000;
-                display: flex;
-                align-items: center;
-                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+                top: 20px; left: 20px;
+                color: white; text-decoration: none;
+                font-size: 1.6rem; font-family: var(--font-main);
+                z-index: 1000; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             }
 
-            /* MENÚ MÁS PEQUEÑO Y COMPACTO */
             #interaction-menu {
-                display: none; 
+                display: none;
                 position: absolute;
-                bottom: 20px; /* Pegado abajo */
-                left: 50%;
+                bottom: 20px; left: 50%;
                 transform: translateX(-50%);
-                width: 240px; /* Más estrecho */
+                width: 240px; 
                 background-color: var(--panel-blue);
                 border-radius: 35px;
-                padding: 15px; /* Menos espacio interno */
+                padding: 15px; 
                 text-align: center;
                 box-shadow: 0 8px 20px rgba(0,0,0,0.2);
                 z-index: 999;
                 font-family: var(--font-main);
             }
 
-            .panel-title {
-                color: white;
-                font-size: 1.1rem; /* Título más pequeño */
-                margin-bottom: 10px;
-                line-height: 1.1;
-                text-transform: lowercase;
-            }
-
             .inner-container {
                 background-color: rgba(255, 255, 255, 0.3);
-                padding: 10px;
-                border-radius: 25px;
-                display: flex;
-                flex-direction: column;
-                gap: 6px;
+                padding: 10px; border-radius: 25px;
+                display: flex; flex-direction: column; gap: 6px;
             }
 
             .interact-btn {
                 background-color: var(--btn-pink);
-                color: white;
-                border: none;
-                padding: 8px; /* Botones más finos */
-                border-radius: 50px;
+                color: white; border: none;
+                padding: 8px; border-radius: 50px;
                 font-family: var(--font-main);
-                font-size: 0.85rem;
-                cursor: pointer;
+                font-size: 0.85rem; cursor: pointer;
                 text-transform: lowercase;
+            }
+
+            .reset-btn {
+                background-color: #ffffff;
+                color: #ff94fa !important;
+                margin-top: 5px;
+                font-weight: bold;
+            }
+
+
+            /* Capa oscura de fondo */
+            .modal-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6); /* Oscuridad al 60% */
+                z-index: 1500; /* Menos que el modal, pero más que el resto */
+                display: none;
+                backdrop-filter: blur(4px); /* Opcional: añade un desenfoque sutil al fondo */
+            }
+            
+            /* Ajustamos el z-index del modal para que esté por encima del overlay */
+            .info-popup {
+                z-index: 2000 !important;
             }
         </style>
 
         <script>
-            AFRAME.registerComponent('click-to-capture', {
-                init: function () {
-                    this.el.addEventListener('click', () => {
-                        const camera = document.querySelector('#main-camera');
-                        const marker = document.querySelector('#animated-marker');
-                        const menu = document.querySelector('#interaction-menu');
-                        
-                        const clone = document.createElement('a-entity');
-                        clone.setAttribute('gltf-model', this.el.getAttribute('gltf-model'));
-                        clone.setAttribute('animation-mixer', '');
-                        camera.appendChild(clone);
+    window.isAnyModelCaptured = false;
+    
+    // información de los modelos
+    const modelInfo = {
+        '#asset-1': 'Balón Oficial 2026: El futuro del fútbol en tus manos.',
+        '#asset-4': 'Jersey Argentina: La albiceleste, campeona del mundo.',
+        '#asset-5': 'Jersey Francia: El poder de "Les Bleus".',
+        '#asset-41': 'Jersey Senegal: Los Leones de la Teranga.',
+        'default': 'camisa muy linda wow despues escribo mejor la infooo.'
+    };
 
-                        // --- AJUSTE DE POSICIÓN ---
-                        // x:0, y:-0.2 (BAJAMOS EL MODELO), z:-1.2 (DISTANCIA)
-                        clone.setAttribute('position', '0 -0.2 -1.2');
-                        
-                        // Si el balón se ve muy pequeño todavía, sube este valor a 0.01
-                        clone.setAttribute('scale', '0.008 0.008 0.008'); 
-                        
-                        clone.setAttribute('animation', {
-                            property: 'rotation',
-                            from: '0 0 0', to: '0 360 0',
-                            dur: 10000, easing: 'linear', loop: true
-                        });
-
-                        menu.style.display = 'block';
-                        this.el.parentNode.removeChild(this.el);
-                        marker.parentNode.removeChild(marker);
-                    });
+    AFRAME.registerComponent('auto-capture', {
+        init: function () {
+            this.timer = null;
+            this.el.addEventListener('markerFound', () => {
+                if (window.isAnyModelCaptured) {
+                    this.el.object3D.visible = false;
+                    return;
                 }
+                this.timer = setTimeout(() => { this.captureModel(); }, 2000);
             });
-        </script>
+            this.el.addEventListener('markerLost', () => { clearTimeout(this.timer); });
+        },
+
+        captureModel: function () {
+            if (window.isAnyModelCaptured) return;
+            window.isAnyModelCaptured = true;
+
+            const menu = document.querySelector('#interaction-menu');
+            const camera = document.querySelector('#main-camera');
+            const modelEntity = this.el.querySelector('.model-entity');
+
+            if (!modelEntity) return;
+
+            const assetId = modelEntity.getAttribute('gltf-model');
+            const clone = document.createElement('a-entity');
+            clone.setAttribute('id', 'captured-model');
+            clone.setAttribute('gltf-model', assetId);
+            clone.setAttribute('position', '0 -0.1 -2.5');
+            clone.setAttribute('scale', '0.01 0.01 0.01');
+
+            clone.setAttribute('animation', {
+                property: 'rotation',
+                to: '0 360 0',
+                dur: 10000,
+                easing: 'linear',
+                loop: true
+            });
+
+            camera.appendChild(clone);
+            menu.style.display = 'block';
+            setupMenuInteractions(assetId);
+
+            this.el.object3D.visible = false;
+            this.el.sceneEl.systems.arjs.pause();
+        }
+    });
+
+    function setupMenuInteractions(assetId) {
+        const buttons = document.querySelectorAll('.interact-btn');
+        const model = document.querySelector('#captured-model');
+
+        // bottón de animar arriba hacia abajo
+        buttons[0].onclick = () => {
+            model.removeAttribute('animation__float');
+            setTimeout(() => {
+                model.setAttribute('animation__float', {
+                    property: 'position',
+                    from: '0 -0.1 -2.5',
+                    to: '0 0.2 -2.5',
+                    dur: 1800,
+                    dir: 'alternate',
+                    loop: true,
+                    easing: 'easeInOutQuad'
+                });
+            }, 10);
+        };
+
+        // botón de información
+        buttons[1].onclick = () => {
+            const oldBox = document.querySelector('.info-popup');
+            if (oldBox) oldBox.remove();
+
+            const infoText = modelInfo[assetId] || modelInfo['default'];
+            const infoBox = document.createElement('div');
+            infoBox.className = 'info-popup';
+            infoBox.style = `
+                position: absolute; top: 50%; left: 50%;
+                transform: translate(-50%, -50%);
+                background: white; padding: 25px;
+                border-radius: 30px; border: 5px solid #ff94fa;
+                font-family: 'DigiBop', sans-serif; z-index: 2000;
+                width: 70%; text-align: center;
+                box-shadow: 8px 8px 0px #c5cfff;
+            `;
+            infoBox.innerHTML = `
+                <p style="color: #444; margin-bottom: 20px; line-height: 1.4;">${infoText}</p>
+                <button onclick="this.parentElement.remove()" style="
+                    background: #ff94fa; border: none; color: white; 
+                    padding: 10px 25px; border-radius: 50px;
+                    font-family: 'DigiBop', sans-serif; cursor: pointer;
+                    box-shadow: 0 4px 0 #d679d1;
+                ">cerrar</button>
+            `;
+            document.body.appendChild(infoBox);
+        };
+
+        // btn efecto visual
+        buttons[2].onclick = () => {
+            createStars(model);
+        };
+    }
+
+    function createStars(target) {
+        const numStars = 15;
+        const scene = target.sceneEl;
+
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('a-entity');
+            
+            // se hace la estrellita
+            star.setAttribute('geometry', {
+                primitive: 'circle',
+                radius: 0.05,
+                segments: 5 
+            });
+
+            star.setAttribute('material', {
+                color: '#fffb00', // color amarillo
+                shader: 'flat',
+                side: 'double'
+            });
+
+            // q empiece cerca del modelo
+            star.setAttribute('position', '0 0 -2.5');
+
+            // direcciones
+            const randX = (Math.random() - 0.5) * 3;
+            const randY = (Math.random() - 0.5) * 3;
+            const randZ = (Math.random() - 0.5) * 2 - 3;
+
+            // animación tipo explosión
+            star.setAttribute('animation__move', {
+                property: 'position',
+                to: `${randX} ${randY} ${randZ}`,
+                dur: 1200,
+                easing: 'easeOutExpo'
+            });
+
+            // animacion de giro de la estrellita
+            star.setAttribute('animation__rotate', {
+                property: 'rotation',
+                to: '0 0 360',
+                dur: 1000,
+                loop: true,
+                easing: 'linear'
+            });
+
+            // anamcion desaparece
+            star.setAttribute('animation__fade', {
+                property: 'scale',
+                from: '1 1 1',
+                to: '0 0 0',
+                dur: 1000,
+                delay: 200,
+                easing: 'easeInCubic'
+            });
+
+            scene.appendChild(star);
+
+            // liempeisza dom
+            setTimeout(() => {
+                if (star.parentNode) star.parentNode.removeChild(star);
+            }, 1200);
+        }
+    }
+
+    function resetScanner() {
+        location.reload();
+    }
+</script>
     </head>
 
-    <body style="margin: 0; overflow: hidden;">
-        
+    <body>
         <a href="../socc3r-1.0.0/index.html" class="back-link"> <-- volver</a>
 
         <div id="interaction-menu">
@@ -122,41 +276,270 @@
                 <button class="interact-btn">animar modelo</button>
                 <button class="interact-btn">información</button>
                 <button class="interact-btn">efecto visual</button>
+                <button class="interact-btn reset-btn" onclick="resetScanner()">escanear otro modelo</button>
             </div>
         </div>
 
         <a-scene
             embedded
             vr-mode-ui="enabled: false;"
-            renderer="logarithmicDepthBuffer: true;"
-            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+            renderer="antialias: false; precision: medium; logarithmicDepthBuffer: true;"
+            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix;"
         >
-            <a-assets>
-                <a-asset-item id="animated-asset" src="assets/asset.glb"></a-asset-item>
-            </a-assets>
+            <a-entity id="main-camera" camera position="0 0 0">
+            </a-entity>
 
-            <a-marker
-                id="animated-marker"
-                type="pattern"
-                preset="custom"
-                url="assets/marker.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-            >
-                <a-entity
-                    id="bowser-model"
-                    class="clickable"
-                    scale="0.02753394049783848 0.02753394049783848 0.02753394049783848"
-                    animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset"
-                    click-to-capture
-                ></a-entity>
+            <a-assets timeout="15000">
+                <a-asset-item id="asset-0" src="assets/asset.glb"></a-asset-item>
+                <!-- balon 2026 -->
+                <a-asset-item id="asset-1" src="assets/asset1.glb"></a-asset-item>
+                <!-- camisa de algo -->
+                <a-asset-item id="asset-3" src="assets/asset3.glb"></a-asset-item>
+                <!-- camisa argentina -->
+                <a-asset-item id="asset-4" src="assets/asset4.glb"></a-asset-item>
+                <!-- camisa francia -->
+                <a-asset-item id="asset-5" src="assets/asset5.glb"></a-asset-item>
+                <!-- camisa brasil -->
+                <a-asset-item id="asset-6" src="assets/asset6.glb"></a-asset-item>
+                <!-- camisa de algo -->
+                <a-asset-item id="asset-7" src="assets/asset7.glb"></a-asset-item>
+                <!-- camisa portugal -->
+                <a-asset-item id="asset-8" src="assets/asset8.glb"></a-asset-item>
+                <a-asset-item id="asset-10" src="assets/asset10.glb"></a-asset-item>
+                <!--  -->
+                <a-asset-item id="asset-11" src="assets/asset11.glb"></a-asset-item>
+                <!-- camisa belgica -->
+                <a-asset-item id="asset-12" src="assets/asset12.glb"></a-asset-item>
+                <!-- camisa peru -->
+                <a-asset-item id="asset-13" src="assets/asset13.glb"></a-asset-item>
+                <!-- camisa mexico -->
+                <a-asset-item id="asset-14" src="assets/asset14.glb"></a-asset-item>
+                <!-- camisa italia -->
+                <a-asset-item id="asset-16" src="assets/asset16.glb"></a-asset-item>
+                <!-- camisa canada -->
+                <a-asset-item id="asset-17" src="assets/asset17.glb"></a-asset-item>
+                <!-- camisa corea -->
+                <a-asset-item id="asset-18" src="assets/asset18.glb"></a-asset-item>
+                <!-- camisa uruguay -->
+                <a-asset-item id="asset-19" src="assets/asset19.glb"></a-asset-item>
+                <!-- camisa serbia -->
+                <a-asset-item id="asset-20" src="assets/asset20.glb"></a-asset-item>
+                <!-- camisa qatar -->
+                <a-asset-item id="asset-21" src="assets/asset21.glb"></a-asset-item>
+                <!-- camisa polonia -->
+                <a-asset-item id="asset-22" src="assets/asset22.glb"></a-asset-item>
+                <!-- camisa chile -->
+                <a-asset-item id="asset-23" src="assets/asset23.glb"></a-asset-item>
+                <!-- camisa brasil 2 -->
+                <a-asset-item id="asset-24" src="assets/asset24.glb"></a-asset-item>
+                <!-- camisa francia 2 -->
+                <a-asset-item id="asset-25" src="assets/asset25.glb"></a-asset-item>
+                <!-- camisa alemania -->
+                <a-asset-item id="asset-26" src="assets/asset26.glb"></a-asset-item>
+                <!-- camisa algeria -->
+                <a-asset-item id="asset-27" src="assets/asset27.glb"></a-asset-item>
+                <!-- camisa austria -->
+                <a-asset-item id="asset-28" src="assets/asset28.glb"></a-asset-item>
+                <!-- camisa cameroun -->
+                <a-asset-item id="asset-29" src="assets/asset29.glb"></a-asset-item>
+                <!-- camisa costa rica -->
+                <a-asset-item id="asset-30" src="assets/asset30.glb"></a-asset-item>
+                <!-- camisa czechia -->
+                <a-asset-item id="asset-31" src="assets/asset31.glb"></a-asset-item>
+                <!-- camisa dinamarca -->
+                <a-asset-item id="asset-32" src="assets/asset32.glb"></a-asset-item>
+                <!-- camisa ghana -->
+                <a-asset-item id="asset-34" src="assets/asset34.glb"></a-asset-item>
+                <!-- camisa irlanda -->
+                <a-asset-item id="asset-35" src="assets/asset35.glb"></a-asset-item>
+                <!-- camisa jamaica -->
+                <a-asset-item id="asset-36" src="assets/asset36.glb"></a-asset-item>
+                <!-- camisa paises bajos -->
+                <a-asset-item id="asset-37" src="assets/asset37.glb"></a-asset-item>
+                <!-- camisa saudi -->
+                <a-asset-item id="asset-38" src="assets/asset38.glb"></a-asset-item>
+                <!-- camisa suecia -->
+                <a-asset-item id="asset-39" src="assets/asset39.glb"></a-asset-item>
+                <!-- camisa wales -->
+                <a-asset-item id="asset-40" src="assets/asset40.glb"></a-asset-item>
+                <!-- camisa senegal -->
+                <a-asset-item id="asset-41" src="assets/asset41.glb"></a-asset-item>
+                <!-- camisa ukraine -->
+                <a-asset-item id="asset-42" src="assets/asset42.glb"></a-asset-item>
+                <!-- camisa usa -->
+                <a-asset-item id="asset-43" src="assets/asset43.glb"></a-asset-item>
+                <!-- balon 1982 creo -->
+                <a-asset-item id="asset-45" src="assets/asset45.glb"></a-asset-item>
+                <!-- camisa fcf -->
+                <a-asset-item id="asset-46" src="assets/asset46.glb"></a-asset-item>
+                <!-- camisa cote divoire -->
+                <a-asset-item id="asset-48" src="assets/asset48.glb"></a-asset-item>
+                <!-- camisa haiti -->
+                <a-asset-item id="asset-49" src="assets/asset49.glb"></a-asset-item>
+                <!-- camisa jordan -->
+                <a-asset-item id="asset-50" src="assets/asset50.glb"></a-asset-item>
+                <!-- camisa morocco -->
+                <a-asset-item id="asset-51" src="assets/asset51.glb"></a-asset-item>
+                <!-- camisa norway -->
+                <a-asset-item id="asset-52" src="assets/asset52.glb"></a-asset-item>
+                <!-- camisa panama -->
+                <a-asset-item id="asset-53" src="assets/asset53.glb"></a-asset-item>
+                <!-- camisa paraguay -->
+                <a-asset-item id="asset-54" src="assets/asset54.glb"></a-asset-item>
+                <a-asset-item id="asset-55" src="assets/asset55.glb"></a-asset-item>
+            </a-assets>
+            
+            <a-marker id="marker-0" type="pattern" url="assets/marker.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-0" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-1" type="pattern" url="assets/marker1.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-1" click-to-capture></a-entity>
+            </a-marker>
+            <a-marker id="marker-3" type="pattern" url="assets/marker3.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-3" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-4" type="pattern" url="assets/marker4.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-4" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-5" type="pattern" url="assets/marker5.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-5" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-6" type="pattern" url="assets/marker6.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-6" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-7" type="pattern" url="assets/marker7.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-7" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-8" type="pattern" url="assets/marker8.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-8" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-10" type="pattern" url="assets/marker10.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-10" click-to-capture></a-entity>
+            </a-marker>
+            <a-marker id="marker-11" type="pattern" url="assets/marker11.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-11" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-12" type="pattern" url="assets/marker12.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-12" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-13" type="pattern" url="assets/marker13.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-13" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-14" type="pattern" url="assets/marker14.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-14" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-16" type="pattern" url="assets/marker16.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-16" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-17" type="pattern" url="assets/marker17.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-17" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-18" type="pattern" url="assets/marker18.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-18" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-19" type="pattern" url="assets/marker19.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-19" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-20" type="pattern" url="assets/marker20.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-20" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-21" type="pattern" url="assets/marker21.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-21" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-22" type="pattern" url="assets/marker22.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-22" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-23" type="pattern" url="assets/marker23.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-23" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-24" type="pattern" url="assets/marker24.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-24" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-25" type="pattern" url="assets/marker25.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-25" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-26" type="pattern" url="assets/marker26.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-26" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-27" type="pattern" url="assets/marker27.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-27" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-28" type="pattern" url="assets/marker28.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-28" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-29" type="pattern" url="assets/marker29.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-29" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-30" type="pattern" url="assets/marker30.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-30" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-31" type="pattern" url="assets/marker31.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-31" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-32" type="pattern" url="assets/marker32.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-32" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-34" type="pattern" url="assets/marker34.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-34" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-35" type="pattern" url="assets/marker35.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-35" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-36" type="pattern" url="assets/marker36.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-36" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-37" type="pattern" url="assets/marker37.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-37" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-38" type="pattern" url="assets/marker38.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-38" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-39" type="pattern" url="assets/marker39.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-39" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-40" type="pattern" url="assets/marker40.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-40" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-41" type="pattern" url="assets/marker41.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-41" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-42" type="pattern" url="assets/marker42.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-42" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-43" type="pattern" url="assets/marker43.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-43" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-45" type="pattern" url="assets/marker45.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-45" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-46" type="pattern" url="assets/marker46.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-46" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-48" type="pattern" url="assets/marker48.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-48" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-49" type="pattern" url="assets/marker49.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-49" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-50" type="pattern" url="assets/marker50.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-50" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+             <a-marker id="marker-51" type="pattern" url="assets/marker51.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-51" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+             <a-marker id="marker-52" type="pattern" url="assets/marker52.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-52" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-53" type="pattern" url="assets/marker53.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-53" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-54" type="pattern" url="assets/marker54.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-54" click-to-capture rotation="-90 0 0"></a-entity>
+            </a-marker>
+            <a-marker id="marker-55" type="pattern" url="assets/marker55.patt" auto-capture>
+                <a-entity class="model-entity" scale="0.027 0.027 0.027" gltf-model="#asset-55" click-to-capture rotation="-90 0 0"></a-entity>
             </a-marker>
 
-            <a-entity id="main-camera" camera>
-                <a-cursor raycaster="objects: .clickable" visible="false"></a-cursor>
-            </a-entity>
         </a-scene>
     </body>
 </html>

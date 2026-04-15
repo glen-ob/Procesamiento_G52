@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Galería de Videos - Socc3r</title>
+  <!-- Favicons -->
+  <link href="assets/img/favicon.ico" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -13,23 +16,23 @@
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <link href="assets/css/main.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@latest/dist/driver.js.iife.js"></script>
+  <link href="assets/css/tour.css" rel="stylesheet">
 
     <style>
-        /* FUENTE PERSONALIZADA */
         @font-face {
             font-family: 'DigiBop';
             src: url('https://dl.dropbox.com/s/8maabpvuycdrlai/DigiBop-Regular.ttf');
         }
 
-        /* FIX DEL NAVBAR: Permitimos que main.js controle el color al hacer scroll */
         .header {
             transition: all 0.5s ease;
         }
 
-        /* ESTILO Y2K PARA EL CONTENIDO CENTRAL */
+        /* contenido central */
         .video-gallery-bg {
             background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
-            padding: 180px 0 80px 0; 
+            padding: 180px 0 80px 0;
             min-height: 100vh;
             font-family: 'DigiBop', sans-serif;
         }
@@ -42,10 +45,12 @@
             text-align: center;
         }
 
-        .box-yellow { background-color: #ffe75c; }
-        
+        .box-yellow {
+            background-color: #ffe75c;
+        }
+
         .y2k-gallery-container {
-            background-color: #d8f08c; 
+            background-color: #d8f08c;
             border: 8px solid #c5e063;
             border-radius: 40px;
             padding: 30px;
@@ -56,7 +61,7 @@
             text-transform: lowercase;
             margin-bottom: 20px;
             color: white;
-            text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
         }
 
         .btn-filter-y2k {
@@ -78,53 +83,86 @@
             color: white;
         }
 
-/* GRID DE VIDEOS: Cambiamos de 4 a 2 columnas para que sean más anchos */
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Solo 2 columnas = videos más grandes */
-    gap: 30px; /* Un poco más de espacio entre ellos */
-}
-
-.video-item {
-    /* Cambiamos de 1/1 (cuadrado) a 16/9 (formato panorámico tipo cine/YouTube) */
-    aspect-ratio: 16 / 9; 
-    background: linear-gradient(135deg, #ffd1ff 0%, #fae1d0 100%);
-    border-radius: 30px;
-    box-shadow: 8px 8px 0px #b191ff;
-    transition: 0.3s;
-    cursor: pointer;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Aseguramos que el video dentro del item cubra todo el espacio ancho */
-.video-item video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Esto evita que queden franjas negras */
-    transition: transform 0.3s ease;
-}
-
-.video-item:hover video {
-    transform: scale(1.05);
-}
-
-        @media (max-width: 991px) {
-            .video-grid { grid-template-columns: repeat(2, 1fr); }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
         }
 
-/* Para celulares, que se vea 1 solo video a la vez a lo ancho */
-@media (max-width: 768px) {
-    .video-grid {
-        grid-template-columns: 1fr;
-    }
-}
+        .video-item {
+            aspect-ratio: 16 / 9;
+            background: linear-gradient(135deg, #ffd1ff 0%, #fae1d0 100%);
+            border-radius: 30px;
+            box-shadow: 8px 8px 0px #b191ff;
+            transition: 0.3s;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
+        .video-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        /* --- NUEVO: ESTILOS DEL OVERLAY --- */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Color oscuro semitransparente */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            /* Invisible por defecto */
+            transition: opacity 0.3s ease;
+            z-index: 2;
+        }
+
+        .video-overlay span {
+            color: white;
+            font-size: 1.8rem;
+            text-transform: lowercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            pointer-events: none;
+            /* Para que el click pase al enlace */
+        }
+
+        /* Efectos al hacer Hover */
+        .video-item:hover .video-overlay {
+            opacity: 1;
+            /* Aparece el texto y el fondo oscuro */
+        }
+
+        .video-item:hover video {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 991px) {
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
+    <!-- driverjs -->
+
 </head>
+
 
 <body class="starter-page-page">
 
@@ -136,22 +174,22 @@
                 </a>
                 <nav id="navmenu" class="navmenu">
                     <ul>
-            <li><a href="index.html">Inicio</a></li>            
-            <li><a href="galeria.html">Galería</a></li>
-            <li><a href="trivia.html">Trivia</a></li>
-            <li><a href="../ar/index.html">Escaneo</a></li>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="galeria.html">Galería</a></li>
+                        <li><a href="trivia.html">Trivia</a></li>
+                        <li><a href="../ar/index.html">Escaneo</a></li>
                     </ul>
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
-                <img src="assets/img/avatar.jpg" alt="Avatar" class="avatar" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
+                <button type="button" id="btnTourGale">tour</button>
             </div>
         </div>
-
         <div class="topbar">
             <div class="container marquee-section">
                 <div class="marquee-div">
                     <div class="marquee">
-                        <p>Nuevas cartas ya disponibles &bull; Nuevas cartas ya disponibles &bull; Nuevas cartas ya disponibles &bull; Nuevas cartas ya disponibles &bull;</p>
+                        <p>Nuevas cartas ya disponibles &bull; Nuevas cartas ya disponibles &bull; Nuevas cartas ya
+                            disponibles &bull; Nuevas cartas ya disponibles &bull;</p>
                     </div>
                 </div>
             </div>
@@ -160,76 +198,698 @@
 
     <main class="main">
 
-    <section class="video-gallery-bg">
-        <div class="container">
-            <div class="row justify-content-center">
-                
-                <div class="col-lg-10">
-                    <div class="y2k-gallery-container">
-                        <h2 class="y2k-title" style="text-align: center;">galería de videos</h2>
-                        
-                        <div class="video-grid">
-                            <div class="video-item">
-                                <a href="detalle_video1.html">
-                                    <video autoplay muted loop playsinline>
-                                        <source src="../socc3r-1.0.0/assets/img/gallery/brasil_video.mp4" type="video/mp4">
-                                    </video>
-                                </a>
+        <section class="video-gallery-bg">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="y2k-gallery-container">
+                            <h2 class="y2k-title" style="text-align: center;">galería de videos</h2>
+
+                            <div id="video-grid" class="video-grid">
+
+                                <div id="video-item" class="video-item">
+                                    <a href="detalle_video1.html">
+                                        <iframe width="790" height="515" class="main-video" id="videoElement"
+                                            src="https://www.youtube.com/embed/UISoMISKp-8?autoplay=1&mute=1&start=10"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                            Tu navegador no soporta videos.
+                                        </iframe>
+                                        <div class="video-overlay">
+                                            <span>brasil</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="video-item">
+                                    <a href="detalle_video2.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/mexico_video.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>méxico</span>
+                                        </div>
+
+                                    </a>
+                                </div>
+
+                                <div class="video-item">
+                                    <a href="detalle_video3.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/españa_video.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>españa</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="video-item">
+                                    <a href="detalle_video4.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video4.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>australia</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="video-item">
+                                    <a href="detalle_video5.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video5.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>estados unidos</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="video-item">
+                                    <a href="detalle_video6.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video6.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>egipto</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="video-item">
+                                    <a href="detalle_video7.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video7.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>croacia</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="video-item">
+                                    <a href="detalle_video8.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video8.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>bélgica</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="video-item">
+                                    <a href="detalle_video9.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video9.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>colombia</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="video-item">
+                                    <a href="detalle_video10.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video10.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>suecia</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="video-item">
+                                    <a href="detalle_video11.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video11.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>japón</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="video-item">
+                                    <a href="detalle_video12.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video12.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>panamá</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="video-item">
+                                    <a href="detalle_video13.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video13.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>irak</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+
+                                <div class="video-item">
+                                    <a href="detalle_video14.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video14.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>argentina</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="video-item">
+                                    <a href="detalle_video15.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video15.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>senegal</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="video-item">
+                                    <a href="detalle_video16.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video16.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>marruecos</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="video-item">
+                                    <a href="detalle_video17.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video17.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>canadá</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="video-item">
+                                    <a href="detalle_video18.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video18.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>francia</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="video-item">
+                                    <a href="detalle_video19.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video19.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>uruguay</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="video-item">
+                                    <a href="detalle_video20.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video20.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>suiza</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="video-item">
+                                    <a href="detalle_video21.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video21.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>nueva zelanda</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="video-item">
+                                    <a href="detalle_video22.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video22.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>irán</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                                <div class="video-item">
+                                    <a href="detalle_video23.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video23.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>uzbekistán</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                                <div class="video-item">
+                                    <a href="detalle_video24.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video24.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>corea del sur</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+
+                                <div class="video-item">
+                                    <a href="detalle_video25.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video25.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>jordania</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+
+                                <div class="video-item">
+                                    <a href="detalle_video26.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video26.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>ecuador</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                                <div class="video-item">
+                                    <a href="detalle_video27.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video27.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>paraguay</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                                <div class="video-item">
+                                    <a href="detalle_video28.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video28.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>túnez</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                                <div class="video-item">
+                                    <a href="detalle_video29.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video29.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>argelia</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                                <div class="video-item">
+                                    <a href="detalle_video30.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video30.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>ghana</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="video-item">
+                                    <a href="detalle_video31.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video31.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>cabo verde</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="video-item">
+                                    <a href="detalle_video32.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video32.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>sudáfrica</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                                <div class="video-item">
+                                    <a href="detalle_video33.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video33.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>qatar</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                                <div class="video-item">
+                                    <a href="detalle_video34.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video34.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>inglaterra</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                                <div class="video-item">
+                                    <a href="detalle_video35.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video35.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>arabia saudita</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                                <div class="video-item">
+                                    <a href="detalle_video36.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video36.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>costa de marfil</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                                <div class="video-item">
+                                    <a href="detalle_video37.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video37.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>portugal</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="video-item">
+                                    <a href="detalle_video38.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video38.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>noruega</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="video-item">
+                                    <a href="detalle_video39.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video39.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>países bajos</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                                <div class="video-item">
+                                    <a href="detalle_video40.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video40.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>alemania</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                                <div class="video-item">
+                                    <a href="detalle_video41.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video41.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>austria</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                                <div class="video-item">
+                                    <a href="detalle_video42.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video42.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>escocia</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+
+                                <div class="video-item">
+                                    <a href="detalle_video43.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video43.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>curazao</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+
+                                <div class="video-item">
+                                    <a href="detalle_video44.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video44.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>haití</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                                <div class="video-item">
+                                    <a href="detalle_video45.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video45.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>turquía</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                                <div class="video-item">
+                                    <a href="detalle_video46.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video46.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>república checa</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                                <div class="video-item">
+                                    <a href="detalle_video47.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video47.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>bosnia y herzegovina</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                                <div class="video-item">
+                                    <a href="detalle_video48.html">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="../socc3r-1.0.0/assets/img/gallery/video48.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="video-overlay">
+                                            <span>rd congo</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+
+
+
 
                             </div>
-
-                            <div class="video-item">
-                                <a href="detalle_video2.html">
-                                    <video autoplay muted loop playsinline>
-                                        <source src="../socc3r-1.0.0/assets/img/gallery/mexico_video.mp4" type="video/mp4">
-                                    </video>
-                                </a>
-
-                            </div>
-
-                            <div class="video-item">
-                                <a href="detalle_video3.html">
-                                    <video autoplay muted loop playsinline>
-                                        <source src="../socc3r-1.0.0/assets/img/gallery/españa_video.mp4" type="video/mp4">
-                                    </video>
-                                </a>
-                            </div>
-                        </div> </div> </div> </div> </div> </section>
-</main>
-
-    <footer id="footer" class="footer">
-        <div class="container footer-top">
-            <div class="row gy-4">
-                <div class="col-lg-4 col-md-6 footer-about">
-                    <a href="index.html" class="logo d-flex align-items-center">
-                        <span class="sitename">Restaurantly</span>
-                    </a>
-                    <div class="footer-contact pt-3">
-                        <p>A108 Adam Street</p>
-                        <p>New York, NY 535022</p>
-                        <p class="mt-3"><strong>Email:</strong> <span>info@example.com</span></p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Useful Links</h4>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About us</a></li>
-                    </ul>
+            </div>
+        </section>
+
+        <footer id="footer" class="footer">
+
+            <div class="container footer-top">
+                <div class="row gy-4">
+                    <div class="col-lg-4 col-md-6 footer-about">
+                        <a href="index.html" class="logo d-flex align-items-center">
+                            <span class="sitename">Socc3r</span>
+                        </a>
+                        <div class="footer-contact pt-3">
+                            <p>A108 Adam Street</p>
+                            <p>New York, NY 535022</p>
+                            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+                            <p><strong>Email:</strong> <span>info@example.com</span></p>
+                        </div>
+                        <div class="social-links d-flex mt-4">
+                            <a href=""><i class="bi bi-twitter-x"></i></a>
+                            <a href=""><i class="bi bi-facebook"></i></a>
+                            <a href=""><i class="bi bi-instagram"></i></a>
+                            <a href=""><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Terms of service</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><a href="#">Web Design</a></li>
+                            <li><a href="#">Web Development</a></li>
+                            <li><a href="#">Product Management</a></li>
+                            <li><a href="#">Marketing</a></li>
+                            <li><a href="#">Graphic Design</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 footer-newsletter">
+                        <h4>Our Newsletter</h4>
+                        <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+                        <form action="forms/newsletter.php" method="post" class="php-email-form">
+                            <div class="newsletter-form"><input type="email" name="email"><input type="submit"
+                                    value="Subscribe"></div>
+                            <div class="loading">Loading</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+                        </form>
+                    </div>
+
                 </div>
             </div>
-        </div>
-        <div class="container copyright text-center mt-4">
-            <p>© <span>Copyright</span> <strong class="px-1 sitename">Restaurantly</strong> <span>All Rights Reserved</span></p>
-        </div>
-    </footer>
 
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/js/main.js"></script>
+        </footer>
 
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/tourGale.js"></script>
 </body>
 
 </html>

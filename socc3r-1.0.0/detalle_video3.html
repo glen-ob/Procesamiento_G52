@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle del Video - Socc3r</title>
+    <title>detalle de video - socc3r</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <style>
@@ -14,12 +14,11 @@
 
         .video-detail-bg {
             background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
-            padding: 100px 0 40px 0; /* Reducido para móvil */
+            padding: 100px 0 40px 0;
             min-height: 100vh;
             font-family: 'DigiBop', sans-serif;
         }
 
-        /* Contenedor del Video (Verde) */
         .video-player-container {
             background-color: #d8f08c;
             border: 6px solid #c5e063;
@@ -35,9 +34,20 @@
             border: 4px solid black; 
             background-color: black;
             display: block;
+            transition: all 0.5s ease;
         }
 
-        /* Estilo de la caja de filtros (Amarilla) */
+        /* --- DEFINICIÓN DE FILTROS --- */
+        .filter-blur { filter: blur(8px); }
+        
+        .filter-pastel { 
+            filter: brightness(1.2) saturate(0.7) sepia(0.2) hue-rotate(-10deg); 
+        }
+
+        .filter-thermal { filter: invert(100%) hue-rotate(180deg) saturate(300%); }
+        .filter-color { filter: sepia(1) hue-rotate(280deg) saturate(5); }
+        .filter-none { filter: none; }
+
         .y2k-box {
             border: 6px solid #c5e063;
             border-radius: 30px;
@@ -58,11 +68,27 @@
             text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
         }
 
-        /* Botones de Filtros */
+       
         .filters-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Dos columnas en móvil */
-            gap: 10px;
+            grid-template-columns: 1fr 1fr; 
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        
+        .grid-full-width {
+            grid-column: span 2; 
+            width: 100%;
+        }
+        
+        
+        @media (max-width: 576px) {
+            .btn-filter-y2k {
+                font-size: 0.8rem;
+                padding: 12px 2px;
+            }
         }
 
         .btn-filter-y2k {
@@ -82,35 +108,25 @@
 
         .btn-filter-y2k:hover {
             transform: scale(1.05);
+            background-color: #72c6e6;
             color: white;
         }
 
-        /* Responsividad específica */
+        .btn-active {
+            background-color: #b191ff !important;
+            box-shadow: inset 2px 2px 5px rgba(0,0,0,0.2);
+        }
+
         @media (max-width: 991px) {
-            .video-detail-bg {
-                padding-top: 60px; /* Menos espacio arriba en móviles */
-            }
-            .order-mobile-1 {
-                order: 1; /* El video sube */
-            }
-            .order-mobile-2 {
-                order: 2; /* Los filtros bajan */
-            }
+            .video-detail-bg { padding-top: 60px; }
+            .order-mobile-1 { order: 1; }
+            .order-mobile-2 { order: 2; }
         }
 
         @media (min-width: 992px) {
-            .filters-grid {
-                display: block; /* Vuelve a lista en escritorio */
-            }
-            .btn-filter-y2k {
-                width: 100%;
-                margin-bottom: 10px;
-                font-size: 1.1rem;
-            }
-            .video-player-container {
-                padding: 30px;
-                border-width: 8px;
-            }
+            .filters-grid { display: block; }
+            .btn-filter-y2k { width: 100%; margin-bottom: 10px; font-size: 1.1rem; }
+            .video-player-container { padding: 30px; border-width: 8px; }
         }
     </style>
 </head>
@@ -122,7 +138,7 @@
                 
                 <div class="col-12 col-lg-8 order-mobile-1">
                     <div class="video-player-container">
-                        <video controls autoplay class="main-video">
+                        <video id="videoElement" controls autoplay loop muted class="main-video">
                             <source src="../socc3r-1.0.0/assets/img/gallery/españa_video.mp4" type="video/mp4">
                             Tu navegador no soporta videos.
                         </video>
@@ -133,10 +149,14 @@
                     <div class="y2k-box box-yellow">
                         <h2 class="y2k-title">filtros</h2>
                         <div class="filters-grid">
-                            <button class="btn-filter-y2k">desenfoque</button>
-                            <button class="btn-filter-y2k">pixeleado</button>
-                            <button class="btn-filter-y2k">térmica</button>
-                            <button class="btn-filter-y2k">color</button>
+                            <button class="btn-filter-y2k" data-filter="filter-blur">desenfoque</button>
+                            <button class="btn-filter-y2k" data-filter="filter-pastel">colores pastel</button>
+                            <button class="btn-filter-y2k" data-filter="filter-thermal">térmica</button>
+                            <button class="btn-filter-y2k" data-filter="filter-color">color rosa</button>
+                                                
+                            <button class="btn-filter-y2k grid-full-width" data-filter="filter-none" style="background:#ddd; color:#555;">
+                                limpiar filtros
+                            </button>
                         </div>
                         <hr style="border-top: 2px solid white; margin: 20px 0;">
                         <a href="galeria.html" class="btn-filter-y2k" style="background:#ff9ed2; width: 100%;">volver</a>
@@ -146,5 +166,29 @@
             </div>
         </div>
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('videoElement');
+            const buttons = document.querySelectorAll('.btn-filter-y2k[data-filter]');
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const filterClass = btn.getAttribute('data-filter');
+
+                    // reiniciamos clases del video
+                    video.className = 'main-video'; 
+
+                    // aplicamos la nueva clase si existe
+                    if (filterClass !== 'filter-none') {
+                        video.classList.add(filterClass);
+                    }
+
+                    buttons.forEach(b => b.classList.remove('btn-active'));
+                    btn.classList.add('btn-active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
