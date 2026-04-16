@@ -4,7 +4,7 @@
 --------------------------------------------------------------*/
 /* Fonts */
 body {
-    cursor: url('https://www.vhv.rs/dpng/d/557-5571660_cursor-heart-aesthetic-windows-computer-pixel-cursor-pc.png')auto;
+  cursor: url('https://www.vhv.rs/dpng/d/557-5571660_cursor-heart-aesthetic-windows-computer-pixel-cursor-pc.png')auto;
 
 }
 
@@ -2437,4 +2437,36 @@ div.gallery-item div.desc {
   justify-content: center;
   align-items: center;
 
+}
+
+#page-numbers {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination a {
+  color: #007BFF;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 1px solid #007BFF;
+  margin: 0 5px;
+  border-radius: 4px;
+}
+
+.pagination a:hover {
+  background-color: #007BFF;
+  color: white;
+}
+
+.pagination .active {
+  background-color: #007BFF;
+  color: white;
 }

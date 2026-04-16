@@ -102,7 +102,7 @@
             gap: 30px;
         }
 
-        .video-item {
+        .video {
             aspect-ratio: 16 / 9;
             background: linear-gradient(135deg, #ffd1ff 0%, #fae1d0 100%);
             border-radius: 30px;
@@ -116,7 +116,7 @@
             justify-content: center;
         }
 
-        .video-item video {
+        .video video {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -151,12 +151,12 @@
         }
 
         /* Efectos al hacer Hover */
-        .video-item:hover .video-overlay {
+        .video:hover .video-overlay {
             opacity: 1;
             /* Aparece el texto y el fondo oscuro */
         }
 
-        .video-item:hover video {
+        .video:hover video {
             transform: scale(1.05);
         }
 
@@ -178,7 +178,7 @@
 
 
 <body class="starter-page-page">
-
+    <!--------------------------- HEADER -->
     <header id="header" class="header fixed-top">
         <div class="branding d-flex align-items-center">
             <div class="container position-relative d-flex align-items-center justify-content-between">
@@ -190,92 +190,13 @@
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="galeria.html">Galería</a></li>
                         <li><a href="trivia.html">Trivia</a></li>
-                        <<<<<<< HEAD <li><a href="../ar/index.html">Escaneo</a></li>
+                        <li><a href="../ar/index.html">Escaneo</a></li>
                     </ul>
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
                 <button type="button" id="btnTourGale">tour</button>
-                =======
-                <li><a href="ar.html">Escanear</a></li>
-                </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
-                <button type="button" id="ayudaBtn">ayuda!</button>
-                <!--Modal de boton d ayuda-->
-                <div id="myModal" class="modal">
-
-                    <!-- Modal contenido -->
-                    <div class="modal-content">
-                        <div class="modal-header d-flex align-items-center">
-                            <span class="close">&times;</span>
-                            <nav id="navmenu" class="navmenu">
-                                <ul>
-                                    <li><a href="#indexAyuda">Index<br></a></li>
-                                    <li><a href="#galeriaAyuda">Galería</a></li>
-                                    <li><a href="#triviaAyuda">Trivia</a></li>
-                                    <li><a href="#escaneoAyuda">Escaneo de cartas</a></li>
-                                </ul>
-                                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-                            </nav>
-                        </div>
-                        <div class="modal-body" id="indexAyuda">
-                            <h1 style="color: black;" data-aos="fade-up" data-aos-delay="200">
-                                Bienvenido a <span style="color: #ffe75c;">Socc3r</span>! <br> </h1>
-                            <h4 style="color: black;"> La página donde verás todas las nuevas noticias sobre nuestra
-                                exclusiva línea
-                                de Trading Cards. </br>
-                                Aquí puedes visualizar todo lo que ofrecemos, desde cartas fisicas hasta nuestra pagina
-                                de galeria con
-                                edición, trivia de equipos y eventos de futbol, y nuestra sección de escaneo para
-                                visualizar mejor tus
-                                propias cartas!
-                            </h4>
-                        </div>
-                        <hr style="color: black;">
-                        <div class="modal-body" id="galeriaAyuda">
-                            <h1 style="color: black;" data-aos="fade-up" data-aos-delay="200">
-                                (っ◔◡◔)っ ♥ <span style="color: #ffe75c;">Galeria</span> ♥ <br> </h1>
-                            <h4 style="color: black;"> ¿Reconoces los clips más populares? <br> <br>
-                                Gracias a la activa comunidad de fans del futbol, tenemos disponibles los clips, fotos y
-                                videos
-                                completos más populares actualmente! Llenate de nuevo contenido y disfruta de tu
-                                creatividad con nuestra
-                                sección de <a href="edicion.html">edición</a>.
-                            </h4>
-                            <br>
-                            <img src="assets/img/galeria-ayuda.png" class="img-fluid center floating" alt="">
-                        </div>
-                        <hr style="color: black;">
-                        <div class="modal-body" id="triviaAyuda">
-                            <h1 style="color: black;" data-aos="fade-up" data-aos-delay="200">
-                                (っ◔◡◔)っ ♥ <span style="color: #ffe75c;">Trivia</span> ♥ </br> </h1>
-                            <h4 style="color: black;"> ¿Crees saber todo sobre el mundial mas reciente? <br><br>
-                                Aquí puedes visualizar todo lo que ofrecemos, desde cartas fisicas hasta nuestra pagina
-                                de galeria con
-                                edición, trivia de equipos y eventos de futbol, y nuestra sección de escaneo para
-                                visualizar mejor tus
-                                propias cartas!
-                            </h4>
-                        </div>
-                        <img src="assets/img/trivia-ayuda.png" class="img-fluid center floating" alt="">
-
-                        <hr style="color: black;">
-                        <div class="modal-body" id="escaneoAyuda">
-                            <h1 style="color: black;" data-aos="fade-up" data-aos-delay="200">
-                                (っ◔◡◔)っ ♥ <span style="color: #ffe75c;">Escaneo de Cartas</span> ♥ <br> </h1>
-                            <h4 style="color: black;"> ¿Conseguiste una de nuestras rarisimas cartas físicas? <br><br>
-                                Escaneala <a href="edicion.html">aquí</a>, y disfruta de nuestra sección de Realidad
-                                Aumentada con la
-                                que puedes visualizar en 3D tu carta y jugar con ella! Utiliza los botones para moverla.
-                            </h4>
-                        </div>
-                        <img src="" class="img-fluid center floating" alt="">
-                        <div class="modal-footer">
-                            <h3>⋆｡°✩</h3>
-                        </div>
-                    </div>
-                </div>
-                >>>>>>> 37ceb770e1adf56e77ac38535214ae8a658fa385
             </div>
         </div>
         <div class="topbar">
@@ -290,20 +211,23 @@
         </div>
     </header>
 
-    <main class="main">
 
+    <main class="main">
+        <!---------------------------------- EMPIEZA GALERIA -->
         <section class="video-gallery-bg">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
                         <div class="y2k-gallery-container">
                             <h2 class="y2k-title" style="text-align: center;">galería de videos</h2>
-                            <<<<<<< HEAD <div id="video-grid" class="video-grid">
-
-                                <div id="video-item" class="video-item">
+                            <!------------------------ GRID -->
+                            <div id="video-grid" class="video-grid">
+                                <!-------------------- VIDEO -->
+                                <div id="video" class="video">
+                                    <!-- para activar los autoplays revisar como es el link en los detalle_video -->
                                     <a href="detalle_video1.html">
-                                        <iframe width="790" height="515" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/UISoMISKp-8?autoplay=1&mute=1&start=10"
+                                        <iframe width="500" height="285" class="main-video" id="videoElement"
+                                            src="https://www.youtube.com/embed/UISoMISKp-8?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -315,145 +239,180 @@
                                     </a>
                                 </div>
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video2.html">
-                                        <video autoplay muted loop playsinline>
-                                            <source src="../socc3r-1.0.0/assets/img/gallery/mexico_video.mp4"
-                                                type="video/mp4">
-                                        </video>
+                                        <iframe width="500" height="285" class="main-video" id="videoElement"
+                                            src="https://www.youtube.com/embed/wlLIlT4y8Z4?"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                            Tu navegador no soporta videos.
+                                        </iframe>
                                         <div class="video-overlay">
                                             <span>méxico</span>
                                         </div>
-
                                     </a>
                                 </div>
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video3.html">
-                                        <video autoplay muted loop playsinline>
-                                            <source src="../socc3r-1.0.0/assets/img/gallery/españa_video.mp4"
-                                                type="video/mp4">
-                                        </video>
+                                        <iframe width="500" height="285" class="main-video" id="videoElement"
+                                            src="https://www.youtube.com/embed/y9bb6Ce3Cec?"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                            Tu navegador no soporta videos.
+                                        </iframe>
                                         <div class="video-overlay">
                                             <span>españa</span>
                                         </div>
                                     </a>
                                 </div>
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video4.html">
-                                        <video autoplay muted loop playsinline>
-                                            <source src="../socc3r-1.0.0/assets/img/gallery/video4.mp4"
-                                                type="video/mp4">
-                                        </video>
+                                        <iframe width="500" height="285" class="main-video" id="videoElement"
+                                            src="https://www.youtube.com/embed/WChSqqDdh8Q?"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                            Tu navegador no soporta videos.
+                                        </iframe>
                                         <div class="video-overlay">
                                             <span>australia</span>
                                         </div>
                                     </a>
                                 </div>
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video5.html">
-                                        <video autoplay muted loop playsinline>
-                                            <source src="../socc3r-1.0.0/assets/img/gallery/video5.mp4"
-                                                type="video/mp4">
-                                        </video>
+                                        <iframe width="500" height="285" class="main-video" id="videoElement"
+                                            src="https://www.youtube.com/embed/cFWvkyQwfWk?"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                            Tu navegador no soporta videos.
+                                        </iframe>
                                         <div class="video-overlay">
                                             <span>estados unidos</span>
                                         </div>
                                     </a>
                                 </div>
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video6.html">
-                                        <video autoplay muted loop playsinline>
-                                            <source src="../socc3r-1.0.0/assets/img/gallery/video6.mp4"
-                                                type="video/mp4">
-                                        </video>
+                                        <iframe width="500" height="285" class="main-video" id="videoElement"
+                                            src="https://www.youtube.com/embed/h0kUe3sNxRM?"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                            Tu navegador no soporta videos.
+                                        </iframe>
                                         <div class="video-overlay">
                                             <span>egipto</span>
                                         </div>
                                     </a>
                                 </div>
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video7.html">
-                                        <video autoplay muted loop playsinline>
-                                            <source src="../socc3r-1.0.0/assets/img/gallery/video7.mp4"
-                                                type="video/mp4">
-                                        </video>
+                                        <iframe width="500" height="285" class="main-video" id="videoElement"
+                                            src="https://www.youtube.com/embed/xTUKP0zIesQ?"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                            Tu navegador no soporta videos.
+                                        </iframe>
                                         <div class="video-overlay">
                                             <span>croacia</span>
                                         </div>
                                     </a>
                                 </div>
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video8.html">
-                                        <video autoplay muted loop playsinline>
-                                            <source src="../socc3r-1.0.0/assets/img/gallery/video8.mp4"
-                                                type="video/mp4">
-                                        </video>
+                                        <iframe width="500" height="285" class="main-video" id="videoElement"
+                                            src="https://www.youtube.com/embed/uqfrMd9qRNs?"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                            Tu navegador no soporta videos.
+                                        </iframe>
                                         <div class="video-overlay">
                                             <span>bélgica</span>
                                         </div>
                                     </a>
                                 </div>
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video9.html">
-                                        <video autoplay muted loop playsinline>
-                                            <source src="../socc3r-1.0.0/assets/img/gallery/video9.mp4"
-                                                type="video/mp4">
-                                        </video>
+                                        <iframe width="500" height="285" class="main-video" id="videoElement"
+                                            src="https://www.youtube.com/embed/iNMMchBwmRE?"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                            Tu navegador no soporta videos.
+                                        </iframe>
                                         <div class="video-overlay">
                                             <span>colombia</span>
                                         </div>
                                     </a>
                                 </div>
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video10.html">
-                                        <video autoplay muted loop playsinline>
-                                            <source src="../socc3r-1.0.0/assets/img/gallery/video10.mp4"
-                                                type="video/mp4">
-                                        </video>
+                                        <iframe width="500" height="285" class="main-video" id="videoElement"
+                                            src="https://www.youtube.com/embed/_mtslrEA6tM?"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                            Tu navegador no soporta videos.
+                                        </iframe>
                                         <div class="video-overlay">
                                             <span>suecia</span>
                                         </div>
                                     </a>
                                 </div>
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video11.html">
-                                        <video autoplay muted loop playsinline>
-                                            <source src="../socc3r-1.0.0/assets/img/gallery/video11.mp4"
-                                                type="video/mp4">
-                                        </video>
+                                        <iframe width="500" height="285" class="main-video" id="videoElement"
+                                            src="https://www.youtube.com/embed/W-WxZU8F-go?"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                            Tu navegador no soporta videos.
+                                        </iframe>
                                         <div class="video-overlay">
                                             <span>japón</span>
                                         </div>
                                     </a>
                                 </div>
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video12.html">
-                                        <video autoplay muted loop playsinline>
-                                            <source src="../socc3r-1.0.0/assets/img/gallery/video12.mp4"
-                                                type="video/mp4">
-                                        </video>
+                                        <iframe width="500" height="285" class="main-video" id="videoElement"
+                                            src="https://www.youtube.com/embed/8jxA3eV6ZBE?"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                            Tu navegador no soporta videos.
+                                        </iframe>
                                         <div class="video-overlay">
                                             <span>panamá</span>
                                         </div>
                                     </a>
                                 </div>
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video13.html">
-                                        <video autoplay muted loop playsinline>
-                                            <source src="../socc3r-1.0.0/assets/img/gallery/video13.mp4"
-                                                type="video/mp4">
-                                        </video>
+                                        <iframe width="500" height="285" class="main-video" id="videoElement"
+                                            src="https://www.youtube.com/embed/f4iSuUPeUHw?"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                            Tu navegador no soporta videos.
+                                        </iframe>
                                         <div class="video-overlay">
                                             <span>irak</span>
                                         </div>
@@ -461,88 +420,109 @@
 
                                 </div>
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video14.html">
-                                        <video autoplay muted loop playsinline>
-                                            <source src="../socc3r-1.0.0/assets/img/gallery/video14.mp4"
-                                                type="video/mp4">
-                                        </video>
+                                        <iframe width="500" height="285" class="main-video" id="videoElement"
+                                            src="https://www.youtube.com/embed/YbMH5TPQEb4?"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                            Tu navegador no soporta videos.
+                                        </iframe>
                                         <div class="video-overlay">
                                             <span>argentina</span>
                                         </div>
                                     </a>
                                 </div>
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video15.html">
-                                        <video autoplay muted loop playsinline>
-                                            <source src="../socc3r-1.0.0/assets/img/gallery/video15.mp4"
-                                                type="video/mp4">
-                                        </video>
+                                        <iframe width="500" height="285" class="main-video" id="videoElement"
+                                            src="https://www.youtube.com/embed/kCxab32PT10?"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                            Tu navegador no soporta videos.
+                                        </iframe>
                                         <div class="video-overlay">
                                             <span>senegal</span>
                                         </div>
                                     </a>
                                 </div>
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video16.html">
-                                        <video autoplay muted loop playsinline>
-                                            <source src="../socc3r-1.0.0/assets/img/gallery/video16.mp4"
-                                                type="video/mp4">
-                                        </video>
+                                        <iframe width="500" height="285" class="main-video" id="videoElement"
+                                            src="https://www.youtube.com/embed/ikGoQkUqZcg?"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                            Tu navegador no soporta videos.
+                                        </iframe>
                                         <div class="video-overlay">
                                             <span>marruecos</span>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video17.html">
-                                        <video autoplay muted loop playsinline>
-                                            <source src="../socc3r-1.0.0/assets/img/gallery/video17.mp4"
-                                                type="video/mp4">
-                                        </video>
+                                        <iframe width="500" height="285" class="main-video" id="videoElement"
+                                            src="https://www.youtube.com/embed/46yxrkHlH9o?"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                            Tu navegador no soporta videos.
+                                        </iframe>
                                         <div class="video-overlay">
                                             <span>canadá</span>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video18.html">
-                                        <video autoplay muted loop playsinline>
-                                            <source src="../socc3r-1.0.0/assets/img/gallery/video18.mp4"
-                                                type="video/mp4">
-                                        </video>
+                                        <iframe width="500" height="285" class="main-video" id="videoElement"
+                                            src="https://www.youtube.com/embed/OIwVnUD6_ts?"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                            Tu navegador no soporta videos.
+                                        </iframe>
                                         <div class="video-overlay">
                                             <span>francia</span>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video19.html">
-                                        <video autoplay muted loop playsinline>
-                                            <source src="../socc3r-1.0.0/assets/img/gallery/video19.mp4"
-                                                type="video/mp4">
-                                        </video>
+                                        <iframe width="500" height="285" class="main-video" id="videoElement"
+                                            src="https://www.youtube.com/embed/LSWSd1g6ZgI?"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                            Tu navegador no soporta videos.
+                                        </iframe>
                                         <div class="video-overlay">
                                             <span>uruguay</span>
                                         </div>
                                     </a>
                                 </div>
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video20.html">
-                                        <video autoplay muted loop playsinline>
-                                            <source src="../socc3r-1.0.0/assets/img/gallery/video20.mp4"
-                                                type="video/mp4">
-                                        </video>
+                                        <iframe width="500" height="285" class="main-video" id="videoElement"
+                                            src="https://www.youtube.com/embed/vv0ZSknEuzo?"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                            Tu navegador no soporta videos.
+                                        </iframe>
                                         <div class="video-overlay">
                                             <span>suiza</span>
                                         </div>
                                     </a>
                                 </div>
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video21.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video21.mp4"
@@ -554,7 +534,7 @@
                                     </a>
                                 </div>
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video22.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video22.mp4"
@@ -567,7 +547,7 @@
                                 </div>
 
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video23.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video23.mp4"
@@ -580,7 +560,7 @@
                                 </div>
 
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video24.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video24.mp4"
@@ -594,7 +574,7 @@
 
 
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video25.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video25.mp4"
@@ -608,7 +588,7 @@
 
 
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video26.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video26.mp4"
@@ -621,7 +601,7 @@
                                 </div>
 
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video27.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video27.mp4"
@@ -634,7 +614,7 @@
                                 </div>
 
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video28.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video28.mp4"
@@ -647,7 +627,7 @@
                                 </div>
 
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video29.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video29.mp4"
@@ -660,7 +640,7 @@
                                 </div>
 
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video30.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video30.mp4"
@@ -672,7 +652,7 @@
                                     </a>
                                 </div>
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video31.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video31.mp4"
@@ -684,7 +664,7 @@
                                     </a>
                                 </div>
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video32.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video32.mp4"
@@ -697,7 +677,7 @@
                                 </div>
 
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video33.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video33.mp4"
@@ -710,7 +690,7 @@
                                 </div>
 
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video34.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video34.mp4"
@@ -723,7 +703,7 @@
                                 </div>
 
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video35.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video35.mp4"
@@ -736,7 +716,7 @@
                                 </div>
 
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video36.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video36.mp4"
@@ -749,7 +729,7 @@
                                 </div>
 
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video37.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video37.mp4"
@@ -761,7 +741,7 @@
                                     </a>
                                 </div>
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video38.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video38.mp4"
@@ -773,7 +753,7 @@
                                     </a>
                                 </div>
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video39.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video39.mp4"
@@ -786,7 +766,7 @@
                                 </div>
 
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video40.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video40.mp4"
@@ -799,7 +779,7 @@
                                 </div>
 
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video41.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video41.mp4"
@@ -812,7 +792,7 @@
                                 </div>
 
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video42.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video42.mp4"
@@ -826,7 +806,7 @@
 
 
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video43.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video43.mp4"
@@ -840,7 +820,7 @@
 
 
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video44.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video44.mp4"
@@ -853,7 +833,7 @@
                                 </div>
 
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video45.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video45.mp4"
@@ -866,7 +846,7 @@
                                 </div>
 
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video46.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video46.mp4"
@@ -879,7 +859,7 @@
                                 </div>
 
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video47.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video47.mp4"
@@ -892,7 +872,7 @@
                                 </div>
 
 
-                                <div class="video-item">
+                                <div class="video">
                                     <a href="detalle_video48.html">
                                         <video autoplay muted loop playsinline>
                                             <source src="../socc3r-1.0.0/assets/img/gallery/video48.mp4"
@@ -904,33 +884,15 @@
                                     </a>
                                 </div>
 
-
-
-
-
-
-                                =======
-                                <div class="video-grid">
-                                    <div class="video-item"><img src="assets/img/gallery/gif_soccer1.gif" alt="preview">
-                                    </div>
-                                    <div class="video-item"><img src="assets/img/gallery/gif_soccer2.gif" alt="preview">
-                                    </div>
-                                    <div class="video-item"><img src="assets/img/gallery/gif3.gif" alt="preview"></div>
-                                    <div class="video-item"><img src="assets/img/gallery/gif_soccer1.gif" alt="preview">
-                                    </div>
-                                    <div class="video-item"><img src="assets/img/gallery/gif_soccer2.gif" alt="preview">
-                                    </div>
-                                    <div class="video-item"><img src="assets/img/gallery/gif3.gif" alt="preview"></div>
-                                    <div class="video-item"><img src="assets/img/gallery/gif_soccer1.gif" alt="preview">
-                                    </div>
-                                    <div class="video-item"><img src="assets/img/gallery/gif_soccer2.gif" alt="preview">
-                                    </div>
-                                    >>>>>>> 37ceb770e1adf56e77ac38535214ae8a658fa385
+                                <div class="pagination" id="pagination">
+                                    <a href="#" id="prev">Previous</a>
+                                    <p id="page-numbers"> </p>
+                                    <a href="#" id="next">Next</a>
                                 </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
 
         <footer id="footer" class="footer">
@@ -992,23 +954,16 @@
                 </div>
             </div>
 
-            <<<<<<< HEAD </footer>
+        </footer>
 
-                <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-                <script src="assets/vendor/aos/aos.js"></script>
-                <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-                <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-                <script src="assets/js/main.js"></script>
-                <script src="assets/js/tourGale.js"></script>
-                =======
-                <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-                <script src="assets/vendor/aos/aos.js"></script>
-                <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-                <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-                <script src="assets/js/main.js"></script>
-                <!-- boton de ayuda -->
-                <script src="assets/js/ayuda.js"></script>
-                >>>>>>> 37ceb770e1adf56e77ac38535214ae8a658fa385
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/tourGale.js"></script>
+        <script src="assets/js/paginacion.js"></script>
+
 </body>
 
 </html>
