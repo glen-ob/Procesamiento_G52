@@ -14,7 +14,6 @@ function initGuidedTour() {
           title: "¡Bienvenido a Socc3r!",
           description: "Te invitamos a tomar este tour virtual por nuestra página.",
           position: "center",
-          popoverClass: 'my-custom-popover-class'
         }
       },
       {
@@ -49,15 +48,25 @@ function initGuidedTour() {
           position: "center"
         }
       },
-    ]
-  });
-  const btnTourIndex = document.getElementById("btnTourIndex");
+      {
+        popover: {
+          showButtons: [],
+          description:
+            "<div class='gif-popover'><img style='max-width: 100%' src='https://media1.tenor.com/m/8tk4dYBnQDQAAAAC/football-cat.gif' /><p>¡Has terminado el tour!</p></div>", 
+          
 
-  if (btnTourIndex) {
-    btnTourIndex?.addEventListener("click", () => {
-      tour.drive();
-    });
-  } else { }
+      },
+      },
+    ]
+});
+const btnTourIndex = document.getElementById("btnTourIndex");
+const img = document.createElement("img")
+
+if (btnTourIndex) {
+  btnTourIndex?.addEventListener("click", () => {
+    tour.drive();
+  });
+} else { }
 
 
 }
