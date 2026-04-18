@@ -186,3 +186,4 @@ inpRange.addEventListener('change', function () {
     console.log(selectedFilter.id)
     applyFilteronImg
 })
+

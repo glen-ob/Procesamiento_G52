@@ -5,6 +5,21 @@
 /* Fonts */
 body {
   cursor: url('https://www.vhv.rs/dpng/d/557-5571660_cursor-heart-aesthetic-windows-computer-pixel-cursor-pc.png')auto;
+}
+
+/* //modo oscuro// */
+[data-theme="light"] {
+  --color-bg: url(/socc3r-1.0.0/assets/img/istockphoto.jpg);
+  --color-fg: #000000;
+  --header-color: rgba(189, 63, 217, 0.61);
+  --primary-text: #ffffff;
+}
+
+[data-theme="dark"] {
+  --color-bg: url(/socc3r-1.0.0/assets/img/dark-bg.jpg);
+  --color-fg: #ffffff;
+  --header-color: rgba(109, 7, 132, 0.61);
+  --primary-text: #201e1f;
 
 }
 
@@ -13,6 +28,7 @@ body {
   src: url('https://dl.dropbox.com/s/8maabpvuycdrlai/DigiBop-Regular.ttf');
   font-display: swap;
   /* Ayuda a que el texto no desaparezca mientras carga */
+
 }
 
 :root {
@@ -57,18 +73,6 @@ body {
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
-.light-background {
-  --background-color: #29261f;
-  --surface-color: #464135;
-}
-
-.dark-background {
-  --background-color: #000000;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
-  --surface-color: #1a1a1a;
-  --contrast-color: #ffffff;
-}
 
 /* Smooth scroll */
 :root {
@@ -82,12 +86,15 @@ body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
+
 }
 
 a {
-  color: var(--accent-color);
+  color: var(--primary-text);
   text-decoration: none;
   transition: 0.3s;
+  color: var(--primary-text);
+
 }
 
 a:hover {
@@ -101,7 +108,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--heading-color);
+  color: var(--primary-text);
   font-family: var(--heading-font);
 }
 
@@ -240,7 +247,7 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: rgba(189, 63, 217, 0.61);
+  background-color: var(--header-color);
   color: var(--default-color);
   transition: all 0.5s;
   z-index: 997;
@@ -311,7 +318,7 @@ h6 {
 }
 
 .header .branding {
-  background-color: var(--background-color);
+  background-color: var(--header-color);
   min-height: 60px;
   padding: 10px 0;
   transition: 0.3s;
@@ -1385,7 +1392,7 @@ section,
 }
 
 .events .swiper-wrapper {
-  height: auto;
+  height: 400px;
 }
 
 .events .swiper-pagination {
@@ -1540,8 +1547,7 @@ section,
 }
 
 .testimonials .swiper-wrapper {
-  height: 50%;
-  width: 50%;
+height: 400px;
 }
 
 .testimonials .swiper-pagination {
@@ -2310,8 +2316,11 @@ div.gallery-item div.desc {
 }
 
 .gradient-section {
-  background: #F8FB3F;
-  background: linear-gradient(0deg, rgba(248, 251, 63, 1) 0%, rgba(246, 70, 252, 1) 100%);
+  background-image: var(--color-bg);
+  color: var(--color-fg);
+  background-repeat: no-repeat;
+  background-size: 1600px 800px;
+  transition: background-color 1s ease, color 1s ease;
 }
 
 
@@ -2469,4 +2478,12 @@ div.gallery-item div.desc {
 .pagination .active {
   background-color: #007BFF;
   color: white;
+}
+
+#hero {
+  background-image: var(--color-bg);
+  color: var(--color-fg);
+  background-repeat: no-repeat;
+  background-size: 1600px 800px;
+  transition: background-color 1s ease, color 1s ease;
 }
