@@ -235,7 +235,8 @@ new Swiper(".wrapper", {
 
 
 
-// // // // // // // //dark mode///// // / / / / / / //
+// // // // // // // // modes ///// // / / / / / / //
+
 /**
 * Utility function to calculate the current theme setting.
 * Look for a local storage value.
