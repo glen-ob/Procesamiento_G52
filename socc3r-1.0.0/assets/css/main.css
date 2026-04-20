@@ -1,5 +1,5 @@
-body {
-  cursor: url('../img/cursor.ico'), default;
+html {
+  cursor: url(../img/base64.png), auto;
 }
 
 * {
@@ -13,8 +13,8 @@ body {
   --header-color: rgba(189, 63, 217, 0.61);
   --primary-text: #ffffff;
   --y2k-border: #c5e063;
-  --box-yellow:  #ffe75c;
-  --gallery-cont:  #d8f08c;
+  --box-yellow: #ffe75c;
+  --gallery-cont: #d8f08c;
   --filter-bg: #89d4f0;
   --video-bg: linear-gradient(135deg, #ffd1ff 0%, #fae1d0 100%);
   --video-shadow: #b191ff;
@@ -26,8 +26,8 @@ body {
   --header-color: rgba(109, 7, 132, 0.61);
   --primary-text: #201e1f;
   --y2k-border: #c5e063;
-  --box-yellow:  #ffe75c;
-  --gallery-cont:  #d8f08c;
+  --box-yellow: #ffe75c;
+  --gallery-cont: #d8f08c;
   --filter-bg: #89d4f0;
   --video-bg: linear-gradient(135deg, #ffd1ff 0%, #fae1d0 100%);
   --video-shadow: #b191ff;
