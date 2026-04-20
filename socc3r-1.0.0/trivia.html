@@ -27,6 +27,66 @@
 
 </head>
 
+<style>
+    .accordion {
+        font-size: 1.5rem !important;
+        font-weight: 600 !important;
+        padding: 15px 20px !important;
+        margin-bottom: 5px !important;
+    }
+
+    .panel {
+        padding: 20px !important;
+    }
+
+
+    #questionP,
+    #questionW,
+    #questionC {
+        font-size: 1.6rem !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+        margin-bottom: 25px !important;
+        color: #45bcf3 !important;
+    }
+
+
+    #optionsP,
+    #optionsW,
+    #optionsC {
+        font-size: 1.2rem !important;
+    }
+
+
+    #optionsP button,
+    #optionsW button,
+    #optionsC button {
+        padding: 12px 20px !important;
+        font-size: 1.1rem !important;
+        margin-bottom: 10px !important;
+        width: 100% !important;
+        text-align: left !important;
+    }
+
+    @media (max-width: 768px) {
+        .accordion {
+            font-size: 1.2rem !important;
+        }
+
+        #questionP,
+        #questionW,
+        #questionC {
+            font-size: 1.3rem !important;
+        }
+
+        #optionsP,
+        #optionsW,
+        #optionsC {
+            font-size: 1.1rem !important;
+        }
+    }
+</style>
+
 <body class="starter-page-page">
     <header id="header" class="header fixed-top">
         <div class="branding d-flex align-items-cente">
@@ -85,7 +145,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 d-flex flex-column align-items-center align-items-lg-start">
-                        <h2 data-aos="fade-up" data-aos-delay="100">Página de <span>Trivia</span></h2>
+                        <h2 class="text-white" data-aos="fade-up" data-aos-delay="100">Página de <span>Trivia</span>
+                        </h2>
                         <p data-aos="fade-up" data-aos-delay="200">Pon a prueba tu conocimiento de todo sobre la FIFA.
                             Desde los balones utilizados en los partidos, los
                             estadios donde cada mundial tomó lugar, hasta datos curiosos de cada equipo que ha
@@ -153,20 +214,6 @@
                     </div>
                 </div>
 
-                <button class="accordion">Champions League</button>
-                <div class="panel">
-                    <div id="quizC">
-                        <div class="formbold-main-wrapper">
-                            <div class="formbold-form-wrapper">
-                                <div class="formbold-mb-5">
-                                    <div id="questionC"></div>
-                                </div>
-                                <div id="optionsC"></div>
-                                <!-- <button id="submit">Enviar</button> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
     </main>

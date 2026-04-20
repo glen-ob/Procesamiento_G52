@@ -117,11 +117,7 @@ function showResultPremier() {
     quizP.innerHTML = `
         <h1> ¡Quiz terminado!</h1 >
             <p>Tus puntos: ${scoreP} de ${quizPremier.length}</p>
-            <p>Las respuestas correctas son: 
-            ${quizPremier.questionP}
-            /
-            ${quizPremier.answerP}
-            </p>
+
     `;
 }
 showQuestionPremier();
