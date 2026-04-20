@@ -80,7 +80,6 @@ const submitButtonC = document.getElementById("submitC");
 let currentQuestionC = 0;
 let scoreC = 0;
 
-
 //premier
 function showQuestionPremier() {
     const questionP = quizPremier[currentQuestionP]; questionElementP.innerText = questionP.questionP;
@@ -97,6 +96,11 @@ function selectAnswerP(e) {
 
     if (selectedButton.innerText === answerP) {
         scoreP++;
+        this.style.backgroundColor = "green";
+
+    }
+    else {
+        this.style.backgroundColor = "red";
     }
 
     currentQuestionP++;
@@ -106,12 +110,18 @@ function selectAnswerP(e) {
     } else {
         showResultPremier();
     }
+
 }
 
 function showResultPremier() {
     quizP.innerHTML = `
-        <h1> Quiz terminado!</h1 >
-            <p>Tus puntos: ${scoreP}/${quizPremier.length}</p>
+        <h1> ¡Quiz terminado!</h1 >
+            <p>Tus puntos: ${scoreP} de ${quizPremier.length}</p>
+            <p>Las respuestas correctas son: 
+            ${quizPremier.questionP}
+            /
+            ${quizPremier.answerP}
+            </p>
     `;
 }
 showQuestionPremier();
@@ -148,6 +158,7 @@ function showResultWorld() {
     quizW.innerHTML = `
         <h1> Quiz terminado!</h1 >
             <p>Tus puntos: ${scoreW}/${quizWorld.length}</p>
+
     `;
 }
 showQuestionWorld();

@@ -1,17 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Galería de Videos - Socc3r</title>
-    <!-- Favicons -->
-    <link href="assets/img/favicon.ico" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Favicons -->
     <link href="assets/img/favicon.ico" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -32,189 +28,66 @@
     <script src="https://cdn.jsdelivr.net/npm/driver.js@latest/dist/driver.js.iife.js"></script>
     <link href="assets/css/tour.css" rel="stylesheet">
 
-    <style>
-        @font-face {
-            font-family: 'DigiBop';
-            src: url('https://dl.dropbox.com/s/8maabpvuycdrlai/DigiBop-Regular.ttf');
-        }
-
-        .header {
-            transition: all 0.5s ease;
-        }
-
-        /* contenido central */
-        .video-gallery-bg {
-            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
-            padding: 180px 0 80px 0;
-            min-height: 100vh;
-            font-family: 'DigiBop', sans-serif;
-        }
-
-        .y2k-box {
-            border: 8px solid #c5e063;
-            border-radius: 40px;
-            padding: 25px;
-            color: white;
-            text-align: center;
-        }
-
-        .box-yellow {
-            background-color: #ffe75c;
-        }
-
-        .y2k-gallery-container {
-            background-color: #d8f08c;
-            border: 8px solid #c5e063;
-            border-radius: 40px;
-            padding: 30px;
-        }
-
-        .y2k-title {
-            font-size: 2.5rem;
-            text-transform: lowercase;
-            margin-bottom: 20px;
-            color: white;
-            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-filter-y2k {
-            background-color: #89d4f0;
-            border: none;
-            border-radius: 50px;
-            color: white;
-            padding: 8px 20px;
-            margin-bottom: 10px;
-            width: 100%;
-            font-size: 1.1rem;
-            transition: 0.3s;
-            display: block;
-            font-family: 'DigiBop', sans-serif;
-        }
-
-        .btn-filter-y2k:hover {
-            transform: scale(1.05);
-            color: white;
-        }
-
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-        }
-
-        .video {
-            aspect-ratio: 16 / 9;
-            background: linear-gradient(135deg, #ffd1ff 0%, #fae1d0 100%);
-            border-radius: 30px;
-            box-shadow: 8px 8px 0px #b191ff;
-            transition: 0.3s;
-            cursor: pointer;
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .video video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        /* --- NUEVO: ESTILOS DEL OVERLAY --- */
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            /* Color oscuro semitransparente */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            /* Invisible por defecto */
-            transition: opacity 0.3s ease;
-            z-index: 2;
-        }
-
-        .video-overlay span {
-            color: white;
-            font-size: 1.8rem;
-            text-transform: lowercase;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            pointer-events: none;
-            /* Para que el click pase al enlace */
-        }
-
-        /* Efectos al hacer Hover */
-        .video:hover .video-overlay {
-            opacity: 1;
-            /* Aparece el texto y el fondo oscuro */
-        }
-
-        .video:hover video {
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 991px) {
-            .video-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .video-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-    <!-- driverjs -->
-
 </head>
 
 
 <body class="starter-page-page">
-    <!--------------------------- HEADER -->
     <header id="header" class="header fixed-top">
-        <div class="branding d-flex align-items-center">
+        <div class="branding d-flex align-items-cente">
             <div class="container position-relative d-flex align-items-center justify-content-between">
                 <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
                     <h1 class="sitename">(っ◔◡◔)っ ♥ Socc3r ♥</h1>
                 </a>
                 <nav id="navmenu" class="navmenu">
                     <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="galeria.html">Galería</a></li>
+                        <li><a href="index.html">Inicio<br></a></li>
+                        <li><a href="galeria.html" class="active">Galería</a></li>
                         <li><a href="trivia.html">Trivia</a></li>
                         <li><a href="../ar/index.html">Escaneo</a></li>
                     </ul>
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
-                <button type="button" id="btnTourGale">tour</button>
-                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-                </nav>
+
+                <button type="button" id="btnTourTrivia">tour</button>
+
+                <input type="checkbox" data-theme-toggle aria-label="Change to dark theme" style="visibility: hidden;"
+                    id="toggle">
+                <div class="toggle-display">
+                    <label for="toggle">
+                        <div class="circle">
+                            <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+                            </svg>
+                            <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </label>
+                </div>
+
             </div>
         </div>
-        <div class="topbar">
-            <div class="container marquee-section">
+        <div class="topbar ">
+            <div class="container marquee-section d-flex justify-content-center justify-content-md-between">
                 <div class="marquee-div">
                     <div class="marquee">
                         <p>Nuevas cartas ya disponibles &bull; Nuevas cartas ya disponibles &bull; Nuevas cartas ya
-                            disponibles &bull; Nuevas cartas ya disponibles &bull;</p>
+                            disponibles &bull; Nuevas cartas ya disponibles &bull; Nuevas cartas ya disponibles &bull;
+                            Nuevas cartas ya disponibles &bull; </p>
                     </div>
                 </div>
             </div>
-        </div>
+        </div><!-- End Top Bar -->
     </header>
 
 
     <main class="main">
-        <!---------------------------------- EMPIEZA GALERIA -->
-        <section class="video-gallery-bg">
+        <!-- Hero Section -->
+        <section id="hero" class="hero section dark-background fade-in video-gallery-bg">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
@@ -226,8 +99,8 @@
                                 <div id="video" class="video">
                                     <!-- para activar los autoplays revisar como es el link en los detalle_video -->
                                     <a href="detalle_video1.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/UISoMISKp-8?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/UISoMISKp-8?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -241,8 +114,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video2.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/wlLIlT4y8Z4?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/wlLIlT4y8Z4?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -256,8 +129,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video3.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/y9bb6Ce3Cec?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/y9bb6Ce3Cec?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -271,8 +144,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video4.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/WChSqqDdh8Q?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/WChSqqDdh8Q?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -284,10 +157,10 @@
                                     </a>
                                 </div>
 
-                                <div class="video">
+                                <!-- <div class="video">
                                     <a href="detalle_video5.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/cFWvkyQwfWk?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/cFWvkyQwfWk?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -301,8 +174,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video6.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/h0kUe3sNxRM?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/h0kUe3sNxRM?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -316,8 +189,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video7.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/xTUKP0zIesQ?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/xTUKP0zIesQ?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -331,8 +204,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video8.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/uqfrMd9qRNs?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/uqfrMd9qRNs?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -346,8 +219,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video9.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/iNMMchBwmRE?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/iNMMchBwmRE?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -361,8 +234,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video10.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/_mtslrEA6tM?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/_mtslrEA6tM?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -376,8 +249,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video11.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/W-WxZU8F-go?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/W-WxZU8F-go?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -391,8 +264,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video12.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/8jxA3eV6ZBE?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/8jxA3eV6ZBE?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -406,8 +279,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video13.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/f4iSuUPeUHw?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/f4iSuUPeUHw?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -422,8 +295,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video14.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/DDWYR9Oi_wI?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/DDWYR9Oi_wI?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -437,8 +310,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video15.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/kCxab32PT10?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/kCxab32PT10?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -452,8 +325,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video16.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/ikGoQkUqZcg?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/ikGoQkUqZcg?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -466,8 +339,8 @@
                                 </div>
                                 <div class="video">
                                     <a href="detalle_video17.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/46yxrkHlH9o?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/46yxrkHlH9o?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -480,8 +353,8 @@
                                 </div>
                                 <div class="video">
                                     <a href="detalle_video18.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/OIwVnUD6_ts?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/OIwVnUD6_ts?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -494,8 +367,8 @@
                                 </div>
                                 <div class="video">
                                     <a href="detalle_video19.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/LSWSd1g6ZgI?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/LSWSd1g6ZgI?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -509,8 +382,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video20.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/vv0ZSknEuzo?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/vv0ZSknEuzo?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -524,8 +397,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video21.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/a6rV487rIIc?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/a6rV487rIIc?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -539,8 +412,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video22.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/kXNIa9LIF24?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/kXNIa9LIF24?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -555,8 +428,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video23.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/Ckn-UZlZ9s0?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/Ckn-UZlZ9s0?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -571,8 +444,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video24.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/b9sVQFIiLRo?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/b9sVQFIiLRo?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -588,8 +461,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video25.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/cq0Xryk2Qw4?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/cq0Xryk2Qw4?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -605,8 +478,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video26.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/HAT_RvvbX6s?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/HAT_RvvbX6s?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -621,8 +494,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video27.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/wsVxyK5ubQU?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/wsVxyK5ubQU?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -637,8 +510,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video28.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/0Zze5n0fmkU?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/0Zze5n0fmkU?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -653,8 +526,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video29.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/QNIqaBdjxJs?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/QNIqaBdjxJs?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -669,8 +542,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video30.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/ZNQ8Qnwinh0?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/ZNQ8Qnwinh0?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -684,8 +557,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video31.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/dMJ2SIS9z_E?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/dMJ2SIS9z_E?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -699,8 +572,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video32.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/3EjgY4O5d3s?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/3EjgY4O5d3s?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -715,8 +588,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video33.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/KInfv6a5fAU?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/KInfv6a5fAU?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -731,8 +604,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video34.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/FfMppoHdlwM?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/FfMppoHdlwM?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -747,8 +620,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video35.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/HFMH4lvKjLo?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/HFMH4lvKjLo?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -763,8 +636,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video36.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/Vk-IIEkQWm0?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/Vk-IIEkQWm0?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -779,8 +652,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video37.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/3VvqeN0JzZ8?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/3VvqeN0JzZ8?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -794,8 +667,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video38.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/8H82420Wv7I?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/8H82420Wv7I?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -809,8 +682,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video39.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/MLG4XtlzJVM?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/MLG4XtlzJVM?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -825,8 +698,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video40.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/eokwhnairdQ?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/eokwhnairdQ?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -841,8 +714,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video41.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/KMlRd0vRD98?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/KMlRd0vRD98?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -857,8 +730,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video42.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/73cVhK9qL1o?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/73cVhK9qL1o?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -874,8 +747,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video43.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/09F8W7gAixI?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/09F8W7gAixI?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -891,8 +764,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video44.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/UbA49ZNh41g?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/UbA49ZNh41g?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -907,8 +780,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video45.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/AAl-MRlC3Tk?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/AAl-MRlC3Tk?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -923,8 +796,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video46.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/_SOsVFyFHxc?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/_SOsVFyFHxc?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -939,8 +812,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video47.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/cXsguNigGCA?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/cXsguNigGCA?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -955,8 +828,8 @@
 
                                 <div class="video">
                                     <a href="detalle_video48.html">
-                                        <iframe width="500" height="285" class="main-video" id="videoElement"
-                                            src="https://www.youtube.com/embed/BCFy5ZcDBjo?"
+                                        <iframe preload="none" width="500" height="285" class="main-video"
+                                            id="videoElement" src="https://www.youtube.com/embed/BCFy5ZcDBjo?"
                                             title="YouTube video player" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -966,7 +839,7 @@
                                             <span>rd congo</span>
                                         </div>
                                     </a>
-                                </div>
+                                </div> -->
                             </div>
 
                             <div class="pagination" id="pagination">
@@ -980,6 +853,7 @@
         </section>
 
         <footer id="footer" class="footer">
+
             <div class="container footer-top">
                 <div class="row gy-4">
                     <div class="col-lg-4 col-md-6 footer-about">
@@ -987,10 +861,12 @@
                             <span class="sitename">Socc3r</span>
                         </a>
                         <div class="footer-contact pt-3">
-                            <p>A108 Adam Street</p>
-                            <p>New York, NY 535022</p>
-                            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-                            <p><strong>Email:</strong> <span>info@example.com</span></p>
+                            <p>Pedro de Alba, Niños Héroes</p>
+                            <p>Ciudad Universitaria, 66451 San Nicolás de los Garza, N.L.</p>
+                            <p class="mt-3"><strong>RIMR:</strong> <span>+52 81 2647 5158</span></p>
+                            <p"><strong>GCOB:</strong> <span>+52 81 1532 6255 </span></p>
+                                <span>reyna.martinezr@uanl.edu.mx</span></p>
+                                <span>glenda.ordonezb@uanl.edu.mx</span></p>
                         </div>
                         <div class="social-links d-flex mt-4">
                             <a href=""><i class="bi bi-twitter-x"></i></a>
@@ -1001,52 +877,41 @@
                     </div>
 
                     <div class="col-lg-2 col-md-3 footer-links">
-                        <h4 class="text-white">Useful Links</h4>
+                        <h4 class="text-white">Links</h4>
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Terms of service</a></li>
-                            <li><a href="#">Privacy policy</a></li>
+                            <li><a id="inicio" href="index.html" class="active">inicio<br></a></li>
+                            <li><a id="galeria" href="galeria.html">Galería</a></li>
+                            <li><a id="trivia" href="trivia.html">Trivia</a></li>
+                            <li><a id="scan" href="../ar/index.html">Escaneo</a></li>
                         </ul>
                     </div>
 
                     <div class="col-lg-2 col-md-3 footer-links">
                         <h4 class="text-white">Our Services</h4>
                         <ul>
-                            <li><a href="#">Web Design</a></li>
-                            <li><a href="#">Web Development</a></li>
-                            <li><a href="#">Product Management</a></li>
-                            <li><a href="#">Marketing</a></li>
-                            <li><a href="#">Graphic Design</a></li>
+                            <li><a>Escaneo de cartas</a></li>
+                            <li><a>Diseño Web</a></li>
+                            <li><a>Trivia del FIFA</a></li>
+                            <li><a>Galería de equipos</a></li>
                         </ul>
                     </div>
-
-                    <div class="col-lg-4 col-md-12 footer-newsletter">
-                        <h4 class="text-white">Our Newsletter</h4>
-                        <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-                        <form action="forms/newsletter.php" method="post" class="php-email-form">
-                            <div class="newsletter-form"><input type="email" name="email"><input type="submit"
-                                    value="Subscribe"></div>
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-                        </form>
-                    </div>
-
                 </div>
             </div>
-
         </footer>
-
+        
+        <!-- Vendor JS Files -->
         <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
         <script src="assets/vendor/aos/aos.js"></script>
         <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
         <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+        <!-- Main JS File -->
         <script src="assets/js/main.js"></script>
         <script src="assets/js/tourGale.js"></script>
         <script src="assets/js/paginacion.js"></script>
-
 </body>
 
 </html>
