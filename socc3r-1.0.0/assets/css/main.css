@@ -11,7 +11,7 @@ html {
   --color-bg: url(/socc3r-1.0.0/assets/img/istockphoto.jpg);
   --color-fg: #000000;
   --header-color: rgba(189, 63, 217, 0.61);
-  --primary-text: #ffffff;
+  --primary-text: #201e1f;
   --y2k-border: #c5e063;
   --box-yellow: #ffe75c;
   --gallery-cont: #d8f08c;
@@ -24,7 +24,7 @@ html {
   --color-bg: url(/socc3r-1.0.0/assets/img/dark-bg.jpg);
   --color-fg: #ffffff;
   --header-color: rgba(109, 7, 132, 0.61);
-  --primary-text: #201e1f;
+  --primary-text: #ffffff;
   --y2k-border: #c5e063;
   --box-yellow: #ffe75c;
   --gallery-cont: #d8f08c;
@@ -2770,18 +2770,8 @@ div.gallery-item div.desc {
   box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100%;
-}
 
-
-body {
-  font-family: 'Montserrat', serif;
-
-}
-
-main {
+.main-trivia {
   width: 100%;
   min-height: 100vh;
   display: flex;
