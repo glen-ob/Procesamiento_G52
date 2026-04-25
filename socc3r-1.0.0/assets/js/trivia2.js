@@ -1,50 +1,48 @@
 
-//this would be the object shape for storing the questions  
-//you can change the questions to your own taste or even add more questions..
 const questions = [
-    { //1
-        question: "How many days makes a week ?",
-        optionA: "10 days",
-        optionB: "14 days",
-        optionC: "5 days",
-        optionD: "7 days",
-        correctOption: "optionD"
+    { //MEXICO 1
+        question: "¿En qué año jugó México en el primer partido de la primera Copa Mundial de la FIFA?",
+        optionA: "1930",
+        optionB: "1934",
+        optionC: "1950",
+        optionD: "1954",
+        correctOption: "optionA"
     },
 
-    { //2
-        question: "How many players are allowed on a soccer pitch ?",
-        optionA: "10 players",
-        optionB: "11 players",
-        optionC: "9 players",
-        optionD: "12 players",
-        correctOption: "optionB"
-    },
-
-    { //3
-        question: "Who was the first President of USA ?",
-        optionA: "Donald Trump",
-        optionB: "Barack Obama",
-        optionC: "Abraham Lincoln",
-        optionD: "George Washington",
-        correctOption: "optionD"
-    },
-
-    { //4
-        question: "30 days has ______ ?",
-        optionA: "January",
-        optionB: "December",
-        optionC: "June",
-        optionD: "August",
+    { //MEXICO 2
+        question: "¿Qué legendario portero mexicano fue el primer jugador de la historia en aparecer en cinco Copas Mundiales de la FIFA?",
+        optionA: "Guillermo Ochoa",
+        optionB: "Jorge Campos",
+        optionC: "Antonio Carbajal",
+        optionD: "Oswaldo Sánchez",
         correctOption: "optionC"
     },
 
-    { //5
-        question: "How manay hours can be found in a day ?",
-        optionA: "30 hours",
-        optionB: "38 hours",
-        optionC: "48 hours",
-        optionD: "24 hours",
-        correctOption: "optionD"
+    { //MEXICO 3
+        question: "México fue sede de la Copa Mundial de la FIFA en 1970. ¿A qué etapa llegaron?",
+        optionA: "Ronda de 16",
+        optionB: "Cuartos de final",
+        optionC: "Semifinales",
+        optionD: "Final",
+        correctOption: "optionB"
+    },
+
+    { //MEXICO 4
+        question: "¿Quién marcó el gol acrobático de “tijera” contra Bulgaria en la Copa Mundial de la FIFA 1986, a menudo votó el gol más hermoso en la historia de México?",
+        optionA: "Hugo Sánchez",
+        optionB: "Manuel Negrete",
+        optionC: "Tomas Boy",
+        optionD: "Luis Flores",
+        correctOption: "optionB"
+    },
+
+    { //MEXICO 5
+        question: "Entre 1994 y 2018, México logró un récord consistente pero frustrante. ¿Qué era?",
+        optionA: "Fueron eliminados en la fase de grupos cada vez.",
+        optionB: "Llegaron a los cuartos de final cada vez.",
+        optionC: "Fueron eliminados en la ronda de 16 siete veces consecutivas",
+        optionD: "No se clasificaron para la Copa Mundial de la FIFA",
+        correctOption: "optionC"
     },
 
     { //6
