@@ -2836,8 +2836,7 @@ div.gallery-item div.desc {
 
 .game-options-container span {
   width: 45%;
-  height: 3rem;
-  border: 2px solid darkgray;
+  height: 5rem;
   border-radius: 20px;
   overflow: hidden;
 }
