@@ -1803,52 +1803,366 @@ const questions = [
         correctOption: "optionD"
     },
     //total 200
-
-        { // 1
-        question: " ",
-        optionA: " ",
-        optionB: " ",
-        optionC: " ",
-        optionD: " ",
-        correctOption: "optionB"
+    { //HAITI 1
+        question: "¿En cuántas Copas Mundiales de la FIFA ha clasificado Haití?",
+        optionA: "2",
+        optionB: "3",
+        optionC: "1",
+        optionD: "4",
+        correctOption: "optionA"
     },
 
-    { // 2
-        question: " ",
-        optionA: " ",
-        optionB: " ",
-        optionC: " ",
-        optionD: " ",
+    { //HAITI 2
+        question: "¿En qué mundiales ha clasificado Haití?",
+        optionA: "1954 y 2022",
+        optionB: "1998 y 2002",
+        optionC: "1974 y 2026",
+        optionD: "1950 y 1958 ",
+        correctOption: "optionC"
+    },
+
+    { //HAITI 3
+        question: "¿Cuál de estos no es un apodo para el equipo de Haití?",
+        optionA: "Les Grenadiers",
+        optionB: "Le Rouge et Bleu",
+        optionC: "Les Bicolores",
+        optionD: "La Sélection Mondial",
         correctOption: "optionD"
     },
 
-    { // 3
-        question: " ",
-        optionA: " ",
-        optionB: " ",
-        optionC: " ",
-        optionD: " ",
-        correctOption: "optionC"
-    },
-
-    { // 4
-        question: " ",
-        optionA: " ",
-        optionB: " ",
-        optionC: " ",
-        optionD: " ",
-        correctOption: "optionC"
-    },
-
-    { // 5
-        question: " ",
-        optionA: " ",
-        optionB: " ",
-        optionC: " ",
-        optionD: " ",
+    { //HAITI 4
+        question: "¿Quién es el capitán del equipo de Haití?",
+        optionA: "Johny Placide",
+        optionB: "Pierre Richard Bruny",
+        optionC: "Duckens Nazon",
+        optionD: "Sébastien Migné",
         correctOption: "optionA"
     },
-    //total 205
+
+    { //HAITI 5
+        question: "¿Quién es el director técnico del equipo de Haití?",
+        optionA: "Johny Placide",
+        optionB: "Pierre Richard Bruny",
+        optionC: "Duckens Nazon",
+        optionD: "Sébastien Migné",
+        correctOption: "optionD"
+    },
+    //total 205    
+    { //PANAMA 1
+        question: "¿En cuántos mundiales ha clasificado Panamá?",
+        optionA: "2",
+        optionB: "3",
+        optionC: "1",
+        optionD: "4",
+        correctOption: "optionA"
+    },
+
+    { //PANAMA 2
+        question: "¿Cuándo clasificó el equipo de Panamá para la Copa Mundial de la FIFA 2026?",
+        optionA: "Enero 2026",
+        optionB: "Diciembre 2025",
+        optionC: "Noviembre 2025",
+        optionD: "Octubre 2025 ",
+        correctOption: "optionC"
+    },
+
+    { //PANAMA 3
+        question: "¿En qué mundiales ha clasificado Panamá?",
+        optionA: "1954 y 2022",
+        optionB: "2018 y 2026",
+        optionC: "1974 y 2002",
+        optionD: "1950 y 1958",
+        correctOption: "optionB"
+    },
+
+    { //PANAMA 4
+        question: "¿Quién es el capitán del equipo de Panamá?",
+        optionA: "Aníbal Godoy",
+        optionB: "Luis Tejada",
+        optionC: "Blas Pérez",
+        optionD: "Gabriel Torres",
+        correctOption: "optionA"
+    },
+
+    { //PANAMA 5
+        question: "¿Quién es el director técnico del equipo de Panamá?",
+        optionA: "Aníbal Godoy",
+        optionB: "Luis Tejada",
+        optionC: "Blas Pérez",
+        optionD: "Thomas Christiansen",
+        correctOption: "optionD"
+    },
+    //total 210
+    { //TURQUIA 1
+        question: "¿Quién es el director técnico del equipo de Turquía?",
+        optionA: "Hakan Çalhanoğlu",
+        optionB: "Hakan Şükür",
+        optionC: "Rüştü Reçber",
+        optionD: "Vincenzo Montella",
+        correctOption: "optionD"
+    },
+
+    { //TURQUIA 2
+        question: "¿Quién es el capitán del equipo de Turquía?",
+        optionA: "Hakan Çalhanoğlu",
+        optionB: "Hakan Şükür",
+        optionC: "Rüştü Reçber",
+        optionD: "Vincenzo Montella",
+        correctOption: "optionA"
+    },
+
+    { //TURQUIA 3
+        question: "¿Cuál se considera la mejor Copa Mundial de FIFA para Turquía?",
+        optionA: "1982 FIFA World Cup España",
+        optionB: "1986 FIFA World Cup México",
+        optionC: "1930 FIFA World Cup Uruguay",
+        optionD: "2002 FIFA World Cup Corea-Japon",
+        correctOption: "optionD"
+    },
+
+    { //TURQUIA 4
+        question: "¿Cuál es la Copa Mundial de la FIFA más reciente en la que jugó Turquía?",
+        optionA: "1982 FIFA World Cup España",
+        optionB: "1986 FIFA World Cup México",
+        optionC: "1930 FIFA World Cup Uruguay",
+        optionD: "2002 FIFA World Cup Corea-Japon",
+        correctOption: "optionD"
+    },
+
+    { //TURQUIA 5
+        question: "¿Cuántas veces ha participado Turquía en la Copa Mundial de la FIFA?",
+        optionA: "3",
+        optionB: "2",
+        optionC: "4",
+        optionD: "5",
+        correctOption: "optionA"
+    },
+    //total 215
+    { //SUECIA 1
+        question: "¿Cuántas veces ha participado Suecia en la Copa Mundial de la FIFA? ",
+        optionA: "12",
+        optionB: "13",
+        optionC: "14",
+        optionD: "15",
+        correctOption: "optionB"
+    },
+
+    { //SUECIA 2
+        question: "¿Qué país fue anfitrión para la 6ta Copa Mundial de la FIFA?",
+        optionA: "Brasil",
+        optionB: "Mexico",
+        optionC: "Suecia",
+        optionD: "Rusia",
+        correctOption: "optionC"
+    },
+
+    { //SUECIA 3
+        question: "¿Cuál ha sido el mejor resultado clasificatorio de Suecia?",
+        optionA: "Cuartos de final",
+        optionB: "Octavos de final",
+        optionC: "Final",
+        optionD: "Semifinal",
+        correctOption: "optionA"
+    },
+
+    { //SUECIA 4
+        question: "¿En qué año tuvo lugar la Copa Mundial de la FIFA Suecia?",
+        optionA: "1934",
+        optionB: "1958 ",
+        optionC: "1998",
+        optionD: "1950",
+        correctOption: "optionB"
+    },
+
+    { //SUECIA 5
+        question: "¿Qué selección quedó emparejada con Japón, Países Bajos y Túnez en el Grupo F?",
+        optionA: "Brasil",
+        optionB: "Rusia",
+        optionC: "Irak",
+        optionD: "Suecia",
+        correctOption: "optionD"
+    },
+    //total 220
+    { //BOSNIA 1
+        question: "¿Cuál es el apodo oficial de la selección de Uzbekistán?",
+        optionA: "The Stars",
+        optionB: "Golden Lilies",
+        optionC: "White Stars",
+        optionD: "Golden Dragons",
+        correctOption: "optionB"
+    },
+
+    { //BOSNIA 2
+        question: "¿Qué selección quedó emparejada con Canadá, Catar y Suiza en el Grupo F?",
+        optionA: "Bosnia y Herzegovina",
+        optionB: "Rusia",
+        optionC: "Irak",
+        optionD: "Suecia",
+        correctOption: "optionA"
+    },
+
+    { //BOSNIA 3
+        question: "Este jugador es capitán, máximo goleador y tiene la mayor cantidad de partidos asistidos en el equipo de Bosnia y Herzegovina.",
+        optionA: "Sergej Barbarez",
+        optionB: "Edin Džeko",
+        optionC: "Zvjezdan Misimović",
+        optionD: "Muhamed Bešić",
+        correctOption: "optionB"
+    },
+
+    { //BOSNIA 4
+        question: "¿Cuántas veces ha participado Bosnia y Herzegovina en la Copa Mundial de la FIFA?",
+        optionA: "1",
+        optionB: "2",
+        optionC: "3",
+        optionD: "4",
+        correctOption: "optionB"
+    },
+
+    { //BOSNIA 5
+        question: "¿En qué mundiales ha clasificado Bosnia y Herzegovina?",
+        optionA: "1954 y 2022",
+        optionB: "2014 y 2026",
+        optionC: "1974 y 2002",
+        optionD: "1950 y 1958",
+        correctOption: "optionB"
+    },
+    //total 225
+    { //CHECA 1
+        question: "¿Cuál fue la primera participación de República Checa en la Copa Mundial de la FIFA?",
+        optionA: "Francia 1998",
+        optionB: "Italia 1934",
+        optionC: "Brasil 1950",
+        optionD: "Sudáfrica 2010",
+        correctOption: "optionB"
+    },
+
+    { //CHECA 2
+        question: "¿Cuál es la Copa Mundial de la FIFA más reciente en la que jugó República Checa?",
+        optionA: "Alemania 2006",
+        optionB: "Catar 2022",
+        optionC: "Sudáfrica 2010",
+        optionD: "Rusia 2018",
+        correctOption: "optionA"
+    },
+
+    { //CHECA 3
+        question: "¿Qué selección quedó emparejada con México, Corea del Sur y Sudáfrica en el Grupo A?",
+        optionA: "República Checa",
+        optionB: "Rusia",
+        optionC: "Catar",
+        optionD: "Suecia",
+        correctOption: "optionA"
+    },
+
+    { //CHECA 4
+        question: "¿Qué equipo ganó 3 - 0 contra Estados Unidos en la Copa Mundial de Alemania 2006?",
+        optionA: "República Checa",
+        optionB: "Rusia",
+        optionC: "Catar",
+        optionD: "Suecia",
+        correctOption: "optionC"
+    },
+
+    { //CHECA 5
+        question: "¿Quién es el director técnico del equipo de Turquía?",
+        optionA: "Tomáš Skuhravý",
+        optionB: "Josef Masopust",
+        optionC: "Oldřich Nejedlý",
+        optionD: "Miroslav Koubek",
+        correctOption: "optionD"
+    },
+    //total 230
+    { //CONGO 1
+        question: "¿Cuál fue la primera participación de R.D. del Congo en la Copa Mundial de la FIFA?",
+        optionA: "Suiza 1954",
+        optionB: "Brasil 1950",
+        optionC: "Alemania 1974",
+        optionD: "España 1982",
+        correctOption: "optionC"
+    },
+
+    { //CONGO 2
+        question: "¿Cuál es la Copa Mundial de la FIFA más reciente en la que jugó R.D. del Congo?",
+        optionA: "Suiza 1954",
+        optionB: "Brasil 1950",
+        optionC: "Alemania 1974",
+        optionD: "España 1982",
+        correctOption: "optionD"
+    },
+
+    { //CONGO 3
+        question: "¿Cuánto tiempo pasó R.D. del Congo sin participar en una Copa Mundial de la FIFA?",
+        optionA: "52 años",
+        optionB: "56 años",
+        optionC: "48 años",
+        optionD: "62 años",
+        correctOption: "optionA"
+    },
+
+    { //CONGO 4
+        question: "¿Cómo terminó el partido contra Jamaica que logró clasificar a R.D. del Congo para la Copa Mundial de la FIFA 2026?",
+        optionA: "0 - 0",
+        optionB: "1 - 0",
+        optionC: "2 - 1",
+        optionD: "4 - 2",
+        correctOption: "optionB"
+    },
+
+    { //CONGO 5
+        question: "¿Quién dio el gol defensor que definió la clasificación de R.D. del Congo en la Copa Mundial de la FIFA 2026?",
+        optionA: "Axel Tuanzebe",
+        optionB: "Chancel Mbemba",
+        optionC: "Dieumerci Mbokani",
+        optionD: "Brian Bayeye",
+        correctOption: "optionA"
+    },
+    //total 235
+    { //IRAK 1
+        question: "¿Cuál fue la primera participación de Irak en la Copa Mundial de la FIFA?",
+        optionA: "Suiza 1954",
+        optionB: "Brasil 1950",
+        optionC: "Mexico 1986",
+        optionD: "España 1982",
+        correctOption: "optionC"
+    },
+
+    { //IRAK 2
+        question: "¿Cuál es la Copa Mundial de la FIFA más reciente en la que jugó Irak ?",
+        optionA: "Suiza 1954",
+        optionB: "Brasil 1950",
+        optionC: "Mexico 1986",
+        optionD: "España 1982",
+        correctOption: "optionC"
+    },
+
+    { //IRAK 3
+        question: "¿Cuánto tiempo pasó Irak sin participar en una Copa Mundial de la FIFA?",
+        optionA: "40 años",
+        optionB: "46 años",
+        optionC: "48 años",
+        optionD: "52 años",
+        correctOption: "optionA"
+    },
+
+    { //IRAK 4
+        question: "¿Cuántas veces ha participado Irak en la Copa Mundial de la FIFA, incluyendo 2026?",
+        optionA: "3",
+        optionB: "4",
+        optionC: "2",
+        optionD: "5",
+        correctOption: "optionC"
+    },
+
+    { //IRAK 5
+        question: "¿Quién es el director técnico del equipo de Irak?",
+        optionA: "Graham Arnold",
+        optionB: "Jalal Hassan",
+        optionC: "Younis Mahmoud",
+        optionD: "Hussein Saeed",
+        correctOption: "optionA"
+    },
+    //total 240
 ]
 
 
