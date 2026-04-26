@@ -876,7 +876,7 @@ const questions = [
 
     { //ARGELIA 3
         question: "¿Quién es el capitán del equipo de Argelia?",
-        optionA: "Vladimir Petković", 
+        optionA: "Vladimir Petković",
         optionB: "Islam Slimani",
         optionC: "Riyad Mahrez",
         optionD: "Aïssa Mandi",
@@ -946,142 +946,865 @@ const questions = [
         correctOption: "optionD"
     },
     //total 105
-    { //  1
-        question: " ",
-        optionA: " ",
-        optionB: " ",
-        optionC: " ",
-        optionD: " ",
+    { //CABO VERDE 1
+        question: "¿Cuántas participaciones tiene Cabo Verde en la Copa Mundial de la FIFA?",
+        optionA: "1",
+        optionB: "2",
+        optionC: "3",
+        optionD: "Ninguna",
+        correctOption: "optionA"
+    },
+
+    { //CABO VERDE 2
+        question: "¿Cuál fue la primera Copa Mundial en la que Cabo Verde calificó?",
+        optionA: "Catar 2022",
+        optionB: "Canada, Mexico & United States 2026",
+        optionC: "Brazil 2014",
+        optionD: "Rusia 2018",
         correctOption: "optionB"
     },
 
-    { //  2
-        question: " ",
-        optionA: " ",
-        optionB: " ",
-        optionC: " ",
-        optionD: " ",
-        correctOption: "optionD"
-    },
-
-    { //  3
-        question: " ",
-        optionA: " ",
-        optionB: " ",
-        optionC: " ",
-        optionD: " ",
+    { //CABO VERDE 3
+        question: "¿Cómo terminó el partido contra Esuatini que logró clasificar a Cabo Verde para la Copa Mundial de la FIFA 2026?",
+        optionA: "3 - 2",
+        optionB: "1 - 2",
+        optionC: "3 - 0",
+        optionD: "2 - 1",
         correctOption: "optionC"
     },
 
-    { //  4
-        question: " ",
-        optionA: " ",
-        optionB: " ",
-        optionC: " ",
-        optionD: " ",
-        correctOption: "optionC"
+    { //CABO VERDE 4
+        question: "¿Quién es el máximo goleador del equipo de Cabo Verde?",
+        optionA: "Bupista",
+        optionB: "Ryan Mendes",
+        optionC: "Rui Águas",
+        optionD: "Lúcio Antunes",
+        correctOption: "optionB"
     },
 
-    { //  5
-        question: " ",
-        optionA: " ",
-        optionB: " ",
-        optionC: " ",
-        optionD: " ",
-        correctOption: "optionA"
+    { //CABO VERDE 5
+        question: "¿Qué selección quedó emparejada con España, Uruguay y Arabia Saudita en el Grupo H?",
+        optionA: "Portugal",
+        optionB: "Cabo Verde",
+        optionC: "Jordania",
+        optionD: "Sudáfrica",
+        correctOption: "optionB"
     },
     //total 110
-    { //  1
-        question: " ",
-        optionA: " ",
-        optionB: " ",
-        optionC: " ",
-        optionD: " ",
+    { //SUDAFRICA 1
+        question: "¿Cuál es la Copa Mundial de la FIFA más reciente en la que jugó Sudáfrica?",
+        optionA: "Catar 2022",
+        optionB: "Sudáfrica 2010",
+        optionC: "Brasil 2014",
+        optionD: "Rusia 2018",
         correctOption: "optionB"
     },
 
-    { //  2
-        question: " ",
-        optionA: " ",
-        optionB: " ",
-        optionC: " ",
-        optionD: " ",
+    { //SUDAFRICA 2
+        question: "¿Cuántas participaciones tiene Sudáfrica en la Copa Mundial de la FIFA?",
+        optionA: "3",
+        optionB: "2 ",
+        optionC: "5",
+        optionD: "4",
         correctOption: "optionD"
     },
 
-    { //  3
-        question: " ",
-        optionA: " ",
-        optionB: " ",
-        optionC: " ",
-        optionD: " ",
-        correctOption: "optionC"
-    },
-
-    { //  4
-        question: " ",
-        optionA: " ",
-        optionB: " ",
-        optionC: " ",
-        optionD: " ",
-        correctOption: "optionC"
-    },
-
-    { //  5
-        question: " ",
-        optionA: " ",
-        optionB: " ",
-        optionC: " ",
-        optionD: " ",
+    { //SUDAFRICA 3
+        question: "¿Cuánto tiempo pasó Sudáfrica sin participar en una Copa Mundial de la FIFA?",
+        optionA: "16 años",
+        optionB: "12 años",
+        optionC: "24 años",
+        optionD: "8 años",
         correctOption: "optionA"
+    },
+
+    { //SUDAFRICA 4
+        question: "¿En qué año participó Sudáfrica por primera vez en una Copa Mundial de la FIFA?",
+        optionA: "Sudáfrica 2010",
+        optionB: "Brasil 2014",
+        optionC: "Francia 1998",
+        optionD: "Estados Unidos 1994",
+        correctOption: "optionC"
+    },
+
+    { //SUDAFRICA 5
+        question: "¿Cuál es el apodo oficial de la selección de Costa de Marfil?",
+        optionA: "Sudáfricanos",
+        optionB: "Bafana Bafana",
+        optionC: "The Bafanas",
+        optionD: "SAFAs",
+        correctOption: "optionB"
     },
     //total 115
-    { //  1
-        question: " ",
-        optionA: " ",
-        optionB: " ",
-        optionC: " ",
-        optionD: " ",
+    { //CATAR 1
+        question: "¿Qué país fue anfitrión para la 22va Copa Mundial de la FIFA?",
+        optionA: "Francia",
+        optionB: "Brasil",
+        optionC: "Catar",
+        optionD: "Rusia",
+        correctOption: "optionC"
+    },
+
+    { //CATAR 2
+        question: "¿Cuántas participaciones tiene Catar en la Copa Mundial de la FIFA?",
+        optionA: "3",
+        optionB: "2",
+        optionC: "5",
+        optionD: "4",
         correctOption: "optionB"
     },
 
-    { //  2
-        question: " ",
-        optionA: " ",
-        optionB: " ",
-        optionC: " ",
-        optionD: " ",
+    { //CATAR 3
+        question: "¿En qué año participó Catar por primera vez en una Copa Mundial de la FIFA?",
+        optionA: "1998",
+        optionB: "2002",
+        optionC: "2006",
+        optionD: "2022",
         correctOption: "optionD"
     },
 
-    { //  3
-        question: " ",
-        optionA: " ",
-        optionB: " ",
-        optionC: " ",
-        optionD: " ",
-        correctOption: "optionC"
-    },
-
-    { //  4
-        question: " ",
-        optionA: " ",
-        optionB: " ",
-        optionC: " ",
-        optionD: " ",
-        correctOption: "optionC"
-    },
-
-    { //  5
-        question: " ",
-        optionA: " ",
-        optionB: " ",
-        optionC: " ",
-        optionD: " ",
+    { //CATAR 4
+        question: "¿Cómo terminó el partido contra Emiratos Árabes Unidos que logró clasificar a Catar para la Copa Mundial de la FIFA 2026?",
+        optionA: "2 - 1",
+        optionB: "3 - 1",
+        optionC: "3 - 2",
+        optionD: "2 - 2",
         correctOption: "optionA"
+    },
+
+    { //CATAR 5
+        question: "¿Qué selección quedó emparejada con Bosnia y Herzegovina, Canadá y Suiza en el Grupo B?",
+        optionA: "Marruecos",
+        optionB: "Catar",
+        optionC: "Haiti",
+        optionD: "Sudáfrica",
+        correctOption: "optionC"
     },
     //total 120
-    { //  1
+    { //INGLATERRA 1
+        question: "¿En qué año ganó Inglaterra su único título de la Copa Mundial de la FIFA?",
+        optionA: "1958",
+        optionB: "1966",
+        optionC: "1974",
+        optionD: "2002",
+        correctOption: "optionB"
+    },
+
+    { //INGLATERRA 2
+        question: "¿Quién fue el entrenador de Inglaterra cuando ganó el Mundial?",
+        optionA: "Bobby Brown",
+        optionB: "John Stephens",
+        optionC: "Gareth Southgate",
+        optionD: "Alf Ramsey",
+        correctOption: "optionD"
+    },
+
+    { //INGLATERRA 3
+        question: "¿En qué estadio se jugó la final del Mundial que ganó Inglaterra?",
+        optionA: "Old Trafford",
+        optionB: "Wembley",
+        optionC: "Anfield",
+        optionD: "Stanford Bridge",
+        correctOption: "optionB"
+    },
+
+    { //INGLATERRA 4
+        question: "¿Contra qué selección jugó Inglaterra en la final de 1966?",
+        optionA: "Brasil",
+        optionB: "Francia",
+        optionC: "Argentina",
+        optionD: "Alemania",
+        correctOption: "optionD"
+    },
+
+    { //INGLATERRA 5
+        question: "¿Quién anotó el gol ganador para Inglaterra en la final de 1966?",
+        optionA: "Geoff Hurst",
+        optionB: "Michael Owen",
+        optionC: "Gary Lineker",
+        optionD: "Bobby Charlton",
+        correctOption: "optionA"
+    },
+    //total 125   
+    { //COSTA 1
+        question: "¿Cuántas participaciones tiene Costa de Marfil en la Copa Mundial de la FIFA?",
+        optionA: "3",
+        optionB: "2",
+        optionC: "5",
+        optionD: "4",
+        correctOption: "optionD"
+    },
+
+    { //COSTA 2
+        question: "¿Quién es el capitán del equipo de Costa de Marfil?",
+        optionA: "Emerse Faé",
+        optionB: "Franck Kessié",
+        optionC: "Didier Zokora",
+        optionD: "Didier Drogba",
+        correctOption: "optionB"
+    },
+
+    { //COSTA 3
+        question: "¿Quién es el director técnico del equipo de Costa de Marfil?",
+        optionA: "Emerse Faé",
+        optionB: "Franck Kessié",
+        optionC: "Didier Zokora",
+        optionD: "Didier Drogba",
+        correctOption: "optionA"
+    },
+
+    { //COSTA 4
+        question: "¿En qué año participó Costa de Marfil por primera vez en una Copa Mundial de la FIFA?",
+        optionA: "2002",
+        optionB: "1998",
+        optionC: "2006",
+        optionD: "1994",
+        correctOption: "optionC"
+    },
+
+    { //COSTA 5
+        question: "¿Cuál es el apodo oficial de la selección de Costa de Marfil?",
+        optionA: "Les Éléphants",
+        optionB: "The Ivory Coast",
+        optionC: "No tienen apodo",
+        optionD: "The African Elephants",
+        correctOption: "optionA"
+    },
+    //total 130   
+    { //SENEGAL 1
+        question: "¿Cuántas participaciones tiene Senegal en la Copa Mundial de la FIFA?",
+        optionA: "3",
+        optionB: "2",
+        optionC: "1",
+        optionD: "4",
+        correctOption: "optionD"
+    },
+
+    { //SENEGAL 2
+        question: "¿Quién es el capitán del equipo de Senegal?",
+        optionA: "Pape Thiaw",
+        optionB: "Kalidou Koulibaly",
+        optionC: "Idrissa Gueye",
+        optionD: "Sadio Mané",
+        correctOption: "optionB"
+    },
+
+    { //SENEGAL 3
+        question: "¿Quién es el director técnico del equipo de Senegal?",
+        optionA: "Pape Thiaw",
+        optionB: "Kalidou Koulibaly",
+        optionC: "Idrissa Gueye",
+        optionD: "Sadio Mané",
+        correctOption: "optionA"
+    },
+
+    { //SENEGAL 4
+        question: "¿En qué año participó Senegal por primera vez en una Copa Mundial de la FIFA?",
+        optionA: "2002",
+        optionB: "1998",
+        optionC: "2006",
+        optionD: "1994",
+        correctOption: "optionA"
+    },
+
+    { //SENEGAL 5
+        question: "¿Cuál es el apodo oficial de la selección de Senegal?",
+        optionA: "Lions of Teranga",
+        optionB: "Tigers of Teranga",
+        optionC: "The Teranga Men",
+        optionD: "The CAF",
+        correctOption: "optionA"
+    },
+    //total 135
+    { //ARABIA 1
+        question: "¿En qué año debutó Arabia Saudita en la Copa Mundial de la FIFA?",
+        optionA: "1992",
+        optionB: "1994",
+        optionC: "2006",
+        optionD: "2012",
+        correctOption: "optionB"
+    },
+
+    { //ARABIA 2
+        question: "¿Qué jugador saudí anotó un famoso gol contra Bélgica en 1994 tras una carrera de 60 metros?",
+        optionA: "Sami Al-Jaber ",
+        optionB: "Yasser Al-Qahtani ",
+        optionC: "Saeed Al-Owairan ",
+        optionD: "Majed Abdullah",
+        correctOption: "optionC"
+    },
+
+    { //ARABIA 3
+        question: "¿Qué selección derrotó a Arabia Saudita 8-0 en el Mundial de 2002?",
+        optionA: "Alemania",
+        optionB: "México",
+        optionC: "Estados Unidos",
+        optionD: "Corea del Sur",
+        correctOption: "optionA"
+    },
+
+    { //ARABIA 4
+        question: "¿Qué victoria de Arabia Saudita sorprendió a todos en 2022?",
+        optionA: "Contra Francia",
+        optionB: "Contra Portugal",
+        optionC: "Contra Argentina",
+        optionD: "Contra Alemania",
+        correctOption: "optionC"
+    },
+
+    { //ARABIA 5
+        question: "¿Cuál ha sido el mejor resultado clasificatorio de Arabia Saudita?",
+        optionA: "Octavos de final",
+        optionB: "Cuartos de final",
+        optionC: "Final",
+        optionD: "Semifinal",
+        correctOption: "optionA"
+    },
+    //total 140
+    { //FRANCIA 1
+        question: "¿Quién es el máximo goleador de todos los tiempos para la selección de fútbol de Francia?",
+        optionA: "Thierry Henry",
+        optionB: "Michel Platini",
+        optionC: "Zinedine Zidane",
+        optionD: "Karim Benzema",
+        correctOption: "optionA"
+    },
+
+    { //FRANCIA 2
+        question: "¿En qué año ganó Francia su primera Copa Mundial de la FIFA?",
+        optionA: "1994",
+        optionB: "1998",
+        optionC: "2002",
+        optionD: "2006",
+        correctOption: "optionB"
+    },
+
+    { //FRANCIA 3
+        question: "¿Cuál de estos es el estadio de la selección francesa?",
+        optionA: "Stade de France",
+        optionB: "Parque de los Príncipes",
+        optionC: "Vélódromo de Stade",
+        optionD: "Stade Geoffroy-Guichard",
+        correctOption: "optionA"
+    },
+
+    { //FRANCIA 4
+        question: "¿Quién fue el entrenador de la selección francesa durante la victoria en la Copa Mundial 2018?",
+        optionA: "Didier Deschamps",
+        optionB: "Raymond Domenech",
+        optionC: "Laurent Blanc",
+        optionD: "Michel Hidalgo",
+        correctOption: "optionA"
+    },
+
+    { //FRANCIA 5
+        question: "¿Qué jugador marcó el gol de la victoria en la final de la Copa del Mundo de 1998?",
+        optionA: "Thierry Henry",
+        optionB: "Michel Platini",
+        optionC: "Zinedine Zidane",
+        optionD: "Karim Benzema",
+        correctOption: "optionC"
+    },
+    //total 145
+    { //CROACIA 1
+        question: "¿En qué año terminó en segundo lugar el equipo de Croacia?",
+        optionA: "2018",
+        optionB: "2014",
+        optionC: "2002",
+        optionD: "1998",
+        correctOption: "optionA"
+    },
+
+    { //CROACIA 2
+        question: "¿Cuántas participaciones tiene Croacia en la Copa Mundial de la FIFA?",
+        optionA: "5",
+        optionB: "6",
+        optionC: "8",
+        optionD: "7",
+        correctOption: "optionD"
+    },
+
+    { //CROACIA 3
+        question: "¿Cuál fue la primera participación de Croacia en la Copa Mundial de la FIFA?",
+        optionA: "Francia 1998",
+        optionB: "Catar 2022",
+        optionC: "Corea-Japón 2002",
+        optionD: "Rusia 2016",
+        correctOption: "optionA"
+    },
+
+    { //CROACIA 4
+        question: "¿En qué lugar terminó Croacia en la Copa Mundial de la FIFA 2022?",
+        optionA: "Cuarto",
+        optionB: "Quinto",
+        optionC: "Tercero",
+        optionD: "Sexto",
+        correctOption: "optionC"
+    },
+
+    { //CROACIA 5
+        question: "¿Quién es el director técnico del equipo de Croacia?",
+        optionA: "Luka Modrić",
+        optionB: "Davor Šuker",
+        optionC: "Zlatko Dalić",
+        optionD: "Ivo Josipović",
+        correctOption: "optionC"
+    },
+    //total 150
+    { //PORTUGAL 1
+        question: "Este jugador es capitán, máximo goleador y tiene la mayor cantidad de partidos asistidos en el equipo de Portugal.",
+        optionA: "Eusébio da Silva Ferreira",
+        optionB: "Cristiano Ronaldo",
+        optionC: "Cédric",
+        optionD: "Adrien Silva",
+        correctOption: "optionB"
+    },
+
+    { //PORTUGAL 2
+        question: "Se convirtió en el primer jugador de la historia en anotar en ocho grandes torneos en forma consecutiva:",
+        optionA: "Eusébio da Silva Ferreira",
+        optionB: "Cristiano Ronaldo",
+        optionC: "Cédric",
+        optionD: "Adrien Silva",
+        correctOption: "optionB"
+    },
+
+    { //PORTUGAL 3
+        question: "Esta selección ha participado consecutivamente en 7 Copas Mundiales de la FIFA, pero su máxima posición ha sido tercer lugar:",
+        optionA: "Francia",
+        optionB: "Portugal",
+        optionC: "México",
+        optionD: "Japón",
+        correctOption: "optionb"
+    },
+
+    { //PORTUGAL 4
+        question: "¿Quién fue el entrenador de la selección de Portugal durante la Copa Mundial de la FIFA 2022?",
+        optionA: "Fernando Santos",
+        optionB: "Roberto Martínez",
+        optionC: "Paulo Bento",
+        optionD: "Carlos Queiroz",
+        correctOption: "optionA"
+    },
+
+    { //PORTUGAL 5
+        question: "¿Qué selección quedó emparejada con Colombia, Uzbekistán y RD Congo en el Grupo K?",
+        optionA: "Japón",
+        optionB: "Ghana",
+        optionC: "Inglaterra",
+        optionD: "Portugal",
+        correctOption: "optionD"
+    },
+    //total 155    
+    { //NORUEGA 1
+        question: "¿Cuánto tiempo pasó Noruega sin participar en una Copa Mundial de la FIFA?",
+        optionA: "28 años",
+        optionB: "30 años",
+        optionC: "18 años",
+        optionD: "26 años",
+        correctOption: "optionA"
+    },
+
+    { //NORUEGA 2
+        question: "¿Cuál es la Copa Mundial de la FIFA más reciente en la que jugó Noruega?",
+        optionA: "Catar 2022",
+        optionB: "Brasil 2014",
+        optionC: "Francia 1998",
+        optionD: "Corea-Japon 2022",
+        correctOption: "optionC"
+    },
+
+    { //NORUEGA 3
+        question: "¿Cuántas participaciones tiene Noruega en la Copa Mundial de la FIFA?",
+        optionA: "4",
+        optionB: "5",
+        optionC: "2",
+        optionD: "3",
+        correctOption: "optionA"
+    },
+
+    { //NORUEGA 4
+        question: "¿Cuál fue la primera participación de Noruega en la Copa Mundial de la FIFA?",
+        optionA: "Francia 1938",
+        optionB: "Uruguay 1930",
+        optionC: "Suiza 1954",
+        optionD: "Brasil 1950",
+        correctOption: "optionA"
+    },
+
+    { //NORUEGA 5
+        question: "¿Qué equipo nunca ha perdido contra Brasil en la Copa Mundial de la FIFA?",
+        optionA: "Italia",
+        optionB: "Noruega",
+        optionC: "Francia",
+        optionD: "Senegal",
+        correctOption: "optionB"
+    },
+    //total 160   
+    { //ALEMANIA 1
+        question: "¿Cuántos títulos de la Copa Mundial de la FIFA ha ganado Alemania?",
+        optionA: "2",
+        optionB: "3",
+        optionC: "4",
+        optionD: "5",
+        correctOption: "optionC"
+    },
+
+    { //ALEMANIA 2
+        question: "¿En qué año ganó Alemania su primer mundial?",
+        optionA: "1954",
+        optionB: "1958",
+        optionC: "1986",
+        optionD: "1990",
+        correctOption: "optionA"
+    },
+
+    { //ALEMANIA 3
+        question: "¿Qué jugador de Alemania es conocido por ser el máximo goleador histórico de los Mundiales?",
+        optionA: "Gerd Müller",
+        optionB: "Thomas Müller",
+        optionC: "Jürgen Kilnsmann",
+        optionD: "Miroslav Klose",
+        correctOption: "optionD"
+    },
+
+    { //ALEMANIA 4
+        question: "¿En qué país ganó Alemania su cuarto título mundial en 2014?",
+        optionA: "Sudáfrica",
+        optionB: "Brasil",
+        optionC: "Rusia",
+        optionD: "Italia",
+        correctOption: "optionB"
+    },
+
+    { //ALEMANIA 5
+        question: "¿Contra qué selección jugó Alemania la final del Mundial de 2014?",
+        optionA: "España",
+        optionB: "Inglaterra",
+        optionC: "Argentina",
+        optionD: "Francia",
+        correctOption: "optionC"
+    },
+    //total 165   
+    { //PAISES 1
+        question: "¿En cuántas finales ha participado Países Bajos?",
+        optionA: "2",
+        optionB: "1",
+        optionC: "4",
+        optionD: "3",
+        correctOption: "optionD"
+    },
+
+    { //PAISES 2
+        question: "¿En qué año alcanzó Países Bajos su primera final mundialista?",
+        optionA: "1966",
+        optionB: "1974",
+        optionC: "2002",
+        optionD: "1990",
+        correctOption: "optionB"
+    },
+
+    { //PAISES 3
+        question: "¿Qué selección derrotó a Países Bajos en la final de 1974?",
+        optionA: "Brasil",
+        optionB: "Alemania",
+        optionC: "Italia",
+        optionD: "Argentina",
+        correctOption: "optionB"
+    },
+
+    { //PAISES 4
+        question: "¿En qué mundial Países Bajos perdió la final contra España?",
+        optionA: "2002",
+        optionB: "2006",
+        optionC: "2010",
+        optionD: "2014",
+        correctOption: "optionC"
+    },
+
+    { //PAISES 5
+        question: "¿Quién es considerado el máximo goleador de Países Bajos?",
+        optionA: "Robin van Persie",
+        optionB: "Ruud van Nistelrooy",
+        optionC: "Dennis Bergkamp",
+        optionD: "Arjen Robben",
+        correctOption: "optionA"
+    },
+    //total 170
+
+    { //BELGICA 1
+        question: "¿Cuál ha sido el mejor resultado de Bélgica en una Copa Mundial de la FIFA?",
+        optionA: "Campeón",
+        optionB: "Subcampeón",
+        optionC: "Semifinalista",
+        optionD: "Cuartos de final",
+        correctOption: "optionC"
+    },
+
+    { // 2
+        question: "¿En qué Mundial logró Bélgica su mejor resultado?",
+        optionA: "1990",
+        optionB: "2010",
+        optionC: "2006",
+        optionD: "2018",
+        correctOption: "optionD"
+    },
+
+    { // 3
+        question: "¿Contra qué selección venció Bélgica para quedarse con el tercer lugar en 2018?",
+        optionA: "Francia",
+        optionB: "Croacia",
+        optionC: "Países Bajos",
+        optionD: "Inglaterra",
+        correctOption: "optionD"
+    },
+
+    { // 4
+        question: "¿Qué jugador belga fue capitán en Rusia 2018?",
+        optionA: "Eden Hazard",
+        optionB: "Kevin De Bruyne",
+        optionC: "Romelu Lukaku",
+        optionD: "Vincent Kompany",
+        correctOption: "optionA"
+    },
+
+    { // 5
+        question: "¿Cuándo fué la primera participación de Bélgica en una Copa Mundial de la FIFA?",
+        optionA: "1930",
+        optionB: "1950",
+        optionC: "1966",
+        optionD: "1974",
+        correctOption: "optionA"
+    },
+    //total 175
+    { //AUSTRIA 1
+        question: "¿Cuál fue el mejor resultado de la selección de Austria en la Copa Mundial de la FIFA?",
+        optionA: "Campeón",
+        optionB: "Cuartos de final",
+        optionC: "Tercer lugar",
+        optionD: "Subcampeón",
+        correctOption: "optionC"
+    },
+
+    { //AUSTRIA 2
+        question: "¿En qué Mundial logró Austria el tercer lugar?",
+        optionA: "1954",
+        optionB: "1930",
+        optionC: "1942",
+        optionD: "1950",
+        correctOption: "optionA"
+    },
+
+    { //AUSTRIA 3
+        question: "¿Cuál fué la última participación de la selección de Austria en un Mundial?",
+        optionA: "1998",
+        optionB: "2022",
+        optionC: "2018",
+        optionD: "2002",
+        correctOption: "optionA"
+    },
+
+    { //AUSTRIA 4
+        question: "¿En cuántos mundiales ha participado Austria?",
+        optionA: "8",
+        optionB: "6",
+        optionC: "7",
+        optionD: "5",
+        correctOption: "optionA"
+    },
+
+    { //AUSTRIA 5
+        question: "¿Qué jugador de la selección de Austria se convertiría en entrenador?",
+        optionA: "Herbert Prohaska",
+        optionB: "Bruno Pezzey",
+        optionC: "Erich Obermayer",
+        optionD: "Friedrich Koncilia",
+        correctOption: "optionA"
+    },
+    //total 180
+    { //SUIZA 1
+        question: "¿Cuál ha sido el mejor resultado de la selección de Suiza?",
+        optionA: "Semifinal",
+        optionB: "Cuartos de final ",
+        optionC: "Octavos de final",
+        optionD: "Final",
+        correctOption: "optionB"
+    },
+
+    { //SUIZA 2
+        question: "¿Cuándo fué la primera participación de Suiza en la Copa Mundial de la FIFA?",
+        optionA: "1934",
+        optionB: "1930",
+        optionC: "1948",
+        optionD: "1942",
+        correctOption: "optionA"
+    },
+
+    { //SUIZA 3
+        question: "¿Cuántas veces ha participado Suiza en un Mundial?",
+        optionA: "12",
+        optionB: "14",
+        optionC: "13",
+        optionD: "10",
+        correctOption: "optionC"
+    },
+
+    { //SUIZA 4
+        question: "¿Cuántas victorias lleva la selección de Suiza?",
+        optionA: "14",
+        optionB: "8",
+        optionC: "19",
+        optionD: "10",
+        correctOption: "optionA"
+    },
+
+    { //SUIZA 5
+        question: "¿Cuándo fué la última participación de Suiza en la Copa Mundial de la FIFA?",
+        optionA: "2022",
+        optionB: "2018",
+        optionC: "2014",
+        optionD: "2010",
+        correctOption: "optionA"
+    },
+    //total 185
+    { //ESPAÑA 1
+        question: "¿En cuántas Copas Mundiales de la FIFA ha clasificado España?",
+        optionA: "20",
+        optionB: "19",
+        optionC: "18",
+        optionD: "17",
+        correctOption: "optiond"
+    },
+
+    { //ESPAÑA 2
+        question: "¿Qué país fue anfitrión para la 12va Copa Mundial de la FIFA?",
+        optionA: "Sudáfrica",
+        optionB: "Italia",
+        optionC: "Argentina",
+        optionD: "España",
+        correctOption: "optionD"
+    },
+
+    { //ESPAÑA 3
+        question: "¿Quién es el máximo goleador en el equipo de España, con 59 goles en total?",
+        optionA: "David Villa",
+        optionB: "Luis de la Fuente",
+        optionC: "Álvaro Morata",
+        optionD: "Sergio Ramos",
+        correctOption: "optionA"
+    },
+
+    { //ESPAÑA 4
+        question: "¿En cuántas Copas Mundiales de la FIFA no clasificó España?",
+        optionA: "4",
+        optionB: "5",
+        optionC: "6",
+        optionD: "7",
+        correctOption: "optionC"
+    },
+
+    { //ESPAÑA 5
+        question: "¿Quién es el capitán del equipo de España?",
+        optionA: "David Villa",
+        optionB: "Luis de la Fuente",
+        optionC: "Álvaro Morata",
+        optionD: "Sergio Ramos",
+        correctOption: "optionC"
+    },
+    //total 190
+    { //ESCOCIA 1
+        question: "¿Qué selección quedó emparejada con Brasil, Marruecos y Haití en el Grupo C?",
+        optionA: "Cabo Verde",
+        optionB: "Curazao",
+        optionC: "Escocia",
+        optionD: "Japón",
+        correctOption: "optionC"
+    },
+
+    { //ESCOCIA 2
+        question: "¿Quién es el capitán del equipo de Escocia?",
+        optionA: "Steve Clarke",
+        optionB: "Andy Robertson",
+        optionC: "Kenny Dalglish",
+        optionD: "Denis Law",
+        correctOption: "optionC"
+    },
+
+    { //ESCOCIA 3
+        question: "¿Quién es el director técnico del equipo de Escocia?",
+        optionA: "Steve Clarke",
+        optionB: "Andy Robertson",
+        optionC: "Kenny Dalglish",
+        optionD: "Denis Law",
+        correctOption: "optionA"
+    },
+
+    { //ESCOCIA 4
+        question: "¿Cuál fue la primera participación de Escocia en la Copa Mundial de la FIFA?",
+        optionA: "Francia 1998",
+        optionB: "Suiza 1954",
+        optionC: "Brasil 1950",
+        optionD: "Sudáfrica 2010",
+        correctOption: "optionB"
+    },
+
+    { //ESCOCIA 5
+        question: "¿Cuál es la Copa Mundial de la FIFA más reciente en la que jugó Escocia?",
+        optionA: "Francia 1998",
+        optionB: "Suiza 1954",
+        optionC: "Brasil 1950",
+        optionD: "Sudáfrica 2010",
+        correctOption: "optionA"
+    },
+    //total 195
+
+    { //CURAZAO 1
+        question: "¿En cuántas Copas Mundiales de la FIFA  ha clasificado Curazao?",
+        optionA: "1",
+        optionB: "2",
+        optionC: "3",
+        optionD: "4",
+        correctOption: "optionA"
+    },
+
+    { //CURAZAO 2
+        question: "¿En qué mundiales ha clasificado Curazao?",
+        optionA: "2022",
+        optionB: "2026",
+        optionC: "2018 y 2022",
+        optionD: "2022 y 2026",
+        correctOption: "optionB"
+    },
+
+    { //CURAZAO 3
+        question: "Esta selección se unió a Haití y Panamá como los únicos representantes de Concacaf",
+        optionA: "Cabo Verde",
+        optionB: "Costa de Marfil",
+        optionC: "Uruguay",
+        optionD: "Curazao",
+        correctOption: "optionD"
+    },
+
+    { //CURAZAO 4
+        question: "¿Cómo terminó el partido contra Jamaica que logró clasificar a Curazao para la Copa Mundial de la FIFA 2026?",
+        optionA: "0 - 0",
+        optionB: "1 - 0",
+        optionC: "2 - 1",
+        optionD: "4 - 2",
+        correctOption: "optionA"
+    },
+
+    { //CURAZAO 5
+        question: "¿Cual es el país más pequeño que ha clasificado para la Copa Mundial de la FIFA?",
+        optionA: "Haití",
+        optionB: "Jamaica",
+        optionC: "Cabo Verde",
+        optionD: "Curazao",
+        correctOption: "optionD"
+    },
+    //total 200
+
+        { // 1
         question: " ",
         optionA: " ",
         optionB: " ",
@@ -1090,7 +1813,7 @@ const questions = [
         correctOption: "optionB"
     },
 
-    { //  2
+    { // 2
         question: " ",
         optionA: " ",
         optionB: " ",
@@ -1099,7 +1822,7 @@ const questions = [
         correctOption: "optionD"
     },
 
-    { //  3
+    { // 3
         question: " ",
         optionA: " ",
         optionB: " ",
@@ -1108,7 +1831,7 @@ const questions = [
         correctOption: "optionC"
     },
 
-    { //  4
+    { // 4
         question: " ",
         optionA: " ",
         optionB: " ",
@@ -1117,7 +1840,7 @@ const questions = [
         correctOption: "optionC"
     },
 
-    { //  5
+    { // 5
         question: " ",
         optionA: " ",
         optionB: " ",
@@ -1125,7 +1848,7 @@ const questions = [
         optionD: " ",
         correctOption: "optionA"
     },
-    //total 125
+    //total 205
 ]
 
 
