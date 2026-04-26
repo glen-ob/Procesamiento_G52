@@ -5,22 +5,38 @@ function initGuidedTour() {
   }
   const driver = window.driver.js.driver;
 
-    const tourTrivia = driver({
+  const tourTrivia = driver({
     showProgress: true,
     steps: [
       {
         element: "#starter-section",
         popover: {
-          title: "Categorías",
-          description: "Para empezar los tests, puedes escoger entre nuestras temáticas tu favorita. ",
+          title: "Trivia",
+          description: "En esta parte encontrarás preguntas sobre la Copa Mundial de la FIFA y las selecciones que participan en ellas.",
           position: "center"
         }
       },
       {
-        element: "#questions",
+        element: "#display-question",
         popover: {
-          title: "tema",
-          description: "Puedes tomar los tests que quieras haciendo click en ellos.",
+          title: "",
+          description: "Aquí verás la pregunta principal",
+          position: "center"
+        }
+      },
+      {
+        element: "#option-one-label",
+        popover: {
+          title: "",
+          description: "Y sus posibles respuestas",
+          position: "center"
+        }
+      },
+      {
+        element: "#nextQuestion",
+        popover: {
+          title: "",
+          description: "una vez selecciones la que crees correcta, ¡da click aquí para pasar a la siguiente!",
           position: "center"
         }
       },

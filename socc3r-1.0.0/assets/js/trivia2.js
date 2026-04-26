@@ -201,7 +201,7 @@ const questions = [
 
     { //JAPON 3
         question: "Durante la Copa Mundial de la FIFA 2002, ¿contra qué nación logró Japón su primera victoria en una Copa Mundial de la FIFA?",
-        optionA: "Tunéz",
+        optionA: "Túnez",
         optionB: "Rusia",
         optionC: "Bélgica",
         optionD: "Turquía",
@@ -317,7 +317,7 @@ const questions = [
     },
     //total 35
     { //UZBE 1
-        question: "¿En cuántos mundiales ha clasificado Uzbekistán?",
+        question: "¿En cuántas Copas Mundiales de la FIFA ha clasificado Uzbekistán?",
         optionA: "3",
         optionB: "5",
         optionC: "2",
@@ -569,16 +569,16 @@ const questions = [
     },
 
     { //BRASIL 4
-        question: "Pelé es el máximo goleador de Brasil de todos los tiempos. ¿Pero quién es el segundo en la lista?",
+        question: "Neymar es el máximo goleador de Brasil de todos los tiempos. ¿Pero quién es el segundo en la lista?",
         optionA: "Romario",
-        optionB: "Ronaldo",
-        optionC: "Zico",
-        optionD: "Bebeto",
+        optionB: "Pelé",
+        optionC: "Ronaldo",
+        optionD: "Zico",
         correctOption: "optionB"
     },
 
     { //BRASIL 5
-        question: "¿Cuántas Copas Mundiales ha ganado Brasil? ",
+        question: "¿Cuántas Copas Mundiales ha ganado Brasil?",
         optionA: "3",
         optionB: "4",
         optionC: "5",
@@ -1100,7 +1100,7 @@ const questions = [
     },
 
     { //INGLATERRA 3
-        question: "¿En qué estadio se jugó la final del Mundial que ganó Inglaterra?",
+        question: "¿En qué estadio se jugó la final de la Copa Mundial de la FIFA que ganó Inglaterra?",
         optionA: "Old Trafford",
         optionB: "Wembley",
         optionC: "Anfield",
@@ -1375,7 +1375,7 @@ const questions = [
         optionB: "Portugal",
         optionC: "México",
         optionD: "Japón",
-        correctOption: "optionb"
+        correctOption: "optionB"
     },
 
     { //PORTUGAL 4
@@ -1410,7 +1410,7 @@ const questions = [
         optionA: "Catar 2022",
         optionB: "Brasil 2014",
         optionC: "Francia 1998",
-        optionD: "Corea-Japon 2022",
+        optionD: "Corea-Japon 2002",
         correctOption: "optionC"
     },
 
@@ -1451,7 +1451,7 @@ const questions = [
     },
 
     { //ALEMANIA 2
-        question: "¿En qué año ganó Alemania su primer mundial?",
+        question: "¿En qué año ganó Alemania su primer Copa Mundial de la FIFA??",
         optionA: "1954",
         optionB: "1958",
         optionC: "1986",
@@ -1469,7 +1469,7 @@ const questions = [
     },
 
     { //ALEMANIA 4
-        question: "¿En qué país ganó Alemania su cuarto título mundial en 2014?",
+        question: "¿En qué país ganó Alemania su cuarto título de la Copa Mundial de la FIFA en 2014?",
         optionA: "Sudáfrica",
         optionB: "Brasil",
         optionC: "Rusia",
@@ -1478,7 +1478,7 @@ const questions = [
     },
 
     { //ALEMANIA 5
-        question: "¿Contra qué selección jugó Alemania la final del Mundial de 2014?",
+        question: "¿Contra qué selección jugó Alemania la final de la Copa Mundial de la FIFA de 2014?",
         optionA: "España",
         optionB: "Inglaterra",
         optionC: "Argentina",
@@ -1514,7 +1514,7 @@ const questions = [
     },
 
     { //PAISES 4
-        question: "¿En qué mundial Países Bajos perdió la final contra España?",
+        question: "¿En qué Copa Mundial de la FIFA Países Bajos perdió la final contra España?",
         optionA: "2002",
         optionB: "2006",
         optionC: "2010",
@@ -1605,7 +1605,7 @@ const questions = [
     },
 
     { //AUSTRIA 4
-        question: "¿En cuántos mundiales ha participado Austria?",
+        question: "¿En cuántas Copas Mundiales de la FIFA ha participado Austria?",
         optionA: "8",
         optionB: "6",
         optionC: "7",
@@ -1673,7 +1673,7 @@ const questions = [
         optionB: "19",
         optionC: "18",
         optionD: "17",
-        correctOption: "optiond"
+        correctOption: "optionD"
     },
 
     { //ESPAÑA 2
@@ -1768,7 +1768,7 @@ const questions = [
     },
 
     { //CURAZAO 2
-        question: "¿En qué mundiales ha clasificado Curazao?",
+        question: "¿En qué Copas Mundiales de la FIFA ha clasificado Curazao?",
         optionA: "2022",
         optionB: "2026",
         optionC: "2018 y 2022",
@@ -1813,7 +1813,7 @@ const questions = [
     },
 
     { //HAITI 2
-        question: "¿En qué mundiales ha clasificado Haití?",
+        question: "¿En qué Copas Mundiales de la FIFA ha clasificado Haití?",
         optionA: "1954 y 2022",
         optionB: "1998 y 2002",
         optionC: "1974 y 2026",
@@ -1849,7 +1849,7 @@ const questions = [
     },
     //total 205    
     { //PANAMA 1
-        question: "¿En cuántos mundiales ha clasificado Panamá?",
+        question: "¿En cuántas Copas Mundiales de la FIFA ha clasificado Panamá?",
         optionA: "2",
         optionB: "3",
         optionC: "1",
@@ -1867,7 +1867,7 @@ const questions = [
     },
 
     { //PANAMA 3
-        question: "¿En qué mundiales ha clasificado Panamá?",
+        question: "¿En qué Copas Mundiales de la FIFA ha clasificado Panamá?",
         optionA: "1954 y 2022",
         optionB: "2018 y 2026",
         optionC: "1974 y 2002",
@@ -2020,7 +2020,7 @@ const questions = [
     },
 
     { //BOSNIA 5
-        question: "¿En qué mundiales ha clasificado Bosnia y Herzegovina?",
+        question: "¿En qué Copas Mundiales de la FIFA ha clasificado Bosnia y Herzegovina?",
         optionA: "1954 y 2022",
         optionB: "2014 y 2026",
         optionC: "1974 y 2002",
@@ -2239,7 +2239,6 @@ function checkForAnswer() {
 }
 
 
-
 function handleNextQuestion() {
     checkForAnswer()
     unCheckRadioButtons()
@@ -2271,22 +2270,20 @@ function unCheckRadioButtons() {
     }
 }
 
-// function for when all questions being answered
 function handleEndGame() {
     let remark = null
     let remarkColor = null
 
-    // condition check for player remark and remark color
     if (playerScore <= 3) {
-        remark = "Bad Grades, Keep Practicing."
+        remark = "Puede mejorar."
         remarkColor = "red"
     }
     else if (playerScore >= 4 && playerScore < 7) {
-        remark = "Average Grades, You can do better."
+        remark = "¡Ahí la llevas!"
         remarkColor = "orange"
     }
     else if (playerScore >= 7) {
-        remark = "Excellent, Keep the good work going."
+        remark = "¡Excelente!"
         remarkColor = "green"
     }
     const playerGrade = (playerScore / 10) * 100
