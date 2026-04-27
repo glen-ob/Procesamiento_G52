@@ -3,6 +3,9 @@ html {
 }
 
 /* //modos// */
+
+
+
 [data-theme="light"] {
   --color-bg: url(/socc3r-1.0.0/assets/img/istockphoto.jpg);
   --color-fg: #000000;
@@ -18,6 +21,10 @@ html {
   --theme-icon: #ffd600;
   --accent-color: #601f9e;
   --game-color: rgb(123, 238, 123);
+  --trivia-bg: #7bee7b;          /* Verde fondo */
+  --trivia-q-box: #ffd1ff;       /* Lila pregunta */
+  --trivia-opt-bg: #ffe75c;      /* Amarillo opciones */
+  --trivia-text-color: #000000;  /* Letras negras */
 }
 
 [data-theme="dark"] {
@@ -35,6 +42,10 @@ html {
   --theme-icon: #2c2c2f;
   --accent-color: #360f5a;
   --game-color: rgb(1, 41, 1);
+  --trivia-bg: #ff00ff;          /* Fucsia fondo */
+  --trivia-q-box: #0000ff;       /* Azul pregunta */
+  --trivia-opt-bg: #2c2c2f;      /* Gris opciones */
+  --trivia-text-color: #ffffff;  /* Letras blancas */
 
 }
 
@@ -2694,13 +2705,10 @@ div.gallery-item div.desc {
   text-transform: lowercase;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   pointer-events: none;
-  /* Para que el click pase al enlace */
 }
 
-/* Efectos al hacer Hover */
 .video:hover .video-overlay {
   opacity: 1;
-  /* Aparece el texto y el fondo oscuro */
 }
 
 .video:hover video {
@@ -2825,8 +2833,8 @@ div.gallery-item div.desc {
 }
 
 .game-question-container {
-  width: 80%;
-  height: 8rem;
+  width: auto;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2842,7 +2850,7 @@ div.gallery-item div.desc {
 
 .game-options-container {
   width: 80%;
-  height: 12rem;
+  /*height: 20rem;*/
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -2982,47 +2990,12 @@ input[type=radio]:checked~.option {
   background-color: rgb(83, 82, 82);
 }
 
-@media(min-width : 300px) and (max-width : 350px) {
-  .game-quiz-container {
-    width: 90%;
-    height: 80vh;
-  }
 
-  .game-details-container h1 {
-    font-size: 0.8rem;
-  }
-
-  .game-question-container {
-    height: 6rem;
-  }
-
-  .game-question-container h1 {
-    font-size: 0.9rem;
-  }
-
-  .game-options-container span {
-    width: 90%;
-    height: 2.5rem;
-  }
-
-  .game-options-container span label {
-    font-size: 0.8rem;
-  }
-
-  .modal-content-container {
-    width: 90%;
-    height: 25rem;
-  }
-
-  .modal-content-container h1 {
-    font-size: 1.2rem;
-  }
-}
 
 @media(min-width : 350px) and (max-width : 700px) {
   .game-quiz-container {
-    width: 90%;
-    height: 80vh;
+    width: 100%;
+    height: 100vh;
   }
 
   .game-details-container h1 {
@@ -3034,7 +3007,7 @@ input[type=radio]:checked~.option {
   }
 
   .game-question-container h1 {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
   }
 
   .game-options-container span {
@@ -3047,7 +3020,7 @@ input[type=radio]:checked~.option {
   }
 
   .modal-content-container h1 {
-    font-size: 1.2rem;
+    font-size: 2rem;
   }
 }
 
@@ -3078,3 +3051,81 @@ input[type=radio]:checked~.option {
   margin-top: 100px;
   background-color: var(--game-color);
 }
+
+
+/* contentder princ de trivia */
+.game-quiz-container {
+    background-color: var(--game-color); 
+    padding: 0px;
+    border-radius: 20px;
+    border: 4px solid var(--y2k-border); 
+    transition: all 0.5s ease;
+    height: 650px;
+}
+
+/* cajita d pregunta*/
+.game-question-container {
+    background-color: var(--accent-color); 
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 5px 5px 0px #e564f1 ;
+    
+}
+
+/* txt de pregunta */
+#display-question {
+    color: var(--contrast-color); 
+}
+
+.option {
+    background-color: #ffd1ff; 
+    color: #000000; 
+    display: block;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid var(--y2k-border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: var(--default-font);
+}
+
+/* hover */
+.option:hover {
+    filter: brightness(0.9);
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0px var(--y2k-border);
+}
+
+/* btn sigueinte*/
+.next-button-container button {
+    width: 50%;
+    height: 50px;
+    background-color: var(--accent-color);
+    color: var(--contrast-color); 
+    font-family: var(--default-font);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+    border: 3px solid var(--y2k-border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 1px;
+    text-transform: uppercase;
+}
+
+
+.next-button-container button:hover {
+    background-color: var(--y2k-border);
+    color: var(--primary-text);
+    transform: scale(1.02);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.option {
+    background-color: var(--box-yellow); 
+    border: 3px solid var(--y2k-border);
+}
+

@@ -32,7 +32,7 @@
                 position: absolute;
                 bottom: 20px; left: 50%;
                 transform: translateX(-50%);
-                width: 240px; 
+                width: 260px; 
                 background-color: var(--panel-blue);
                 border-radius: 35px;
                 padding: 15px; 
@@ -64,6 +64,14 @@
                 font-weight: bold;
             }
 
+            .stop-btn-active {
+                background-color: #ff4444 !important;
+            }
+
+            .stop-btn-inactive {
+                background-color: #70ff70 !important;
+                color: #333 !important;
+            }
 
             /* Capa oscura de fondo */
             .modal-overlay {
@@ -72,10 +80,10 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background: rgba(0, 0, 0, 0.6); /* Oscuridad al 60% */
-                z-index: 1500; /* Menos que el modal, pero más que el resto */
+                background: rgba(0, 0, 0, 0.6);
+                z-index: 1500;
                 display: none;
-                backdrop-filter: blur(4px); /* Opcional: añade un desenfoque sutil al fondo */
+                backdrop-filter: blur(4px);
             }
             
             /* Ajustamos el z-index del modal para que esté por encima del overlay */
@@ -163,10 +171,7 @@
 
     window.isAnyModelCaptured = true;
 
-    // id para la info de modelos
     const assetId = modelEntity.getAttribute('data-asset-id');
-    
-    // ruta para el clon
     const modelSrc = modelEntity.getAttribute('gltf-model');
     const menu = document.querySelector('#interaction-menu');
     const camera = document.querySelector('#main-camera');
@@ -174,16 +179,9 @@
     const clone = document.createElement('a-entity');
     clone.setAttribute('id', 'captured-model');
     clone.setAttribute('gltf-model', modelSrc);
-    clone.setAttribute('position', '0 -0.1 -2.5');
+    clone.setAttribute('position', '0 -0.2 -2.5');
     clone.setAttribute('scale', '0.01 0.01 0.01');
-
-            clone.setAttribute('animation', {
-                property: 'rotation',
-                to: '0 360 0',
-                dur: 10000,
-                easing: 'linear',
-                loop: true
-            });
+    clone.setAttribute('rotation', '0 0 0');
 
             camera.appendChild(clone);
             menu.style.display = 'block';
@@ -204,30 +202,47 @@ function setupMenuInteractions(assetId) {
     const audioAnim = new Audio('sounds/sound1.mp3'); 
     audioAnim.volume = 1;
 
-    //desbloquear y bloquear botones
-    const toggleButtons = (isDisabled) => {
-        buttons.forEach(btn => {
-            btn.disabled = isDisabled;
-            btn.style.opacity = isDisabled ? "0.5" : "1";
-            btn.style.pointerEvents = isDisabled ? "none" : "auto";
-        });
-    };
+    let isMoving = false;
+    let animationTimeout = null;
 
-    // btn animacion
-    buttons[0].onclick = () => {
+    function stopAllAnimations(resetStopButton = true) {
         model.removeAttribute('animation__jump');
         model.removeAttribute('animation__float');
         model.removeAttribute('animation__rotation');
         model.removeAttribute('animation__rotation_loop');
+        
+        if (animationTimeout) {
+            clearTimeout(animationTimeout);
+            animationTimeout = null;
+        }
+        
+        isMoving = false;
+        
+        const stopAnimBtn = buttons[3];
+        if (stopAnimBtn && resetStopButton) {
+            stopAnimBtn.textContent = 'detener animación';
+            stopAnimBtn.classList.remove('stop-btn-inactive');
+            stopAnimBtn.classList.add('stop-btn-active');
+            stopAnimBtn.style.backgroundColor = '';
+            stopAnimBtn.style.color = '';
+            stopAnimBtn.disabled = false;
+        }
+    }
 
+    function startFullAnimation() {
+        stopAllAnimations(false);
+        
         model.object3D.rotation.set(0, 0, 0);
         model.setAttribute('rotation', '0 0 0');
         model.setAttribute('position', '0 -0.2 -2.5');
-
+        
+        isMoving = true;
+        
         audioAnim.currentTime = 0;
         audioAnim.play().catch(e => console.log("Error:", e));
+        
         createStars(model);
-
+        
         model.setAttribute('animation__jump', {
             property: 'position',
             from: '0 -0.2 -2.5',
@@ -235,8 +250,9 @@ function setupMenuInteractions(assetId) {
             dur: 600, 
             easing: 'easeOutCubic'
         });
-
+        
         setTimeout(() => {
+            if (!isMoving) return;
             model.setAttribute('animation__rotation', {
                 property: 'rotation',
                 from: '0 0 0',
@@ -245,10 +261,11 @@ function setupMenuInteractions(assetId) {
                 easing: 'easeOutBack'
             });
         }, 300);
-
+        
         const startFinalPhase = () => {
+            if (!isMoving) return;
             model.removeEventListener('animationcomplete__jump', startFinalPhase);
-
+            
             model.setAttribute('animation__float', {
                 property: 'position',
                 from: '0 0.2 -2.5',
@@ -258,8 +275,9 @@ function setupMenuInteractions(assetId) {
                 loop: true,
                 easing: 'easeInOutQuad'
             });
-
+            
             model.addEventListener('animationcomplete__rotation', () => {
+                if (!isMoving) return;
                 model.setAttribute('animation__rotation_loop', {
                     property: 'rotation',
                     from: '0 360 0',
@@ -270,13 +288,35 @@ function setupMenuInteractions(assetId) {
                 });
             }, { once: true });
         };
-
+        
         model.addEventListener('animationcomplete__jump', startFinalPhase);
+        
+        const stopAnimBtn = buttons[3];
+        if (stopAnimBtn) {
+            stopAnimBtn.textContent = 'detener animación';
+            stopAnimBtn.classList.remove('stop-btn-inactive');
+            stopAnimBtn.classList.add('stop-btn-active');
+            stopAnimBtn.style.backgroundColor = '';
+            stopAnimBtn.style.color = '';
+            stopAnimBtn.disabled = false;
+        }
+    }
+
+    const toggleButtons = (isDisabled) => {
+        buttons.forEach((btn, index) => {
+            if (index !== 3) {
+                btn.disabled = isDisabled;
+                btn.style.opacity = isDisabled ? "0.5" : "1";
+                btn.style.pointerEvents = isDisabled ? "none" : "auto";
+            }
+        });
     };
 
-    // btn info
+    buttons[0].onclick = () => {
+        startFullAnimation();
+    };
+
     buttons[1].onclick = () => {
-        // se bloquean botones
         toggleButtons(true);
 
         const audioClick = new Audio('sounds/sound3.wav'); 
@@ -300,15 +340,11 @@ function setupMenuInteractions(assetId) {
             box-shadow: 8px 8px 0px #c5cfff;
         `;
         
-        // cont
         infoBox.innerHTML = `
             <p style="color: #444; margin-bottom: 20px; line-height: 1.4;">${infoText}</p>
         `;
 
-        //btn cerrar
         const closeBtn = document.createElement('button');
-
-        
         closeBtn.innerText = 'cerrar';
         closeBtn.style = `
             background: #ff94fa; border: none; color: white; 
@@ -318,7 +354,6 @@ function setupMenuInteractions(assetId) {
         `;
         
         closeBtn.onclick = () => {
-
             const audioCerrar = new Audio('sounds/sound6.wav'); 
             audioCerrar.volume = 1;
             audioCerrar.play().catch(e => console.log("Error audio:", e));
@@ -330,7 +365,6 @@ function setupMenuInteractions(assetId) {
         document.body.appendChild(infoBox);
     };
 
-    // btn efecto visual
     buttons[2].onclick = () => {
         const audioEfecto = new Audio('sounds/sound4.wav');
         audioEfecto.volume = 1;
@@ -338,6 +372,28 @@ function setupMenuInteractions(assetId) {
         createConfetti(model);
         createBallParticles(model);
     };
+
+    const stopAnimBtn = buttons[3];
+    
+    if (stopAnimBtn) {
+        stopAnimBtn.classList.add('stop-btn-active');
+        
+        stopAnimBtn.onclick = () => {
+            if (isMoving) {
+                stopAnimBtn.disabled = true;
+                stopAnimBtn.style.opacity = "0.5";
+                stopAnimBtn.style.pointerEvents = "none";
+                
+                stopAllAnimations(true);
+                
+                setTimeout(() => {
+                    stopAnimBtn.disabled = false;
+                    stopAnimBtn.style.opacity = "1";
+                    stopAnimBtn.style.pointerEvents = "auto";
+                }, 500);
+            }
+        };
+    }
 }
 
 
@@ -348,7 +404,6 @@ function setupMenuInteractions(assetId) {
         for (let i = 0; i < numStars; i++) {
             const star = document.createElement('a-entity');
             
-            // se hace la estrellita
             star.setAttribute('geometry', {
                 primitive: 'circle',
                 radius: 0.05,
@@ -356,20 +411,17 @@ function setupMenuInteractions(assetId) {
             });
 
             star.setAttribute('material', {
-                color: '#fffb00', // color amarillo
+                color: '#fffb00',
                 shader: 'flat',
                 side: 'double'
             });
 
-            // q empiece cerca del modelo
             star.setAttribute('position', '0 0 -2.5');
 
-            // direcciones
             const randX = (Math.random() - 0.5) * 3;
             const randY = (Math.random() - 0.5) * 3;
             const randZ = (Math.random() - 0.5) * 2 - 3;
 
-            // animación tipo explosión
             star.setAttribute('animation__move', {
                 property: 'position',
                 to: `${randX} ${randY} ${randZ}`,
@@ -377,7 +429,6 @@ function setupMenuInteractions(assetId) {
                 easing: 'easeOutExpo'
             });
 
-            // animacion de giro de la estrellita
             star.setAttribute('animation__rotate', {
                 property: 'rotation',
                 to: '0 0 360',
@@ -386,7 +437,6 @@ function setupMenuInteractions(assetId) {
                 easing: 'linear'
             });
 
-            // anamcion desaparece
             star.setAttribute('animation__fade', {
                 property: 'scale',
                 from: '1 1 1',
@@ -398,7 +448,6 @@ function setupMenuInteractions(assetId) {
 
             scene.appendChild(star);
 
-            // liempeisza dom
             setTimeout(() => {
                 if (star.parentNode) star.parentNode.removeChild(star);
             }, 1200);
@@ -406,14 +455,13 @@ function setupMenuInteractions(assetId) {
     }
 
     function createConfetti(target) {
-        const numConfetti = 100; // cuanto confetti
+        const numConfetti = 100;
         const scene = target.sceneEl;
         const colors = ['#ff94fa', '#fffb00', '#00e5ff', '#ff4d4d', '#70ff70'];
 
         for (let i = 0; i < numConfetti; i++) {
             const confetti = document.createElement('a-entity');
             
-            // cuadrito d papel
             confetti.setAttribute('geometry', {
                 primitive: 'plane',
                 width: 0.04,
@@ -427,13 +475,11 @@ function setupMenuInteractions(assetId) {
                 side: 'double'
             });
 
-            // posciiones
             const startX = (Math.random() - 0.5) * 4; 
-            const startY = 2; //empieza de arriba
+            const startY = 2;
             const startZ = -2.5;
             confetti.setAttribute('position', `${startX} ${startY} ${startZ}`);
 
-            // anim de que cae
             const endY = -2;
             confetti.setAttribute('animation__move', {
                 property: 'position',
@@ -442,7 +488,6 @@ function setupMenuInteractions(assetId) {
                 easing: 'linear'
             });
 
-            // anim de que gira
             confetti.setAttribute('animation__rotate', {
                 property: 'rotation',
                 to: `${Math.random() * 360} 360 ${Math.random() * 360}`,
@@ -488,7 +533,6 @@ function setupMenuInteractions(assetId) {
 
         const endY = -2; 
 
-        // anim cae abajo, igual q conff
         ball.setAttribute('animation__move', {
             property: 'position',
             to: `${startX} ${endY} ${startZ}`,
@@ -496,7 +540,6 @@ function setupMenuInteractions(assetId) {
             easing: 'linear'
         });
 
-        // anim rotacion
         ball.setAttribute('animation__rotate', {
             property: 'rotation',
             to: `0 0 ${Math.random() > 0.5 ? 360 : -360}`, 
@@ -527,6 +570,7 @@ function setupMenuInteractions(assetId) {
                 <button class="interact-btn">animar modelo</button>
                 <button class="interact-btn">informacion</button>
                 <button class="interact-btn">efecto visual</button>
+                <button class="interact-btn">detener animación</button>
                 <button class="interact-btn reset-btn" onclick="resetScanner()">escanear otro modelo</button>
             </div>
         </div>
@@ -542,103 +586,55 @@ function setupMenuInteractions(assetId) {
 
             <a-assets timeout="15000">
                 <a-asset-item id="asset-0" src="assets/asset.glb"></a-asset-item>
-                <!-- balon 2026 -->
                 <a-asset-item id="asset-1" src="assets/asset1.glb"></a-asset-item>
-                <!-- camisa de algo -->
                 <a-asset-item id="asset-3" src="assets/asset3.glb"></a-asset-item>
-                <!-- camisa argentina -->
                 <a-asset-item id="asset-4" src="assets/asset4.glb"></a-asset-item>
-                <!-- camisa francia -->
                 <a-asset-item id="asset-5" src="assets/asset5.glb"></a-asset-item>
-                <!-- camisa brasil -->
                 <a-asset-item id="asset-6" src="assets/asset6.glb"></a-asset-item>
-                <!-- camisa de algo -->
                 <a-asset-item id="asset-7" src="assets/asset7.glb"></a-asset-item>
-                <!-- camisa portugal -->
                 <a-asset-item id="asset-8" src="assets/asset8.glb"></a-asset-item>
                 <a-asset-item id="asset-10" src="assets/asset10.glb"></a-asset-item>
-                <!--  -->
                 <a-asset-item id="asset-11" src="assets/asset11.glb"></a-asset-item>
-                <!-- camisa belgica -->
                 <a-asset-item id="asset-12" src="assets/asset12.glb"></a-asset-item>
-                <!-- camisa peru -->
                 <a-asset-item id="asset-13" src="assets/asset13.glb"></a-asset-item>
-                <!-- camisa mexico -->
                 <a-asset-item id="asset-14" src="assets/asset14.glb"></a-asset-item>
-                <!-- camisa italia -->
                 <a-asset-item id="asset-16" src="assets/asset16.glb"></a-asset-item>
-                <!-- camisa canada -->
                 <a-asset-item id="asset-17" src="assets/asset17.glb"></a-asset-item>
-                <!-- camisa corea -->
                 <a-asset-item id="asset-18" src="assets/asset18.glb"></a-asset-item>
-                <!-- camisa uruguay -->
                 <a-asset-item id="asset-19" src="assets/asset19.glb"></a-asset-item>
-                <!-- camisa serbia -->
                 <a-asset-item id="asset-20" src="assets/asset20.glb"></a-asset-item>
-                <!-- camisa qatar -->
                 <a-asset-item id="asset-21" src="assets/asset21.glb"></a-asset-item>
-                <!-- camisa polonia -->
                 <a-asset-item id="asset-22" src="assets/asset22.glb"></a-asset-item>
-                <!-- camisa chile -->
                 <a-asset-item id="asset-23" src="assets/asset23.glb"></a-asset-item>
-                <!-- camisa brasil 2 -->
                 <a-asset-item id="asset-24" src="assets/asset24.glb"></a-asset-item>
-                <!-- camisa francia 2 -->
                 <a-asset-item id="asset-25" src="assets/asset25.glb"></a-asset-item>
-                <!-- camisa alemania -->
                 <a-asset-item id="asset-26" src="assets/asset26.glb"></a-asset-item>
-                <!-- camisa algeria -->
                 <a-asset-item id="asset-27" src="assets/asset27.glb"></a-asset-item>
-                <!-- camisa austria -->
                 <a-asset-item id="asset-28" src="assets/asset28.glb"></a-asset-item>
-                <!-- camisa cameroun -->
                 <a-asset-item id="asset-29" src="assets/asset29.glb"></a-asset-item>
-                <!-- camisa costa rica -->
                 <a-asset-item id="asset-30" src="assets/asset30.glb"></a-asset-item>
-                <!-- camisa czechia -->
                 <a-asset-item id="asset-31" src="assets/asset31.glb"></a-asset-item>
-                <!-- camisa dinamarca -->
                 <a-asset-item id="asset-32" src="assets/asset32.glb"></a-asset-item>
-                <!-- camisa ghana -->
                 <a-asset-item id="asset-34" src="assets/asset34.glb"></a-asset-item>
-                <!-- camisa irlanda -->
                 <a-asset-item id="asset-35" src="assets/asset35.glb"></a-asset-item>
-                <!-- camisa jamaica -->
                 <a-asset-item id="asset-36" src="assets/asset36.glb"></a-asset-item>
-                <!-- camisa paises bajos -->
                 <a-asset-item id="asset-37" src="assets/asset37.glb"></a-asset-item>
-                <!-- camisa saudi -->
                 <a-asset-item id="asset-38" src="assets/asset38.glb"></a-asset-item>
-                <!-- camisa suecia -->
                 <a-asset-item id="asset-39" src="assets/asset39.glb"></a-asset-item>
-                <!-- camisa wales -->
                 <a-asset-item id="asset-40" src="assets/asset40.glb"></a-asset-item>
-                <!-- camisa senegal -->
                 <a-asset-item id="asset-41" src="assets/asset41.glb"></a-asset-item>
-                <!-- camisa ukraine -->
                 <a-asset-item id="asset-42" src="assets/asset42.glb"></a-asset-item>
-                <!-- camisa usa -->
                 <a-asset-item id="asset-43" src="assets/asset43.glb"></a-asset-item>
-                <!-- balon 1982 creo -->
                 <a-asset-item id="asset-45" src="assets/asset45.glb"></a-asset-item>
-                <!-- camisa fcf -->
                 <a-asset-item id="asset-46" src="assets/asset46.glb"></a-asset-item>
-                <!-- camisa cote divoire -->
                 <a-asset-item id="asset-48" src="assets/asset48.glb"></a-asset-item>
-                <!-- camisa haiti -->
                 <a-asset-item id="asset-49" src="assets/asset49.glb"></a-asset-item>
-                <!-- camisa jordan -->
                 <a-asset-item id="asset-50" src="assets/asset50.glb"></a-asset-item>
-                <!-- camisa morocco -->
                 <a-asset-item id="asset-51" src="assets/asset51.glb"></a-asset-item>
-                <!-- camisa norway -->
                 <a-asset-item id="asset-52" src="assets/asset52.glb"></a-asset-item>
-                <!-- camisa panama -->
                 <a-asset-item id="asset-53" src="assets/asset53.glb"></a-asset-item>
-                <!-- camisa paraguay -->
                 <a-asset-item id="asset-54" src="assets/asset54.glb"></a-asset-item>
                 <a-asset-item id="asset-55" src="assets/asset55.glb"></a-asset-item>
-
 
                 <img id="balon-png" src="assets/balon_futbol.png">
             </a-assets>
