@@ -16,7 +16,7 @@ html {
   --video-shadow: #b191ff;
   --theme-button: #ffffff;
   --theme-icon: #ffd600;
-  --accent-color:  	#601f9e;
+  --accent-color: #601f9e;
   --game-color: rgb(123, 238, 123);
 }
 
@@ -34,19 +34,23 @@ html {
   --theme-button: #2c2c2f;
   --theme-icon: #2c2c2f;
   --accent-color: #360f5a;
-    --game-color: rgb(1, 41, 1);
+  --game-color: rgb(1, 41, 1);
 
 }
 
 svg {
   width: 40px;
   position: absolute;
+    transition: .5s;
+
 }
 
 .toggle-display {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: .5s;
+
 }
 
 label {
@@ -57,6 +61,8 @@ label {
   box-shadow: 10px 10px 30px rgba(0, 0, 0, .05) inset;
   cursor: pointer;
   position: relative;
+    transition: .5s;
+
 }
 
 .circle {
@@ -74,6 +80,8 @@ label {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  transition: .5s;
+
 }
 
 #sun {
@@ -91,10 +99,11 @@ label {
 [data-theme="dark"] .toggle-display label {
   background: var(--background-color);
   box-shadow: 10px 10px 30px rgba(0, 0, 0, .05) inset;
-
+  transition: .5s;
 }
 
 [data-theme="dark"] .toggle-display label .circle {
+  transition: .5s;
   left: 100%;
   transform: translate(-110%, -50%);
   background: var(--theme-button);
@@ -103,16 +112,19 @@ label {
 }
 
 [data-theme="dark"] .toggle-display label .circle #sun {
+  transition: .5s;
   margin-top: 150%;
   opacity: 0;
 }
 
 [data-theme="dark"] .toggle-display label .circle #moon {
+  transition: .5s;
   margin-top: 0%;
   opacity: 1;
 }
 
 [data-theme="dark"] label:active .circle {
+  transition: .5s;
   width: 40px;
 }
 
@@ -3063,6 +3075,6 @@ input[type=radio]:checked~.option {
 
 
 .game-section {
-    margin-top: 100px;
-    background-color: var(--game-color);
+  margin-top: 100px;
+  background-color: var(--game-color);
 }
