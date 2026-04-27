@@ -25,6 +25,11 @@ html {
   --trivia-q-box: #ffd1ff;       /* Lila pregunta */
   --trivia-opt-bg: #ffe75c;      /* Amarillo opciones */
   --trivia-text-color: #000000;  /* Letras negras */
+  --trivia-end-container: rgb(253, 234, 255);
+  --trivia-end-text: rgb(59, 59, 59);
+  --trivia-end-h1: rgb(0, 0, 0);
+  --trivia-hover-btn: rgb(255, 207, 253);
+  --trivia-btn-border: rgb(110, 0, 83);
 }
 
 [data-theme="dark"] {
@@ -46,7 +51,11 @@ html {
   --trivia-q-box: #0000ff;       /* Azul pregunta */
   --trivia-opt-bg: #2c2c2f;      /* Gris opciones */
   --trivia-text-color: #ffffff;  /* Letras blancas */
-
+  --trivia-end-container: rgb(43, 42, 42);
+  --trivia-end-text: lightgray;
+  --trivia-end-h1: white;
+  --trivia-hover-btn: rgb(83, 82, 82);
+  --trivia-btn-border: rgb(252, 242, 241);
 }
 
 svg {
@@ -2937,7 +2946,7 @@ input[type=radio]:checked~.option {
 .modal-content-container {
   height: 20rem;
   width: 25rem;
-  background-color: rgb(43, 42, 42);
+  background-color: var(--trivia-end-container);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2948,7 +2957,7 @@ input[type=radio]:checked~.option {
 .modal-content-container h1 {
   font-size: 1.3rem;
   height: 3rem;
-  color: lightgray;
+  color: var(--trivia-end-h1);
   text-align: center;
 }
 
@@ -2962,7 +2971,7 @@ input[type=radio]:checked~.option {
 }
 
 .grade-details p {
-  color: white;
+  color: var(--trivia-end-text);
   text-align: center;
 }
 
@@ -2979,15 +2988,15 @@ input[type=radio]:checked~.option {
   height: 2rem;
   background: none;
   outline: none;
-  border: 1px solid rgb(252, 242, 241);
-  color: white;
+  border: 1px solid var(--trivia-btn-border);
+  color: var(--trivia-end-h1);
   font-size: 1.1rem;
   cursor: pointer;
   border-radius: 20px;
 }
 
 .modal-button-container button:hover {
-  background-color: rgb(83, 82, 82);
+  background-color: var(--trivia-hover-btn);
 }
 
 
