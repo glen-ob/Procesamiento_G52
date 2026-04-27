@@ -2,10 +2,6 @@ html {
   cursor: url(../img/base64.png), auto;
 }
 
-* {
-  transition: .5s;
-}
-
 /* //modos// */
 [data-theme="light"] {
   --color-bg: url(/socc3r-1.0.0/assets/img/istockphoto.jpg);
@@ -20,7 +16,8 @@ html {
   --video-shadow: #b191ff;
   --theme-button: #ffffff;
   --theme-icon: #ffd600;
-
+  --accent-color:  	#601f9e;
+  --game-color: rgb(123, 238, 123);
 }
 
 [data-theme="dark"] {
@@ -28,14 +25,17 @@ html {
   --color-fg: #ffffff;
   --header-color: rgba(109, 7, 132, 0.61);
   --primary-text: #ffffff;
-  --y2k-border: #c5e063;
+  --y2k-border: #304268;
   --box-yellow: #ffe75c;
-  --gallery-cont: #d8f08c;
+  --gallery-cont: #02006c;
   --filter-bg: #89d4f0;
-  --video-bg: linear-gradient(135deg, #ffd1ff 0%, #fae1d0 100%);
-  --video-shadow: #b191ff;
+  --video-bg: linear-gradient(135deg, #a325a3 0%, #380e30 100%);
+  --video-shadow: #511266;
   --theme-button: #2c2c2f;
   --theme-icon: #2c2c2f;
+  --accent-color: #360f5a;
+    --game-color: rgb(1, 41, 1);
+
 }
 
 svg {
@@ -1651,7 +1651,7 @@ section,
 .testimonials .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  background-color: var(--background-color);
+  background-color: var(--accent-color);
   opacity: 1;
   border: 1px solid var(--accent-color);
 }
@@ -3059,4 +3059,10 @@ input[type=radio]:checked~.option {
   to {
     opacity: 1;
   }
+}
+
+
+.game-section {
+    margin-top: 100px;
+    background-color: var(--game-color);
 }

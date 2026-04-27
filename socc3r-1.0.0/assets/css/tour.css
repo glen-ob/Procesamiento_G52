@@ -1,5 +1,5 @@
  /* PARA eliminar el digibop font de tour solo devuelve todo a sans-serif */
- 
+
 .driver-active .driver-overlay,
 .driver-active * {
     pointer-events: none;

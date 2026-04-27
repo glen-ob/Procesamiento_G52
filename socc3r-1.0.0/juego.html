@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="description" content="Foosball Game [Tutorial]">
+    <meta name="keywords" content="sololearn,foosball game,tutorial">
+    <meta name="author" content="WASP - https://www.sololearn.com/Profile/7532653">
+    <meta name="date" content="2018-03-04" scheme="YYYY-MM-DD">
+    <meta name="revised" content="2018-03-04" scheme="YYYY-MM-DD">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="assets/css/minijuego.css" rel="stylesheet">
+    <!-- Main CSS File -->
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@latest/dist/driver.js.iife.js"></script>
+    <link href="assets/css/tour.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <a href="index.html" class="active">volver a inicio<br></a>
+
+    <div id="main">
+        <div style="position:absolute;top:3px;left:0;width:100%;">
+            <div style="float:left;margin:0 0 0 15px;">Tiros: <span id="kicks">0</span></div>
+            <div style="float:right;margin:0 15px 0 0;">Goles: <span id="goals">0</span></div>
+        </div>
+        <div id="walls">
+            <div id="ball">
+                <div id="ball_direction"></div>
+                <div id="ball_image"></div>
+            </div>
+        </div>
+        <div class="players_line" id="players_line_1" style="top:50px;">
+            <div class="sticks"></div>
+            <div class="players" style="left:162px;background-position:35px 0px"></div>
+        </div>
+        <div class="players_line" id="players_line_2" style="top:145px;">
+            <div class="sticks"></div>
+            <div class="players" style="left:92px;background-position:0 0"></div>
+            <div class="players" style="left:232px;background-position:-35px 0"></div>
+        </div>
+        <div class="players_line" id="players_line_3" style="top:260px;">
+            <div class="sticks"></div>
+            <div class="players" style="left:112px;background-position:-70px 0"></div>
+            <div class="players" style="left:212px;background-position:-105px 0"></div>
+        </div>
+        <input id="deg" class="slider" type="range" min="-60" max="60" value="0" />
+        <div class="next" id="next_8">Jugar</div>
+        <button class="buttonGame" id="playagain"></button>
+        <div id="goal"></div>
+    </div>
+
+    <script src="assets/js/minijuego.js"></script>
+
+</body>
+
+</html>
