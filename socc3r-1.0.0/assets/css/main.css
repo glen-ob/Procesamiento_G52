@@ -41,7 +41,7 @@ html {
 [data-theme="dark"] {
   --color-bg: url(/socc3r-1.0.0/assets/img/dark-bg.jpg);
   --color-fg: #ffffff;
-    --main-text: #ffe75c;
+  --main-text: #ffe75c;
   --header-color: rgba(109, 7, 132, 0.61);
   --primary-text: #ffffff;
   --y2k-border: #304268;
@@ -58,7 +58,7 @@ html {
   /* Fucsia fondo */
   --trivia-q-box: #0000ff;
   /* Azul pregunta */
-  --trivia-opt-bg:  #a325a3;
+  --trivia-opt-bg: #a325a3;
   /* Gris opciones */
   --trivia-text-color: #ffffff;
   /* Letras blancas */
@@ -1049,6 +1049,14 @@ section,
   overflow: clip;
 }
 
+section2,
+.section2 {
+  background-color: pink;
+  padding: 60px 0;
+  scroll-margin-top: 77px;
+  overflow: clip;
+}
+
 @media (max-width: 1199px) {
 
   section,
@@ -1087,7 +1095,7 @@ section,
 }
 
 .section-title p {
-  color: var(--accent-color);
+  color: var(--main-text);
   margin: 0;
   font-size: 36px;
   font-weight: 600;
@@ -1107,6 +1115,62 @@ section,
   justify-content: center;
   color: var(--default-color);
 }
+
+.escaneo {
+  width: 100%;
+  min-height: 100px;
+  position: relative;
+  margin-top: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--default-color);
+}
+
+@media (max-width: 768px) {
+  .escaneo {
+    background-color: pink;
+    height: 30px;
+    margin-top: 0px;
+  }
+
+  .escaneo2 {
+    height: 70px;
+    margin-top: 650px;
+  }
+
+  .escaneo3 {
+    height: 30px;
+    margin-top: -550px;
+    margin-right: 400px;
+    transform: rotate(90deg);
+  }
+
+    .escaneo4 {
+    height: 30px;
+    margin-top: -100px;
+    margin-left: 400px;
+    transform: rotate(90deg);
+  }
+
+  .escaneo h2 {
+    margin-top: 26px;
+    font-size: 19px;
+  }
+}
+
+
+.escaneo .h2 {
+  width: 100%;
+  min-height: 400px;
+  position: relative;
+  margin-top: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--default-color);
+}
+
 
 .hero img {
   position: absolute;
