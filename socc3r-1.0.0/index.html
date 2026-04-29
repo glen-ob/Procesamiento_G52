@@ -21,6 +21,7 @@
   <!-- driverjs -->
   <script src="https://cdn.jsdelivr.net/npm/driver.js@latest/dist/driver.js.iife.js"></script>
   <link href="assets/css/tour.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
 </head>
 
 <body class="index-page">
@@ -43,6 +44,15 @@
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
+        <select id="flags">
+          <option class="flag" value="mx">🇲🇽&emsp;</option>
+          <option class="flag" value="en">🇺🇸&emsp;</option>
+          <option class="flag" value="arabe">🇹🇳&emsp;</option>
+          <option class="flag" value="sueco">🇸🇪&emsp;</option>
+          <option class="flag" value="japones">🇯🇵&emsp;</option>
+          <option class="flag" value="coreano">🇰🇷&emsp;</option>
+
+        </select>
         <input type="checkbox" data-theme-toggle aria-label="Change to dark theme" style="visibility: hidden;"
           id="toggle">
         <div class="toggle-display">
@@ -84,8 +94,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 d-flex flex-column align-items-center align-items-lg-start">
-            <h2 class="text-white" data-aos="fade-up" data-aos-delay="100">Bienvenido a <span>Socc3r</span></h2>
-            <p data-aos="fade-up" data-aos-delay="200">Donde tienes tu colección de cartas favoritas!</p>
+            <h2 id="h2" class="text-white" data-aos="fade-up" data-aos-delay="100">Bienvenido a <span id="span">Socc3r</span></h2>
+            <p id="p" data-aos="fade-up" data-aos-delay="200">Donde tienes tu colección de cartas favoritas!</p>
           </div>
         </div>
       </div>
@@ -313,9 +323,9 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-  <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/tourIndex.js"></script>
+  <script src="assets/js/traductor.js"></script>
 
 </body>
 
