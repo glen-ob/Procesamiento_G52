@@ -21,7 +21,6 @@
   <!-- driverjs -->
   <script src="https://cdn.jsdelivr.net/npm/driver.js@latest/dist/driver.js.iife.js"></script>
   <link href="assets/css/tour.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
 </head>
 
 <body class="index-page">
@@ -44,15 +43,8 @@
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <select id="flags">
-          <option class="flag" value="mx">🇲🇽&emsp;</option>
-          <option class="flag" value="en">🇺🇸&emsp;</option>
-          <option class="flag" value="arabe">🇹🇳&emsp;</option>
-          <option class="flag" value="sueco">🇸🇪&emsp;</option>
-          <option class="flag" value="japones">🇯🇵&emsp;</option>
-          <option class="flag" value="coreano">🇰🇷&emsp;</option>
+        <div id="translate"></div>
 
-        </select>
         <input type="checkbox" data-theme-toggle aria-label="Change to dark theme" style="visibility: hidden;"
           id="toggle">
         <div class="toggle-display">
@@ -94,7 +86,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 d-flex flex-column align-items-center align-items-lg-start">
-            <h2 id="h2" class="text-white" data-aos="fade-up" data-aos-delay="100">Bienvenido a <span id="span">Socc3r</span></h2>
+            <h2 id="h2" class="text-white" data-aos="fade-up" data-aos-delay="100">Bienvenido a <span
+                id="span">Socc3r</span></h2>
             <p id="p" data-aos="fade-up" data-aos-delay="200">Donde tienes tu colección de cartas favoritas!</p>
           </div>
         </div>
@@ -116,14 +109,16 @@
               Balones de Mundiales, Estadios y Equipos
             </p>
             <ul>
-              <li><i class="bi bi-check2-all"></i> 
+              <li><i class="bi bi-check2-all"></i>
                 <span id="calidad">Alta calidad.</span>
               </li>
-              <li><i class="bi bi-check2-all"></i> 
-                <span id="favs">Con tus equipos favoritos.</span></li>
-              <li><i class="bi bi-check2-all"></i> 
+              <li><i class="bi bi-check2-all"></i>
+                <span id="favs">Con tus equipos favoritos.</span>
+              </li>
+              <li><i class="bi bi-check2-all"></i>
                 <span id="info">Los equipos, balones y estadios del Mundial 2026 ya se
-                  encuentran disponibles.</span></li>
+                  encuentran disponibles.</span>
+              </li>
             </ul>
             <p id="extra">
               Una de las colecciones más prestigiosas de cromos de futbol y trading cards de la más alta calidad con
@@ -329,7 +324,16 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/tourIndex.js"></script>
   <script src="assets/js/traductor.js"></script>
+  <script src="https://cdn.staticfile.net/translate.js/3.15.6/translate.min.js"></script>
 
+  <script> 
+    translate.service.use('siliconflow'); //Set to use SiliconFlow’s translation channel
+    translate.language.setDefaultTo('spanish');
+    translate.ignore.text.push('Socc3r');
+    translate.ignore.text.push('socc3r');
+    translate.setAutoDiscriminateLocalLanguage(); 
+    translate.execute(); //Trigger translation
+  </script>
 </body>
 
 </html>

@@ -173,7 +173,8 @@
                     </ul>
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
-                <img src="assets/img/avatar.jpg" alt="Avatar" class="avatar"
+
+        <div id="translate"></div>                <img src="assets/img/avatar.jpg" alt="Avatar" class="avatar"
                     style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
             </div>
 
@@ -280,6 +281,14 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 
+        <script src="https://cdn.staticfile.net/translate.js/3.15.6/translate.min.js"></script>
+        <script>
+            translate.service.use('siliconflow'); //Set to use SiliconFlow’s translation channel
+            translate.language.setDefaultTo('spanish');
+            translate.ignore.text.push('Socc3r');
+            translate.ignore.text.push('socc3r');
+            translate.execute(); //Trigger translation
+        </script>
 </body>
 
 </html>

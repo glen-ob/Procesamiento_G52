@@ -42,6 +42,7 @@
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
 
+                <div id="translate"></div>
                 <button type="button" id="btnTourGale">ayuda</button>
 
                 <input type="checkbox" data-theme-toggle aria-label="Change to dark theme" style="visibility: hidden;"
@@ -692,7 +693,7 @@
                                             <span>rd congo</span>
                                         </div>
                                     </a>
-                                </div>  
+                                </div>
                             </div>
 
                             <div class="pagination" id="pagination">
@@ -768,6 +769,14 @@
         <script src="assets/js/main.js"></script>
         <script src="assets/js/tourGale.js"></script>
         <script src="assets/js/paginacion.js"></script>
+        <script src="https://cdn.staticfile.net/translate.js/3.15.6/translate.min.js"></script>
+        <script>
+            translate.service.use('siliconflow'); //Set to use SiliconFlow’s translation channel
+            translate.language.setDefaultTo('spanish');
+            translate.ignore.text.push('Socc3r');
+            translate.ignore.text.push('socc3r');
+            translate.execute(); //Trigger translation
+        </script>
 </body>
 
 </html>

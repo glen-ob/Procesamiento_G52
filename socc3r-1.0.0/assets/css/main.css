@@ -2,8 +2,10 @@ html {
   cursor: url(../img/base64.png), auto;
 }
 
-.flag {
-  height: 80px;
+@media (max-width: 575px) {
+  #translate select {
+    width: 50px;
+  }
 }
 
 

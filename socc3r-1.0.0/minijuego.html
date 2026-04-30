@@ -41,6 +41,7 @@
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
 
+        <div id="translate"></div>
                 <button type="button" id="btnTourJuego">ayuda</button>
                 
                 <input type="checkbox" data-theme-toggle aria-label="Change to dark theme" style="visibility: hidden;"
@@ -131,6 +132,14 @@
     <script src="assets/js/tourJuego.js"></script>
 
 
+        <script src="https://cdn.staticfile.net/translate.js/3.15.6/translate.min.js"></script>
+        <script>
+            translate.service.use('siliconflow'); //Set to use SiliconFlow’s translation channel
+            translate.language.setDefaultTo('spanish');
+            translate.ignore.text.push('Socc3r');
+            translate.ignore.text.push('socc3r');
+            translate.execute(); //Trigger translation
+        </script>
 </body>
 
 </html>
